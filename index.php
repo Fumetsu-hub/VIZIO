@@ -5,7 +5,7 @@ session_start();
 	{
 			switch ($_GET["action"]) {
 				case  'LOGIN':
-					include("controlleur/conexion.php");
+					include("/controlleur/conexion.php");
 					break;
 
 			}
