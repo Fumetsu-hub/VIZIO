@@ -8,7 +8,8 @@ session_start();
 					include("/controlleur/login.php");
 					break;
                 case 'LOGOUT':
-                    include("/controlleur/sign_out.php")
+                    include("/controlleur/sign_out.php");
+                    break;
 
 			}
 		}
