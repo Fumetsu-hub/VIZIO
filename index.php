@@ -4,8 +4,8 @@ session_start();
 	try 
 	{
 			switch ($_GET["action"]) {
-				case  'accueil':
-					include("conexion.php");
+				case  'LOGIN':
+					include("controlleur/conexion.php");
 					break;
 
 			}
