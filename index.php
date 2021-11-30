@@ -10,6 +10,9 @@ session_start();
                 case 'LOGOUT':
                     include("/controlleur/sign_out.php");
                     break;
+				case 'profil':
+					include("/controlleur/info_profil.php");
+					break;
 
 			}
 		}
