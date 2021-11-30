@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <h2>Profil de : <?= $afficher['nom']. " " . $afficher['prenom']."";
     Vos donnée :  ?> </h2>
     <!--bouton pour suprimer le profile -->
@@ -16,5 +17,8 @@
 <?php
 include('m_profile.php');
 ?>
+
+    <h2>Profil de : <?= $afficher['nom']. " " . $afficher['prenom']; ?> </h2>
+
 </body>
 </html>
