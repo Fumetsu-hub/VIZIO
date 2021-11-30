@@ -20,5 +20,5 @@ if (!isset($afficher['id'])){
     header('Location: index.php'); 
     exit;
 }
-
+// A TESTER 
 ?>

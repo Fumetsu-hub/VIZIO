@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Profil de : <?= $afficher['nom']. " " . $afficher[] </h2>
+    <h2>Profil de : <?= $afficher['nom']. " " . $afficher[]; ?> </h2>
 <?php
 include('m_profile.php');
 ?>
