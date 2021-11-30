@@ -7,7 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Profil de : <?= $afficher['nom']. " " . $afficher[]; ?> </h2>
+    <h2>Profil de : <?= $afficher['nom']. " " . $afficher['prenom']."";
+    Vos donnée :  ?> </h2>
+    <!--bouton pour suprimer le profile -->
+    <form action='supprimer_profil.php' method='post'>
+        <button type="submit" placeholder='supprimer user' name='delete'></button>
+    </form>
 <?php
 include('m_profile.php');
 ?>
