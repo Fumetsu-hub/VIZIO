@@ -22,6 +22,7 @@ session_start();
 
 			}
 		}
+	}
 	catch(Exception $e)
 	{
 		echo 'Erreur : '. $e->getMessage();

@@ -5,12 +5,7 @@ include('../db_connexion.php');
 
 if(isset($_SESSION['id_user']))
 {
-    //regarde si le nom d'utilisateur est deja utilisé pour qqn d'autre
-    $requser = $bdd->prepare("SELECT * FROM user WHERE id_user = ?");
-    $requser->execute(array($_SESSION['id_user']));
-    $info_user = $requser->fetch();
-
-    //modifier les infos perso : nom ; pernom ; email
+    //modifier les infos perso : nom ; prenom ; email
     if(isset($_POST['newnom']) AND !empty($_POST['newnom']) AND $_POST['newnom'] != $info_user['nom'])
     {
         $new_nom = htmlspecialchars($_POST['newnom']);
