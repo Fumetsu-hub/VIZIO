@@ -4,7 +4,7 @@ include('db_connexion.php');
     if(isset($_POST['delete']))
     {
         $requete= $DB->query("DELETE FROM user WHERE : id = id");
-        alert("le compte a bien était supprimer");
+        $_SESSION['flash_message'] = "Ce compte à été supprimé";
         exit;
     }
     
