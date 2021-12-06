@@ -5,7 +5,7 @@ session_start();
 	{
 		if (!isset($_GET['action']))
 		{
-			include('./controlleur/login.php');
+			include('./controlleur/sign_up.php');
 		}
 		else 
 		{
@@ -18,6 +18,9 @@ session_start();
                     break;
 				case 'profil':
 					include("/controlleur/info_profil.php");
+					break;
+				case 'acceuil':
+					include("/controlleur/acceuil.php");
 					break;
 
 			}
