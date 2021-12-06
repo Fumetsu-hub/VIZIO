@@ -22,7 +22,7 @@ session_start();
 				case 'acceuil':
 					include("./controlleur/acceuil.php");
 					break;
-				case 'inscription':
+				case 'Inscription':
 					include("./controlleur/sign_up.php");
 					break;
 				case 'acceuil':
