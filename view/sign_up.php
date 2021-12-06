@@ -14,63 +14,71 @@
      <body>
          <div align="center">
          <h2>REGISTER</h2>
-             <br></br>
+
+         <?php // affiche si le compte est créé ou si il y a une erreure
+        if(isset($erreur))
+        {
+            echo '<div class = "erreur">' . $erreur . '</div>';
+        }
+        ?>
+
+             <br>
          <form action="" method="POST">
              <table>
                   <tr>
                      <td>
-                         <label for="name">Name:</label>
+                         <label for="name">Nom:</label><br>
                          <input type="text" name="nom" autocomplete="off">
                      </td>
                   </tr>
                   <tr>
                       <td>
-                          <label for="name">Prenom:</label>
+                          <label for="name">Prenom:</label><br>
                           <input type="text" name="prenom" autocomplete="off">
                       </td>
                  </tr>
                  <tr>
                      <td>
-                        <label for="mdp">Mot_de_passe:</label>
+                        <label for="mdp">Mot_de_passe:</label><br>
                         <input type="password" name="mdp" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mdp">Confirmation_mot_de_passe:</label>
+                         <label for="mdp">Confirmation_mot_de_passe:</label><br>
                          <input type="password" name="mdp2" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mail">E-mail:</label>
+                         <label for="mail">E-mail:</label><br>
                          <input type="email" name="email" autocomplete="off">
                      </td>
                  </tr>
                 
                  <tr>
                      <td>
-                         <label for="age">Age:</label>
+                         <label for="age">Age:</label><br>
                          <input type="age" name="age" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="sex">Sex:</label>
+                     <br><label for="sex">Sexe:</label>
                          <select name="sex">
-                         <option value="h">Mascuilin</option>
+                         <option value="h">Masculin</option>
                          <option value="f">Feminin</option>
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="tel">Tel:</label>
+                     <br><label for="tel">Tel:</label>
                          <input type="tel" name="tel" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="statut">Statut:</label>
+                     <br><label for="statut">Statut:</label>
                          <select name="statut">
                          <option value="med">Medecin</option>
                          <option value="pat">Patient</option>
@@ -80,10 +88,11 @@
                      <td></td>
                      <td align="center">
                          <br/>
-                         <input type="submit" value="sign_up" name="action">
                      </td>
                  </tr>
              </table> 
+             <input type="submit" value="Inscription" name="action"><br><br>
+
          </form>
 
          <form action="./index.php" method="GET">

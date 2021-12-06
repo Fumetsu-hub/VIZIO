@@ -41,18 +41,4 @@ mysqli_select_db($base, "vizio");
 
   }
 
-  if(isset($_POST['nom']))
-  {
-    echo "nom = ".$_POST['nom']."<br>";
-  }
-  if(isset($_POST['action']))
-  {
-    echo "nom = ".$_POST['nom']."<br>";
-  }
-  if(isset($_POST['nom']) and isset($_POST['prenom']) and isset($_POST['mdp']) and isset($_POST['mdp2']) and isset($_POST['email']) and isset($_POST['age']) and isset($_POST['sex']) and isset($_POST['tel']) and isset($_POST['statut']))
-  {
-    echo "nom = ".$_POST['nom']."<br>";
-
-  }
-
  ?>
