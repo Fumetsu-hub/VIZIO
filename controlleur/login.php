@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <?php
 
- $bdd = new PDO('mysql:host=localhost;dbname=vizio', 'root', '');
+ $bdd = new PDO('mysql:host=localhost;dbname=patient', 'root', '');
  
  if(isset($_POST['forminscription']))
  {
@@ -60,41 +60,84 @@
              <table>
                   <tr>
                      <td>
-                         <label for="name">Name:</label><br>
+                         <label for="name">Name:</label>
                          <input type="text" name="nom" autocomplete="off">
                      </td>
                   </tr>
                   <tr>
                       <td>
-                          <label for="name">Prenom:</label><br>
+                          <label for="name">Prenom:</label>
                           <input type="text" name="prenom" autocomplete="off">
                       </td>
                  </tr>
                  <tr>
                      <td>
-                        <label for="mdp">Mot_de_passe:</label><br>
+                        <label for="mdp">Mot_de_passe:</label>
                         <input type="password" name="mdp" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mdp">Confirmation_mot_de_passe:</label><br>
+                         <label for="mdp">Confirmation_mot_de_passe:</label>
                          <input type="password" name="mdp" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mail">E-mail:</label><br>
+                         <label for="mail">E-mail:</label>
                          <input type="email" name="email" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mdp">Confirmation_mot_de_passe:</label><br>
+                         <label for="mdp">Confirmation_mot_de_passe:</label>
                          <input type="password" name="mdp" autocomplete="off">
                      </td>
                  </tr>
                  
                  <tr>
                      <td>
-                         <label for="patient">Patient:</label><br>
+                         <label for="patient">Patient:</label>
+                         <input type="text" name="patient" autocomplete="off">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <label for="age">Age:</label>
+                         <input type="age" name="age" autocomplete="off">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <label for="sex">Sex:</label>
+                         <select name="genre">
+                         <option value="h">Mascuilin</option>
+                         <option value="f">Feminin</option>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <label for="tel">Tel:</label>
+                         <input type="tel" name="tel" autocomplete="off">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <label for="statut">Statut:</label>
+                         <select name="genre">
+                         <option value="med">Medecin</option>
+                         <option value="pat">Patient</option>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td></td>
+                     <td align="center">
+                         <br/>
+                         <input type="submit" value="Je m'inscris">
+                     </td>
+                 </tr>
+             </table> 
+         </form>
+     </div>
+ </body>
+ </html>
