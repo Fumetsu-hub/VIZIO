@@ -1,31 +1,18 @@
-<html>
-    <head>
-       <meta charset="utf-8">
-        <!-- importer le fichier de style -->
-        <link rel="stylesheet" href="accueil.css" media="screen" type="text/css" />
-    </head>
-    <body>
-        <div id="container">
-            <!-- zone de connexion -->
-            
-            <form action="verification.php" method="POST">
-                <h1>Connexion</h1>
+<?php
+
+    require_once('./model/login.php');
+
+    if(isset($_POST['action']))
+    {
+        if(empty($_POST['mail']) AND empty($_POST['mdp']))
+        {
                 
-                <label><b>email</b></label>
-                <input type="mail" placeholder="Entrer le mail" name="email" required>
+            $erreur2 = "Veuillez remplir tous les champs !";
+        }
+    }
 
-                <label><b>Mot de passe</b></label>
-                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
-
-                <input type="submit" id='submit' value='LOGIN' >
-                <?php
-                if(isset($_GET['erreur'])){
-                    $err = $_GET['erreur'];
-                    if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                }
-                ?>
-            </form>
-        </div>
-    </body>
-</html>
+  
+    $title = "INSCRIPTION";
+    
+    require_once('./view/login.php');
+?> 

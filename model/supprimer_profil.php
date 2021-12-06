@@ -7,5 +7,4 @@ include('db_connexion.php');
         $_SESSION['flash_message'] = "Ce compte à été supprimé";
         exit;
     }
-    
 ?>
