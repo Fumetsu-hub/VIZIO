@@ -22,7 +22,7 @@
         }
         ?>
 
-             <br>
+        <br>
          <form action="" method="POST">
              <table>
                   <tr>
@@ -39,13 +39,13 @@
                  </tr>
                  <tr>
                      <td>
-                        <label for="mdp">Mot_de_passe:</label><br>
+                        <label for="mdp">Mot de passe:</label><br>
                         <input type="password" name="mdp" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mdp">Confirmation_mot_de_passe:</label><br>
+                         <label for="mdp">Confirmation mot de passe:</label><br>
                          <input type="password" name="mdp2" autocomplete="off">
                      </td>
                  </tr>
@@ -72,7 +72,7 @@
                  </tr>
                  <tr>
                      <td>
-                     <br><label for="tel">Tel:</label>
+                     <br><label for="tel">Telephone:</label>
                          <input type="tel" name="tel" autocomplete="off">
                      </td>
                  </tr>
