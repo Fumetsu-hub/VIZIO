@@ -60,41 +60,41 @@
              <table>
                   <tr>
                      <td>
-                         <label for="name">Name:</label>
+                         <label for="name">Name:</label><br>
                          <input type="text" name="nom" autocomplete="off">
                      </td>
                   </tr>
                   <tr>
                       <td>
-                          <label for="name">Prenom:</label>
+                          <label for="name">Prenom:</label><br>
                           <input type="text" name="prenom" autocomplete="off">
                       </td>
                  </tr>
                  <tr>
                      <td>
-                        <label for="mdp">Mot_de_passe:</label>
+                        <label for="mdp">Mot_de_passe:</label><br>
                         <input type="password" name="mdp" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mdp">Confirmation_mot_de_passe:</label>
+                         <label for="mdp">Confirmation_mot_de_passe:</label><br>
                          <input type="password" name="mdp" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mail">E-mail:</label>
+                         <label for="mail">E-mail:</label><br>
                          <input type="email" name="email" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mdp">Confirmation_mot_de_passe:</label>
+                         <label for="mdp">Confirmation_mot_de_passe:</label><br>
                          <input type="password" name="mdp" autocomplete="off">
                      </td>
                  </tr>
                  
                  <tr>
                      <td>
-                         <label for="patient">Patient:</label>
+                         <label for="patient">Patient:</label><br>
