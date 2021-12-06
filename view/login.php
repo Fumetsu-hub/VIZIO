@@ -57,3 +57,46 @@
                  <tr>
                      <td>
                          <label for="patient">Patient:</label>
+                         <input type="text" name="patient" autocomplete="off">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <label for="age">Age:</label>
+                         <input type="age" name="age" autocomplete="off">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <label for="sex">Sex:</label>
+                         <select name="genre">
+                         <option value="h">Mascuilin</option>
+                         <option value="f">Feminin</option>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <label for="tel">Tel:</label>
+                         <input type="tel" name="tel" autocomplete="off">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <label for="statut">Statut:</label>
+                         <select name="genre">
+                         <option value="med">Medecin</option>
+                         <option value="pat">Patient</option>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td></td>
+                     <td align="center">
+                         <br/>
+                         <input type="submit" value="Je m'inscris">
+                     </td>
+                 </tr>
+             </table> 
+         </form>
+     </div>
+ </body>
+ </html>
