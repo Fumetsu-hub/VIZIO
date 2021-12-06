@@ -5,7 +5,7 @@ session_start();
 	{
 		if (!isset($_GET['action']))
 		{
-			include('./controlleur/sign_in.php');
+			include('./controlleur/sign_up.php');
 		}
 		else 
 		{
