@@ -96,7 +96,7 @@
          </form>
 
          <form action="./index.php" method="GET">
-            <input type="submit" id='submit' value='LOGIN' name='action' >
+            <button type="submit" value="LOGIN" name="action">Se connecter</button>
         </form>
 
      </div>
