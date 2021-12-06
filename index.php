@@ -28,6 +28,9 @@ session_start();
 				case 'acceuil':
 					include("./controlleur/acceuil.php");
 					break;
+				case 'creer_dossier_patient':
+					include("./controlleur/creer_dossier_patient.php");
+					break;
 			}
 		}
 	}
