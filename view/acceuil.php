@@ -14,11 +14,6 @@
 
     <form action="./index.php" method="POST">
         <div class="topnav1">
-
-            <form id="vizio" action="./index.php" method='GET'>
-                <input type="hidden" name="action" value="vizio" />
-            </form>
-
             <form id="profil" action="./index.php" method='GET'>
                 <input type="button" name="action" value="profil" />
             </form>
@@ -30,11 +25,6 @@
 
     <form action="./index.php" method="POST">
         <div class="topnav2">
-
-            <form id="vizio" action="./index.php" method='GET'>
-                <input type="hidden" name="action" value="vizio" />
-            </form>
-
             <form id="liste patient" action="./index.php" method='GET'>
                 <input type="button" name="action" value="liste patient" />
             </form>
@@ -46,17 +36,21 @@
 
     <form action="./index.php" method="POST">
         <div class="topnav3">
-
-            <form id="vizio" action="./index.php" method='GET'>
-                <input type="hidden" name="action" value="vizio" />
-            </form>
-
             <form id="questionnaire" action="./index.php" method='GET'>
                 <input type="button" name="action" value="questionnaire" />
             </form>
             
         </div>
     </form>
+    <br><br>
 
+    <form action="./index.php" method="POST">
+        <div class="topnav3">
+            <form id="consultation" action="./index.php" method='GET'>
+                <input type="button" name="action" value="consultation" />
+            </form>
+            
+        </div>
+    </form>
 </body>
 </html>
