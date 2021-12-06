@@ -25,7 +25,12 @@ session_start();
 				case 'profil':
 					include("/controlleur/info_profil.php");
 					break;
-
+				case 'acceuil':
+					include("/controlleur/acceuil.php");
+					break;
+				case 'Inscription':
+					include("/controlleur/sign_up.php");
+					break;
 			}
 		}
 	}
