@@ -28,8 +28,11 @@ session_start();
 				case 'acceuil':
 					include("/controlleur/acceuil.php");
 					break;
-				case 'Inscription':
+				case 'inscription':
 					include("/controlleur/sign_up.php");
+					break;
+				case 'acceuil':
+					include("/controlleur/acceuil.php");
 					break;
 			}
 		}

@@ -1,21 +1,17 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <!-- importer le fichier de style -->
-        <link rel="stylesheet" href="accueil.css" media="screen" type="text/css" />
-    </head>
-    <body style='background:#fff;'>
-        <div id="content">
-            <!-- tester si l'utilisateur est connecté -->
-            <?php
-                session_start();
-                if($_SESSION['mail'] !== ""){
-                    $user = $_SESSION['mail'];
-                    // afficher un message
-                    echo "Bonjour $user, vous êtes connecté";
-                }
-            ?>
-            
-        </div>
-    </body>
-</html>
+<?php
+
+    require_once('./model/login.php');
+
+    if(isset($_POST['action']))
+    {
+        if(empty($_POST['mail']) AND empty($_POST['mdp']))
+        {
+            $erreur2 = "Veuillez remplir tous les champs !";
+        }
+    }
+
+  
+    $title = "login";
+    
+    require_once('./view/login.php');
+?> 
