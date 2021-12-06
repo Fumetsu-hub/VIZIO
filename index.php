@@ -25,7 +25,12 @@ session_start();
 				case 'Inscription':
 					include("./controlleur/sign_up.php");
 					break;
-
+				case 'acceuil':
+					include("./controlleur/acceuil.php");
+					break;
+				case 'creer_dossier_patient':
+					include("./controlleur/creer_dossier_patient.php");
+					break;
 			}
 		}
 	}
