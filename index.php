@@ -13,12 +13,6 @@ session_start();
 				case  'LOGIN':
 					include("./controlleur/login.php");
 					break;
-				case 'ACCUEIL':
-					include("/controlleur/principale.php");
-					break;
-					case 'VERIF':
-						include("/controlleur/verification.php");
-						break;
                 case 'LOGOUT':
                     include("./controlleur/sign_out.php");
                     break;
@@ -31,9 +25,7 @@ session_start();
 				case 'Inscription':
 					include("./controlleur/sign_up.php");
 					break;
-				case 'acceuil':
-					include("./controlleur/acceuil.php");
-					break;
+
 			}
 		}
 	}
