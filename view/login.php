@@ -8,26 +8,28 @@
      <br><br><h1 style="text-align:center">Connexion</h1><br><br>
 
 <div class="container">
-
-<?php // affiche si le compte est créé ou si il y a une erreure
-        if(isset($erreur))
-        {
-            echo $erreur;
-        }
-        if(isset($erreur2))
-        {
-            echo $erreur2;
-        }
-?>
+  
 <br><br>
 <form action="" method="POST">
     <div class="form-group">
-      <label for="exampleInputEmail1">E-mail</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+      <label for="email">E-mail</label>
+      <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+      <?php
+      if(isset($erreur))
+        {
+            echo $erreur;
+        } 
+      ?>
     </div><br>
     <div class="form-group">
-      <label for="exampleInputPassword1">Mot de passe</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
+      <label for="mdp">Mot de passe</label>
+      <input name="mdp" type="password" class="form-control" id="mdp" placeholder="Mot de passe">
+      <?php
+      if(isset($erreur2))
+        {
+            echo $erreur2;
+        }
+      ?>
     </div><br>
     <button name="action" value="LOGIN" type="submit" class="btn btn-primary">Se connecter</button>
     <button name="action" value="Inscription" type="submit" class="btn btn-primary">S'inscrire</button>
