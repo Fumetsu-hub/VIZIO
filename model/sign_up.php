@@ -17,8 +17,8 @@ mysqli_select_db($base, "vizio");
      {
          $nom = htmlspecialchars($_POST['nom']);
          $prenom = htmlspecialchars($_POST['prenom']);
-         $mdp = sha1($_POST['mdp']);
-         $mdp2 = sha1($_POST['mdp2']);
+         $mdp = htmlspecialchars($_POST['mdp']);
+         $mdp2 = htmlspecialchars($_POST['mdp2']);
          $mail = htmlspecialchars($_POST['email']);
          $age = htmlspecialchars($_POST['age']);
          $sex = htmlspecialchars($_POST['sex']);
@@ -35,7 +35,6 @@ mysqli_select_db($base, "vizio");
      {
          $erreur = "Vos mots de passe ne correspondent pas !";
      }
-      
         
     }
 

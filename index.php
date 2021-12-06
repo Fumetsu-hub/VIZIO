@@ -11,19 +11,19 @@ session_start();
 		{
 			switch ($_GET["action"]) {
 				case  'LOGIN':
-					include("/controlleur/login.php");
+					include("./controlleur/login.php");
 					break;
                 case 'LOGOUT':
-                    include("/controlleur/sign_out.php");
+                    include("./controlleur/sign_out.php");
                     break;
 				case 'profil':
-					include("/controlleur/info_profil.php");
+					include("./controlleur/info_profil.php");
 					break;
 				case 'acceuil':
-					include("/controlleur/acceuil.php");
+					include("./controlleur/acceuil.php");
 					break;
 				case 'Inscription':
-					include("/controlleur/sign_up.php");
+					include("./controlleur/sign_up.php");
 					break;
 			}
 		}
