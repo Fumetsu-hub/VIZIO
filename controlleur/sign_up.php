@@ -1,6 +1,6 @@
 <?php
 
-    require_once('./model/login.php');
+    require_once('./model/sign_up.php');
 
     if(isset($_POST['action']))
     {
@@ -14,5 +14,5 @@
   
     $title = "INSCRIPTION";
     
-    require_once('./view/login.php');
+    require_once('./view/sign_up.php');
 ?> 
