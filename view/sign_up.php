@@ -14,7 +14,15 @@
      <body>
          <div align="center">
          <h2>REGISTER</h2>
-             <br></br>
+
+         <?php // affiche si le compte est créé ou si il y a une erreure
+        if(isset($erreur))
+        {
+            echo '<div class = "erreur">' . $erreur . '</div>';
+        }
+        ?>
+
+             <br>
          <form action="" method="POST">
              <table>
                   <tr>
@@ -83,20 +91,13 @@
                      </td>
                  </tr>
              </table> 
-             <input type="submit" value="sign_up" name="action"><br><br>
+             <input type="submit" value="Inscription" name="action"><br><br>
 
          </form>
 
          <form action="./index.php" method="GET">
             <input type="submit" id='submit' value='LOGIN' name='action' >
         </form>
-
-        <?php
-        if(isset($erreur))
-        {
-            echo '<div class = "erreur">' . $erreur . '</div>';
-        }
-        ?>
 
      </div>
  </body>
