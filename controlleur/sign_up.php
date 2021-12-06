@@ -4,7 +4,8 @@
 
     if(isset($_POST['action']))
     {
-        if(empty($_POST['mail']) AND empty($_POST['mdp']))
+        if(empty($_POST['email']) OR empty($_POST['mdp']) OR empty($_POST['nom']) OR empty($_POST['mdp2']) 
+        OR empty($_POST['age']) OR empty($_POST['sex']) OR empty($_POST['tel']) OR empty($_POST['statut']))
         {
                 
             $erreur2 = "Veuillez remplir tous les champs !";
