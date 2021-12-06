@@ -13,9 +13,9 @@
  </head>
      <body>
          <div align="center">
-         <h2>Inscription</h2>
+         <h2>REGISTER</h2>
              <br></br>
-         <form action="Inscription" method="post">
+         <form action="" method="POST">
              <table>
                   <tr>
                      <td>
@@ -38,7 +38,7 @@
                  <tr>
                      <td>
                          <label for="mdp">Confirmation_mot_de_passe:</label>
-                         <input type="password" name="mdp" autocomplete="off">
+                         <input type="password" name="mdp2" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
@@ -47,19 +47,7 @@
                          <input type="email" name="email" autocomplete="off">
                      </td>
                  </tr>
-                 <tr>
-                     <td>
-                         <label for="mdp">Confirmation_mot_de_passe:</label>
-                         <input type="password" name="mdp" autocomplete="off">
-                     </td>
-                 </tr>
-                 
-                 <tr>
-                     <td>
-                         <label for="patient">Patient:</label>
-                         <input type="text" name="patient" autocomplete="off">
-                     </td>
-                 </tr>
+                
                  <tr>
                      <td>
                          <label for="age">Age:</label>
@@ -69,7 +57,7 @@
                  <tr>
                      <td>
                          <label for="sex">Sex:</label>
-                         <select name="genre">
+                         <select name="sex">
                          <option value="h">Mascuilin</option>
                          <option value="f">Feminin</option>
                      </td>
@@ -83,7 +71,7 @@
                  <tr>
                      <td>
                          <label for="statut">Statut:</label>
-                         <select name="genre">
+                         <select name="statut">
                          <option value="med">Medecin</option>
                          <option value="pat">Patient</option>
                      </td>
@@ -92,18 +80,16 @@
                      <td></td>
                      <td align="center">
                          <br/>
-                         <input type="submit" value="Je m'inscris" action= "LOGIN">
-                     </td>
-                 </tr>
-                 <tr>
-                     <td></td>
-                     <td align="center">
-                         <br/>
-                         <input type="submit" value="Deja inscris" action= "LOGIN">
+                         <input type="submit" value="sign_up" name="action">
                      </td>
                  </tr>
              </table> 
          </form>
+
+         <form action="./index.php" method="GET">
+            <input type="submit" id='submit' value='LOGIN' name='action' >
+        </form>
+
      </div>
  </body>
  </html>

@@ -22,6 +22,9 @@ session_start();
 				case 'acceuil':
 					include("/controlleur/acceuil.php");
 					break;
+				case 'sign_up':
+					include("/controlleur/sign_up.php");
+					break;
 
 			}
 		}
