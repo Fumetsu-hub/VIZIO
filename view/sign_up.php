@@ -92,7 +92,14 @@
                      <td></td>
                      <td align="center">
                          <br/>
-                         <input type="submit" value="Je m'inscris">
+                         <input type="submit" value="Je m'inscris" action= "LOGIN">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td></td>
+                     <td align="center">
+                         <br/>
+                         <input type="submit" value="Deja inscris" action= "LOGIN">
                      </td>
                  </tr>
              </table> 
