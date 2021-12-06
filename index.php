@@ -25,7 +25,6 @@ session_start();
 				case 'sign_up':
 					include("/controlleur/sign_up.php");
 					break;
-
 			}
 		}
 	}
