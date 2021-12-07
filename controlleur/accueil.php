@@ -7,5 +7,5 @@ if (empty($_SESSION['id_user'])){
 
 $title = "Accueil";
 
-require('.\view\Accueil.php');
+require('.\view\accueil.php');
 ?>
