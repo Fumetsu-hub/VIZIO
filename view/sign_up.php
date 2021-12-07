@@ -97,6 +97,6 @@
             <button class="btn btn-primary" type="submit" value="LOGIN" name="action">Se connecter</button>
         </form>
 
-     </div>
+     
  </body>
  </html>
