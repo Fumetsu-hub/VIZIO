@@ -5,8 +5,7 @@
     if(isset($_POST['action']))
     {
         if(empty($_POST['email']))
-        {
-                
+        {     
             $erreur2 = "Veuillez remplir tous les champs !";
         }
     }
