@@ -7,7 +7,7 @@
      <body>
 
 <div class="container">
-  
+
 <br><br><br><br><br><br>
 
 <h1 style="text-align:center">Connexion</h1>
@@ -42,5 +42,6 @@
             <button type="submit" value="Inscription" name="action" class="btn btn-primary">S'inscrire</button>
     </form>
 </div>
+
  </body>
  </html>
