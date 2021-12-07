@@ -1,0 +1,2 @@
+Notre bdd créer une colonne "patient" inutile et qui créer des erreures
+J'ai push des modifs de sign up et login
