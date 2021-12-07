@@ -32,10 +32,12 @@
       ?>
     </div><br>
     <button name="action" value="LOGIN" type="submit" class="btn btn-primary">Se connecter</button>
-    <button name="action" value="Inscription" type="submit" class="btn btn-primary">S'inscrire</button>
 
 </form>
+<br>
+<form action="./index.php" method="GET">
+            <button type="submit" value="Inscription" name="action" class="btn btn-primary">S'inscrire</button>
+    </form>
 </div>
-     
  </body>
  </html>

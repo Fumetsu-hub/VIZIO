@@ -20,24 +20,18 @@
     <div class="col-md-4 mb-3">
       <label for="validationTooltip01">Nom</label>
       <input name = "nom" type="text" class="form-control" id="validationTooltip01" placeholder="Nom" required>
-      <div class="valid-tooltip">
-        Looks good!
-      </div>
+
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationTooltip02">Prénom</label>
       <input name = "prenom" type="text" class="form-control" id="validationTooltip02" placeholder="Prénom" name  required>
-      <div class="valid-tooltip">
-        Looks good!
-      </div>
+
     </div>
     <div class="col-md-4 mb-3">
       <label for="exampleInputEmail1">Email</label>
       <div class="input-group">
         <input name = "email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp" required>
-        <div class="invalid-tooltip">
-          
-        </div>
+
       </div>
     </div>
   </div>
@@ -45,16 +39,12 @@
     <div class="col-md-6 mb-3">
       <label for="validationTooltip03">Âge</label>
       <input name = "age" type="text" class="form-control" id="validationTooltip03" placeholder="Âge" required>
-      <div class="invalid-tooltip">
-        Please provide a valid city.
-      </div>
+
     </div>
     <div class="col-md-3 mb-3">
       <label for="validationTooltip04">Telephone</label>
       <input name = "telephone" type="number" class="form-control" id="validationTooltip04" placeholder="Telephone" required>
-      <div class="invalid-tooltip">
-        Please provide a valid state.
-      </div>
+
     </div>
     <div class="form-group">
     <label for="exampleFormControlSelect2">Sexe</label>
