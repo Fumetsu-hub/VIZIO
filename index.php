@@ -31,6 +31,9 @@ session_start();
 				case 'creer_dossier_patient':
 					include("./controlleur/creer_dossier_patient.php");
 					break;
+				case 'modifier_dossier_patient':
+					include("./controlleur/modifier_dossier_patient.php");
+					break;
 			}
 		}
 	}
