@@ -31,6 +31,9 @@ session_start();
 				case 'creer_dossier_patient':
 					include("./controlleur/creer_dossier_patient.php");
 					break;
+				case 'afficher_profil':
+					include("./controlleur/afficher_profil.php");
+					break;
 			}
 		}
 	}

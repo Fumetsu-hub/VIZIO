@@ -73,6 +73,9 @@
     <form action="./index.php" method="GET">
             <button type="submit" value="modifier_profil" name="action" class="btn btn-dark">Modifier Profil</button> <a>Faut etre connecté avant (A mettre sur l'accueil)</a>
     </form>
+    <form action="./index.php" method="GET">
+            <button type="submit" value="afficher_profil" name="action" class="btn btn-dark">Afficher Profil</button> <a>Faut etre connecté avant (A mettre sur l'accueil)</a>
+    </form>
 </div>
 
  </body>
