@@ -16,16 +16,16 @@ session_start();
                 case 'LOGOUT':
                     include("./controlleur/sign_out.php");
                     break;
-				case 'profil':
-					include("./controlleur/info_profil.php");
+				case 'modifier_profil':
+					include("./controlleur/modifier_profil.php");
 					break;
-				case 'acceuil':
-					include("./controlleur/acceuil.php");
+				case 'accueil':
+					include("./controlleur/acueil.php");
 					break;
 				case 'Inscription':
 					include("./controlleur/sign_up.php");
 					break;
-				case 'acceuil':
+				case 'accueil':
 					include("./controlleur/acceuil.php");
 					break;
 				case 'creer_dossier_patient':

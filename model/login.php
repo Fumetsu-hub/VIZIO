@@ -41,6 +41,20 @@ mysqli_select_db($base, "vizio");
             {
                 $erreur2 = "Rentrez un mdp correspondant.";
             }
+
+            $sql = "SELECT id FROM user WHERE mail = '$email_connection'";
+            $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
+            $data = mysqli_fetch_array($result);
+            $_SESSION['id_user'] = $data['id'];
+
+            $sql = "SELECT * FROM user WHERE mail = '$email_connection'";
+            $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
+            $data = mysqli_fetch_array($result);
+            $_SESSION['nom'] = $data['nom'];
+            $_SESSION['prenom'] = $data['prenom'];
+            $_SESSION['mail'] = $data['mail'];
+            $_SESSION['mdp'] = $data['mdp'];
+
         }
     }
 }

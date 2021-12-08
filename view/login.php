@@ -41,6 +41,10 @@
 <form action="./index.php" method="GET">
             <button type="submit" value="Inscription" name="action" class="btn btn-primary">S'inscrire</button>
     </form>
+
+    <form action="./index.php" method="GET">
+            <button type="submit" value="modifier_profil" name="action" class="btn btn-primary">Modifier Profil</button>
+    </form>
 </div>
 
  </body>
