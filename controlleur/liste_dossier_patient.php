@@ -1,8 +1,5 @@
 <?php
-
-    require_once('../model/liste_dossier_patient.php');
-  
-    $title = "login";
+    $title = "Liste dossier patient";
     
     require_once('../view/liste_dossier_patient.php');
 ?>
