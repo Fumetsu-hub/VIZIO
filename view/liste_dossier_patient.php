@@ -39,7 +39,7 @@ include('../db_connexion.php');
             <td  align="left"><?php echo $row["age"]; ?></td>
             <td  align="left"><?php echo $row["sexe"]; ?></td>
             <td  align="left">
-                <?php $row["id"]; ?>    
+                <?php $row["id"]; ?>
                 <button style="font-size:17px;">Dossier Patient</button>
             </td>
 
