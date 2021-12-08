@@ -7,6 +7,14 @@
     <title>creer dossier patient</title>
  </head>
 <body>
+
+<?php
+// bootstrap
+include('./utilitaire/bootstrap.php');
+//navbar
+include('./utilitaire/barre_de_navigation.php');
+?>
+
 <div class="container">
 <br><br><h1 style="text-align:center;">Création d'un Dossier Patient</h1><br><br>
 
@@ -15,6 +23,12 @@
   {
     echo '<div class="alert alert-danger w-25 p-2" role="alert">';
     echo $erreur2;
+    echo '</div>';
+  } 
+  if(isset($reussite))
+  {
+    echo '<div class="alert alert-success w-25 p-2" role="alert">';
+    echo $reussite;
     echo '</div>';
   } 
 ?>

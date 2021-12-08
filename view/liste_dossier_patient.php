@@ -51,4 +51,8 @@ include('./utilitaire/barre_de_navigation.php');
         $count++; } ?>
         </tbody>
     </table>
+
+    <form action="./index.php" method="GET">
+            <button type="submit" value="creer_dossier_patient" name ="action" class="btn btn-primary">Ajouter un patient</button>
+        </form>
 </div>
