@@ -22,7 +22,7 @@ mysqli_select_db($base, "vizio");
             $data = mysqli_fetch_array($result);
             if(!empty($data['mail']) && $data['mail'] == $email_connection)
             {
-                $erreur = "<br>Le mail est correcte<br>";
+                $reussite = "<br>Le mail est correcte<br>"; // a retirer quand l'accueil sera terminé
             }
             else
             {
@@ -35,26 +35,33 @@ mysqli_select_db($base, "vizio");
 
             if(!empty($data['mdp']) && $data['mdp'] == $mdp_connection)
             {
-                $erreur2 = "<br>Le mot de passe est correcte<br>";
+                $reussite2 = "<br>Le mot de passe est correcte<br>"; // a retirer quand l'accueil sera terminé
+
+                // récupère l'ID de l'utilisateur
+                $sql = "SELECT id FROM user WHERE mail = '$email_connection'";
+                $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
+                $data = mysqli_fetch_array($result);
+                $_SESSION['id_user'] = $data['id'];
+
+                // récupere les informations de utilisateur (j'ai pas réussi à exploiter ces données dans "modifier profil")
+                $sql = "SELECT * FROM user WHERE mail = '$email_connection'";
+                $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
+                $data = mysqli_fetch_array($result);
+                $_SESSION['nom'] = $data['nom'];
+                $_SESSION['prenom'] = $data['prenom'];
+                $_SESSION['mail'] = $data['mail'];
+                $_SESSION['mdp'] = $data['mdp'];
+
             }
             else
             {
-                $erreur2 = "Rentrez un mdp correspondant.";
+                $erreur2 = "Rentrez un mdp correspondant à l'email.";
             }
 
-            $sql = "SELECT id FROM user WHERE mail = '$email_connection'";
-            $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
-            $data = mysqli_fetch_array($result);
-            $_SESSION['id_user'] = $data['id'];
-
-            $sql = "SELECT * FROM user WHERE mail = '$email_connection'";
-            $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
-            $data = mysqli_fetch_array($result);
-            $_SESSION['nom'] = $data['nom'];
-            $_SESSION['prenom'] = $data['prenom'];
-            $_SESSION['mail'] = $data['mail'];
-            $_SESSION['mdp'] = $data['mdp'];
-
+        }
+        else
+        {
+            $erreur3 = "Veuillez remplir tous les champs !";
         }
     }
 }

@@ -11,8 +11,12 @@
 <br><br><h1 style="text-align:center;">Création d'un Dossier Patient</h1><br><br>
 
 <?php
-    if(!empty ($erreur2))
-    echo $erreur2."<br><br>";
+  if(isset($erreur2))
+  {
+    echo '<div class="alert alert-danger w-25 p-2" role="alert">';
+    echo $erreur2;
+    echo '</div>';
+  } 
 ?>
 
 <form action = "" method = "POST" class="needs-validation" novalidate>

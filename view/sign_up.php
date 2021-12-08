@@ -8,59 +8,61 @@
  </head>
      <body>
          <div align="center">
-        <br>
+        <br><hr>
          <h2>Inscription</h2>
+         <br>
 
-         <?php // affiche si le compte est créé ou si il y a une erreure
-        if(isset($erreur))
-        {
-            echo '<div class = "erreur">' . $erreur . '</div>';
-        }
+        <?php //Renvoi un msg d'erreur si la création du compte à échoué
+            if(isset($erreur))
+            {
+                echo '<div class="alert alert-danger container w-25 p-3" role="alert">';
+                echo $erreur;
+                echo '</div>';
+            }
         ?>
 
-        <br>
          <form action="" method="POST" >
              <table>
                   <tr>
                      <td>
-                         <label for="name">Nom:</label><br>
+                         <label for="name">Nom</label><br>
                          <input class="form-control" type="text" name="nom" autocomplete="off">
                      </td>
                   </tr>
                   <tr>
                       <td>
-                          <label for="name">Prenom:</label><br>
+                          <label for="name">Prenom</label><br>
                           <input class="form-control" type="text" name="prenom" autocomplete="off">
                       </td>
                  </tr>
                  <tr>
                      <td>
-                        <label for="mdp">Mot de passe:</label><br>
+                        <label for="mdp">Mot de passe</label><br>
                         <input class="form-control" type="password" name="mdp" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mdp">Confirmation mot de passe:</label><br>
+                         <label for="mdp">Confirmation mot de passe</label><br>
                          <input class="form-control" type="password" name="mdp2" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                         <label for="mail">E-mail:</label><br>
+                         <label for="mail">E-mail</label><br>
                          <input class="form-control" type="email" name="email" autocomplete="off">
                      </td>
                  </tr>
                 
                  <tr>
                      <td>
-                         <label for="age">Age:</label><br>
+                         <label for="age">Age</label><br>
                          <input class="form-control" type="number" name="age" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                     <br><label for="sex">Sexe:</label>
+                     <br><label for="sex">Sexe</label>
                          <select class="form-control" name="sex">
                          <option value="h">Masculin</option>
                          <option value="f">Feminin</option>
@@ -68,13 +70,13 @@
                  </tr>
                  <tr>
                      <td>
-                     <br><label for="tel">Telephone:</label>
+                     <br><label for="tel">Telephone</label>
                          <input class="form-control" type="tel" name="tel" autocomplete="off">
                      </td>
                  </tr>
                  <tr>
                      <td>
-                     <br><label for="statut">Statut:</label>
+                     <br><label for="statut">Statut</label>
                          <select class="form-control" name="statut">
                          <option value="med">Medecin</option>
                          <option value="pat">Patient</option>
@@ -87,8 +89,9 @@
                      </td>
                  </tr>
              </table> 
+
             <form action="./index.php" method="GET">
-                <button class="btn btn-primary" type="submit" value="Inscription" name="action">S'inscrire</button>
+                <button class="btn btn-success" type="submit" value="Inscription" name="action">S'inscrire</button>
             </form>
          </form>
         <br>
@@ -96,7 +99,6 @@
              <a class="form-text">Déjà enregistré ?</a>
             <button class="btn btn-primary" type="submit" value="LOGIN" name="action">Se connecter</button>
         </form>
-
-     
+        <hr>
  </body>
  </html>
