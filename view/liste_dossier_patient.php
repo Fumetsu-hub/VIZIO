@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <?php
 // connexion à la base de données
-include('../db_connexion.php');
+include('./db_connexion.php');
+// bootstrap
+include('./utilitaire/bootstrap.php');
+//navbar
+include('./utilitaire/barre_de_navigation.php');
 ?>
-
 
 <br><br><h1 style="text-align:center;">Liste Patients</h1><br><br>
 <div class="container">
@@ -40,7 +42,7 @@ include('../db_connexion.php');
             <td  align="left"><?php echo $row["sexe"]; ?></td>
             <td  align="left">
                 <?php $row["id"]; ?>
-                <button style="font-size:17px;">Dossier Patient</button>
+                <button style="font-size:17px;">Dossier</button>
             </td>
 
         </tr>

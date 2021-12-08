@@ -10,10 +10,15 @@
 </head>
 
 <body>
+<?php
+include('./utilitaire/bootstrap.php');
+include('./utilitaire/barre_de_navigation.php');
+?>
+
 <div class="container">
     <div>
 
-    <br><br><h1>MON PROFIL</h1>
+    <br><h1>MON PROFIL</h1>
 
             <br><hr><br>
             <form action="" method="POST">
@@ -72,10 +77,6 @@
         
         <form action="./index.php" method="GET">
             <button type="submit" value="supprimer_profil" name ="action" class="btn btn-danger">Supprimer profil</button>
-        </form>
-<br>
-        <form action="./index.php" method="GET">
-            <button type="submit" value="accueil" name="action" class="btn btn-primary">Revenir à l'accueil</button>
         </form>
 
     </div>

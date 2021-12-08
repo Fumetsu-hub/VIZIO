@@ -5,7 +5,7 @@ session_start();
 	{
 		if (!isset($_GET['action']))
 		{
-			include('./controlleur/sign_up.php');
+			include('./controlleur/login.php');
 		}
 		else 
 		{
@@ -19,14 +19,11 @@ session_start();
 				case 'modifier_profil':
 					include("./controlleur/modifier_profil.php");
 					break;
-				case 'accueil':
-					include("./controlleur/acueil.php");
-					break;
 				case 'Inscription':
 					include("./controlleur/sign_up.php");
 					break;
 				case 'accueil':
-					include("./controlleur/acceuil.php");
+					include("./controlleur/accueil.php");
 					break;
 				case 'creer_dossier_patient':
 					include("./controlleur/creer_dossier_patient.php");
