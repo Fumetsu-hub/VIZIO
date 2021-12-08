@@ -26,6 +26,9 @@ include('./utilitaire/barre_de_navigation.php');
     <br>
     <form action="./index.php" method="GET">
             <button type="submit" value="modifier_profil" name="action" class="btn btn-dark">Modifier Profil</button>
+    </form><br>
+    <form action="./index.php" method="GET">
+            <button type="submit" value="LOGOUT" name="action" class="btn btn-danger">Se déconnecter</button>
     </form>
     <br>
 
