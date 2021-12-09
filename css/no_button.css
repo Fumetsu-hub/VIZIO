@@ -6,7 +6,7 @@ button.no_button {
   /*optional*/
   font-family: arial, sans-serif;
   /*input has OS specific font-family*/
-  color: #069;
+  color: rgb(5, 71, 170);
   text-decoration: none;
   cursor: pointer;
 }
