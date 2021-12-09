@@ -3,9 +3,18 @@
   <head>
     <title>test</title>
 
+    <link rel="stylesheet" href="./bootstrap-5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap-5.1.3/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/staff.css"/><script type="text/javascript" src="./bootstrap-5.1.3/js/rightde.js"></script>
+
   </head>
   <body>
-  <?php include('./utilitaire/bootstrap.php'); ?>
+  <?php
+  
+include('./utilitaire/barre_de_navigation.php');
+
+  ?>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -34,6 +43,8 @@
 </div>
 
 
+<script src="./bootstrap-5.1.3/js/jquery.min.js"></script>
+<script src="./bootstrap-5.1.3/js/bootstrap.min.js"></script>
 
   </body>
 </html>
