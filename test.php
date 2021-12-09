@@ -7,31 +7,33 @@
   <body>
   <?php include('./utilitaire/bootstrap.php'); ?>
 
-  <!-- BARRE DE NAVIGATION -->
-  <nav style="background-color:#e3f3fc; font-size:25px" class="container-fluid navbar navbar-expand-lg navbar-light">
-  <img src="utilitaire/logo.png" width="80" height="80" class="d-inline-block align-top" alt="">
-  <a style="margin-left:20px; font-size:28px" class="navbar-brand mb-0 h1" href="#">Accueil</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li style="margin-left:10px;" class="nav-item">
-        <a class="nav-link" href="#">Dossiers patient</a>
-      </li>
-      <li style="margin-left:20px;" class="nav-item">
-        <a class="nav-link" href="#">Mon profil</a>
-      </li>
-      <li style="margin-left:20px;" class="nav-item">
-        <a class="nav-link" href="#">Fiche consultation</a>
-      </li>
-      <li style="margin-left:20px;" class="nav-item">
-        <a class="nav-link" href="#">Questionnaires</a>
-      </li>
-    </ul>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
-</nav>
-<!-- FIN BARRE DE NAVIGATION -->
+</div>
+
+
 
   </body>
 </html>

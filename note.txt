@@ -1,2 +1,4 @@
 Notre bdd créer une colonne "patient" inutile et qui créer des erreures
 J'ai push des modifs de sign up et login
+
+Liste dossier patients : esssayer de faire plusieurs pages (pour quand y'a bcp de dossiers)

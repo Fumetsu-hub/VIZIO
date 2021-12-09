@@ -67,8 +67,8 @@ include('./utilitaire/barre_de_navigation.php');
     <div class="form-group">
     <label for="exampleFormControlSelect2">Sexe</label>
     <select name = "sexe" class="form-control">
-    <option>Homme</option>
-    <option>Femme</option>
+    <option value="h">Homme</option>
+    <option value="f">Femme</option>
     </select>
     
     </div>
