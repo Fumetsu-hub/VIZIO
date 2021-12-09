@@ -11,9 +11,6 @@ include('./utilitaire/bootstrap.php');
 include('./utilitaire/barre_de_navigation.php');
 ?>
 
-<form action="./index.php" method="GET">
-            <button type="submit" value="profil" name="action" class="btn btn-primary">Profil</button>
-    </form><br><br>
     <form action="./index.php" method="GET">
             <button type="submit" value="creer_dossier_patient" name="action" class="btn btn-primary">Crée un dossier patient</button>
     </form><br><br>
