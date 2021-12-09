@@ -11,11 +11,11 @@ include('./utilitaire/bootstrap.php');
 include('./utilitaire/barre_de_navigation.php');
 ?>
 
-<form action="./index.php" method="GET">
-            <button type="submit" value="profil" name="action" class="btn btn-primary">Profil</button>
+    <form action="./index.php" method="GET">
+            <button type="submit" value="consultation" name="action" class="btn btn-primary">Crée une fiche consultation</button>
     </form><br><br>
     <form action="./index.php" method="GET">
-            <button type="submit" value="liste_dossier_patient" name="action" class="btn btn-primary">Liste des patients</button>
-    </form><br>
+            <button type="submit" value="questionnaire" name="action" class="btn btn-primary">Crée un questionnaire</button>
+    </form><br><br>
 </body>
 </html>
