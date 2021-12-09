@@ -51,10 +51,6 @@ mysqli_select_db($base, "vizio");
                 $_SESSION['prenom'] = $data['prenom'];
                 $_SESSION['mail'] = $data['mail'];
                 $_SESSION['mdp'] = $data['mdp'];
-                $_SESSION['age'] = $data['age'];
-                $_SESSION['tel'] = $data['tel'];
-                $_SESSION['statut'] = $data['statut'];
-                $_SESSION['sexe'] = $data['sexe'];
 
             }
             else

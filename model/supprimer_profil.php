@@ -1,6 +1,6 @@
 <?php
-include('db_connexion.php');
-    //suuprimer
+include('./db_connexion.php');
+    //supprimer
     if(isset($_POST['delete']))
     {
         $requete= $DB->query("DELETE FROM user WHERE : id = :id");
