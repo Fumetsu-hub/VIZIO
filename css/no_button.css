@@ -1,0 +1,12 @@
+button.no_button {
+/*empêche les boutons de ressembler à des boutons pour la barre de navigation*/
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: rgb(5, 71, 170);
+  text-decoration: none;
+  cursor: pointer;
+}

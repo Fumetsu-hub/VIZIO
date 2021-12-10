@@ -2,8 +2,7 @@
 
 <?php
 // connexion à la base de données
-$base = mysqli_connect('localhost', 'root', '');
-mysqli_select_db($base, "vizio");
+include('./db_connexion.php');
 ?>
 
  <?php
@@ -23,7 +22,7 @@ mysqli_select_db($base, "vizio");
 
           $sql = 'INSERT INTO user VALUES("", "'.$nom.'", "'.$prenom.'", "", "'.$mail.'", "'.$age.'", "'.$sex.'", "'.$tel.'", "pat")';
           mysqli_query($base, $sql) or die('Erreur : '.$sql.'<br />'.mysqli_error($base));
-          $erreur = "Dossier patient créé !";
+          $reussite = "Dossier patient créé !";
       }
         
     }

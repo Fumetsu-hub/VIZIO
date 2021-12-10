@@ -6,7 +6,7 @@
     {
         if(empty($_POST['email']))
         {     
-            $erreur2 = "Veuillez remplir tous les champs !";
+            $erreur = "Veuillez remplir tous les champs !";
         }
     }
 

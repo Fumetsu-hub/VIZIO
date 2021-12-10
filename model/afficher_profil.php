@@ -22,7 +22,7 @@ mysqli_select_db($base, "vizio");
             $data = mysqli_fetch_array($result);
             if(!empty($data['mail']) && $data['mail'] == $email_connection)
             {
-                $reussite = "<br>Le mail est correcte<br>";
+                $reussite = "<br>Le mail est correcte<br>"; // a retirer quand l'accueil sera terminé
             }
             else
             {
@@ -35,7 +35,7 @@ mysqli_select_db($base, "vizio");
 
             if(!empty($data['mdp']) && $data['mdp'] == $mdp_connection)
             {
-                $reussite2 = "<br>Le mot de passe est correcte<br>";
+                $reussite2 = "<br>Le mot de passe est correcte<br>"; // a retirer quand l'accueil sera terminé
 
                 // récupère l'ID de l'utilisateur
                 $sql = "SELECT id FROM user WHERE mail = '$email_connection'";
@@ -51,10 +51,6 @@ mysqli_select_db($base, "vizio");
                 $_SESSION['prenom'] = $data['prenom'];
                 $_SESSION['mail'] = $data['mail'];
                 $_SESSION['mdp'] = $data['mdp'];
-                $_SESSION['age'] = $data['age'];
-                $_SESSION['tel'] = $data['tel'];
-                $_SESSION['statut'] = $data['statut'];
-                $_SESSION['sexe'] = $data['sexe'];
 
             }
             else

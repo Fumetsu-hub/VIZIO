@@ -5,7 +5,7 @@ session_start();
 	{
 		if (!isset($_GET['action']))
 		{
-			include('./controlleur/sign_up.php');
+			include('./controlleur/login.php');
 		}
 		else 
 		{
@@ -16,23 +16,28 @@ session_start();
                 case 'LOGOUT':
                     include("./controlleur/sign_out.php");
                     break;
-				case 'profil':
-					include("./controlleur/info_profil.php");
-					break;
-				case 'acceuil':
-					include("./controlleur/acceuil.php");
+				case 'modifier_profil':
+					include("./controlleur/modifier_profil.php");
 					break;
 				case 'Inscription':
 					include("./controlleur/sign_up.php");
 					break;
-				case 'acceuil':
-					include("./controlleur/acceuil.php");
+				case 'accueil':
+					include("./controlleur/accueil.php");
 					break;
 				case 'creer_dossier_patient':
 					include("./controlleur/creer_dossier_patient.php");
 					break;
 				case 'modifier_dossier_patient':
 					include("./controlleur/modifier_dossier_patient.php");
+				case 'afficher_profil':
+					include("./controlleur/afficher_profil.php");
+					break;
+				case 'liste_dossier_patient':
+					include("./controlleur/liste_dossier_patient.php");
+					break;
+				case 'supprimer_profil':
+					include("./controlleur/supprimer_profil.php");
 					break;
 			}
 		}
