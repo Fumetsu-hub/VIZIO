@@ -34,6 +34,9 @@ session_start();
 				case 'liste_dossier_patient':
 					include("./controlleur/liste_dossier_patient.php");
 					break;
+				case 'supprimer_profil':
+					include("./controlleur/supprimer_profil.php");
+					break;
 			}
 		}
 	}
