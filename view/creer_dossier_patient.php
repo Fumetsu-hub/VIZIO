@@ -19,6 +19,12 @@ include('./utilitaire/barre_de_navigation.php');
 <br><br><h1 style="text-align:center;">Création d'un Dossier Patient</h1><br><br>
 
 <?php
+  if(isset($erreur_email))
+  {
+    echo '<div class="alert alert-danger container w-25 p-3" role="alert">';
+    echo $erreur_email;
+    echo '</div>';
+  }
   if(isset($erreur2))
   {
     echo '<div class="alert alert-danger w-25 p-2" role="alert">';
