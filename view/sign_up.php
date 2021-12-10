@@ -18,6 +18,19 @@
                 echo '<div class="alert alert-danger container w-25 p-3" role="alert">';
                 echo $erreur;
                 echo '</div>';
+                unset($erreur);
+            }
+            if(isset($succes))
+            {
+                echo '<div class="alert alert-success container w-25 p-3" role="alert">';
+                echo $succes;
+                echo '</div>';
+            }
+            if(isset($erreur_email))
+            {
+                echo '<div class="alert alert-danger container w-25 p-3" role="alert">';
+                echo $erreur_email;
+                echo '</div>';
             }
         ?>
 

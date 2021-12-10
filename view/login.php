@@ -32,7 +32,7 @@
         echo $erreur;
         echo '</div>';
       } 
-      else if(isset($reussite)) // a retirer quand l'accueil sera terminé
+      else if(isset($reussite))
       {
         echo '<div class="alert alert-success w-50 p-1" role="alert">';
         echo $reussite;
@@ -50,7 +50,7 @@
         echo $erreur2;
         echo '</div>';        
       }
-      else if(isset($reussite2)) // a retirer quand l'accueil sera terminé
+      else if(isset($reussite2))
       {
         echo '<div class="alert alert-success w-50 p-1" role="alert">';
         echo $reussite2;

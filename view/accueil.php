@@ -10,49 +10,16 @@
 include('./utilitaire/bootstrap.php');
 include('./utilitaire/barre_de_navigation.php');
 ?>
-
-
-    <br><br><br>
-
-    <form action="./index.php" method="POST">
-        <div class="topnav1">
-            <form id="profil" action="./index.php" method='GET'>
-                <input type="button" name="action" value="profil" />
-            </form>
-            
-        </div>
-    </form>
-
-    <br><br>
-
-    <form action="./index.php" method="POST">
-        <div class="topnav2">
-            <form id="liste patient" action="./index.php" method='GET'>
-                <input type="button" name="action" value="liste patient" />
-            </form>
-            
-        </div>
-    </form>
-
-    <br><br>
-
-    <form action="./index.php" method="POST">
-        <div class="topnav3">
-            <form id="questionnaire" action="./index.php" method='GET'>
-                <input type="button" name="action" value="questionnaire" />
-            </form>
-            
-        </div>
-    </form>
-    <br><br>
-
-    <form action="./index.php" method="POST">
-        <div class="topnav3">
-            <form id="consultation" action="./index.php" method='GET'>
-                <input type="button" name="action" value="consultation" />
-            </form>
-            
-        </div>
-    </form>
+<div class = "container">
+    <form action="./index.php" method="GET">
+            <button type="submit" value="creer_dossier_patient" name="action" class="btn btn-primary">Crée un dossier patient</button>
+    </form><br><br>
+    <form action="./index.php" method="GET">
+            <button type="submit" value="consultation" name="action" class="btn btn-primary">Crée une fiche consultation</button>
+    </form><br><br>
+    <form action="./index.php" method="GET">
+            <button type="submit" value="questionnaire" name="action" class="btn btn-primary">Crée un questionnaire</button>
+    </form><br><br>
+</div>
 </body>
 </html>
