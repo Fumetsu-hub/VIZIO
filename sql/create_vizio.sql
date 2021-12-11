@@ -29,8 +29,7 @@ CREATE TABLE IF NOT EXISTS `vizio`.`user` (
   `prenom` VARCHAR(50) NULL,
   `mdp` VARCHAR(30) NULL,
   `mail` VARCHAR(70) NULL,
-  `patient` INT(11) NULL,
-  `age` VARCHAR(3) NULL,
+  `date_n` DATE NULL,
   `sexe` ENUM('f', 'h') NULL,
   `tel` CHAR(10) NULL,
   `statut` ENUM('med', 'pat') NULL,
@@ -177,5 +176,4 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
 

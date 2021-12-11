@@ -62,7 +62,7 @@ include('./utilitaire/barre_de_navigation.php');
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationTooltip03">Âge</label>
-      <input name = "age" type="text" class="form-control" id="validationTooltip03" placeholder="Âge" required>
+      <input name = "date_n" type="date" class="form-control" id="validationTooltip03" required>
 
     </div>
     <div class="col-md-3 mb-3">

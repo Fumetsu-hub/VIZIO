@@ -69,8 +69,8 @@
                 
                  <tr>
                      <td>
-                         <label for="age">Age</label><br>
-                         <input class="form-control" type="number" name="age" autocomplete="off">
+                         <label for="date">Date de naissance</label><br>
+                         <input class="form-control" type="date" name="date_n" autocomplete="off">
                      </td>
                  </tr>
                  <tr>

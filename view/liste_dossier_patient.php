@@ -29,7 +29,7 @@ include('./utilitaire/barre_de_navigation.php');
         <tbody>
         <?php
         $count=1;
-        $sel_query='SELECT id, nom, prenom, mail, age, sexe, tel ,statut
+        $sel_query='SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut
         FROM user WHERE statut = "pat"';
         $result = mysqli_query($base,$sel_query);
         while($row = mysqli_fetch_assoc($result)) { ?>
@@ -38,7 +38,16 @@ include('./utilitaire/barre_de_navigation.php');
             <td  align="left"><?php echo $row["nom"]; ?></td>
             <td  align="left"><?php echo $row["prenom"]; ?>
             <td  align="left"><?php echo $row["mail"]; ?></td>
-            <td  align="left"><?php echo $row["age"]; ?></td>
+            
+            <td  align="left">
+            <?php 
+            # Déterminer l'âge
+            $from = new DateTime($row["date_n"]);
+            $to   = new DateTime('today');
+            $age = $from->diff($to)->y;
+            echo $age;
+            ?></td>
+
             <td  align="left"><?php echo $row["sexe"]; ?></td>
             <td  align="left">
                 <?php $row["id"]; ?>

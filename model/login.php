@@ -51,10 +51,16 @@ mysqli_select_db($base, "vizio");
                 $_SESSION['prenom'] = $data['prenom'];
                 $_SESSION['mail'] = $data['mail'];
                 $_SESSION['mdp'] = $data['mdp'];
-                $_SESSION['age'] = $data['age'];
                 $_SESSION['tel'] = $data['tel'];
                 $_SESSION['statut'] = $data['statut'];
                 $_SESSION['sexe'] = $data['sexe'];
+                $_SESSION['date_n'] = $data['date_n'];
+
+                # Déterminer l'âge
+                $from = new DateTime($data["date_n"]);
+                $to   = new DateTime('today');
+                $_SESSION['age'] = $from->diff($to)->y;
+                echo "age = ". $_SESSION['age'];
 
             }
             else
