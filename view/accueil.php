@@ -10,6 +10,8 @@
 include('./utilitaire/bootstrap.php');
 include('./utilitaire/barre_de_navigation.php');
 ?>
+
+<br><br><br><br><br>
 <div class = "container">
     <form action="./index.php" method="GET">
             <button type="submit" value="creer_dossier_patient" name="action" class="btn btn-primary">Crée un dossier patient</button>
@@ -19,7 +21,7 @@ include('./utilitaire/barre_de_navigation.php');
     </form><br><br>
     <form action="./index.php" method="GET">
             <button type="submit" value="questionnaire" name="action" class="btn btn-primary">Crée un questionnaire</button>
-    </form><br><br>
+    </form><br>
 </div>
 </body>
 </html>

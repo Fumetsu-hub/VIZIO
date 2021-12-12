@@ -2,7 +2,7 @@
  <head>
     <title>Login</title>
  </head>
-<body>
+<body style="background-color:#f3f3f2;">
 <?php include('./utilitaire/bootstrap.php'); ?>
 
 <div class="container">

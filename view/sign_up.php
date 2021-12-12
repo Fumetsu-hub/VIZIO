@@ -6,7 +6,7 @@
 
     <title>Inscription</title>
  </head>
-     <body>
+    <body style="background-color:#f3f3f2;">
          <div align="center">
         <br><hr>
          <h2>Inscription</h2>
