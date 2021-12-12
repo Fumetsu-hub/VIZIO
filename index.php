@@ -22,12 +22,9 @@ session_start();
 				case 'Inscription':
 					include("./controlleur/sign_up.php");
 					break;
-<<<<<<< HEAD
-=======
 				case 'accueil':
 					include("./controlleur/accueil.php");
-					break;
->>>>>>> e068b9bd65ff28c795c27dbc6d54ab8f4079a7e5
+
 				case 'creer_dossier_patient':
 					include("./controlleur/creer_dossier_patient.php");
 					break;
