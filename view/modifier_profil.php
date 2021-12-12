@@ -77,7 +77,10 @@ include('./utilitaire/barre_de_navigation.php');
         
         <form action="./index.php" method="GET">
             <button type="submit" value="supprimer_profil" name ="action" class="btn btn-danger">Supprimer profil</button>
-        </form>
+        </form><br>
+        <form action="./index.php" method="GET">
+            <button type="submit" value="afficher_profil" name="action" class="btn btn-dark">Retour</button>
+        </form><br>
 
     </div>
 </div>

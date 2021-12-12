@@ -77,7 +77,10 @@ include('./utilitaire/barre_de_navigation.php');
         
         <form action="./index.php" method="GET">
             <button type="submit" value="supprimer_patient" name ="action" class="btn btn-danger">Supprimer patient</button>
-        </form>
+        </form><br>
+        <form action="./index.php" method="GET">
+            <button type="submit" value="afficher_dossier_patient" name="action" class="btn btn-dark">Retour</button>
+        </form><br>
 
     </div>
 </div>

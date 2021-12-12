@@ -26,6 +26,9 @@ include('./utilitaire/barre_de_navigation.php');
     <form action="./index.php" method="GET">
             <button type="submit" value="modifier_dossier_patient" name="action" class="btn btn-dark">Modifier dossier</button>
     </form><br>
+    <form action="./index.php" method="GET">
+            <button type="submit" value="liste_dossier_patient" name="action" class="btn btn-dark">Retour</button>
+    </form><br>
   </div>
 </div>
 
