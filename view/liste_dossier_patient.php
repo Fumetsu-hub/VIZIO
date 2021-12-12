@@ -35,7 +35,6 @@ include('./utilitaire/barre_de_navigation.php');
             <td  align="left"><?php echo $row["nom"]; ?></td>
             <td  align="left"><?php echo $row["prenom"]; ?>
             <td  align="left"><?php echo $row["mail"]; ?></td>
-            
             <td  align="left">
             <?php 
             # Déterminer l'âge
