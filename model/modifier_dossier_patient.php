@@ -1,6 +1,6 @@
 <?php
 
-include('./db_connexion.php');
+include('./utilitaire/db_connexion.php');
 
 if(isset($_SESSION['id_dossier_patient']))
 {

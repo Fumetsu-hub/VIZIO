@@ -2,7 +2,7 @@
 
 <?php
 // connexion à la base de données
-include('./db_connexion.php');
+include('./utilitaire/db_connexion.php');
 // bootstrap
 include('./utilitaire/bootstrap.php');
 //navbar
@@ -20,9 +20,6 @@ include('./utilitaire/barre_de_navigation.php');
         <th><strong>Email</strong></th>
         <th><strong>Âge</strong></th>
         <th><strong>Sexe</strong></th>
-        <th><strong></strong></th>
-
-        <th></th>
         <th></th>
         </tr>
         </thead>

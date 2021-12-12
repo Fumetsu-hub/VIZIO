@@ -2,7 +2,7 @@
 
 <?php
 // connexion à la base de données
-include('./db_connexion.php');
+include('./utilitaire/db_connexion.php');
 ?>
 
 <?php

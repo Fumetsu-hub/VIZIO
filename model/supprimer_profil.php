@@ -1,5 +1,5 @@
 <?php
-include('./db_connexion.php');
+include('./utilitaire/db_connexion.php');
 
 $id_user = $_SESSION['id_user']; // récupère l'id de l'utilisateur
 
