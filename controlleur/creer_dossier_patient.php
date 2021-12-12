@@ -10,7 +10,7 @@ if (empty($_SESSION['id_user']))
 
     if(isset($_POST['action']))
     {
-        if(empty($_POST['nom']) or empty($_POST['prenom']) or empty($_POST['email']) or empty($_POST['age'])
+        if(empty($_POST['nom']) or empty($_POST['prenom']) or empty($_POST['email']) or empty($_POST['date_n'])
         or empty($_POST['telephone']) or empty($_POST['sexe']))
         {
             $erreur2 = "Veuillez remplir tous les champs !";

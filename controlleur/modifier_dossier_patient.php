@@ -4,7 +4,7 @@
 
     if(isset($_POST['action']))
     {
-        if(!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['email']) and !empty($_POST['age'])
+        if(!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['email']) and !empty($_POST['date_n'])
         and !empty($_POST['telephone']) and !empty($_POST['sexe']))
         {
             $erreur2 = "Les champs sont remplis";
