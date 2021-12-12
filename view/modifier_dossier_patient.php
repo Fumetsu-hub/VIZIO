@@ -13,8 +13,10 @@
 <?php
 include('./utilitaire/bootstrap.php');
 include('./utilitaire/barre_de_navigation.php');
+include('./utilitaire/popup_dossier_patient.php');
 ?>
 
+<div class="tout">
 <div class="container">
     <div>
 
@@ -75,14 +77,14 @@ include('./utilitaire/barre_de_navigation.php');
 
             <hr><br>
         
-        <form action="./index.php" method="GET">
-            <button type="submit" value="supprimer_patient" name ="action" class="btn btn-danger">Supprimer patient</button>
-        </form><br>
+        <div class="popup-btn btn btn-danger">
+         <a>Supprimer patient</a>
+        </div><br><br>
         <form action="./index.php" method="GET">
             <button type="submit" value="afficher_dossier_patient" name="action" class="btn btn-dark">Retour</button>
         </form><br>
 
     </div>
+    <br><br><br><br>
 </div>
-<br><br>
 </body>
