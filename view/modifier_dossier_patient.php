@@ -1,78 +1,85 @@
-<html>
- <head>
-    <meta charset='utf-8'>
+<!DOCTYPE html>
+<html lang="en">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>modifier dossier patient</title>
- </head>
-<body>
-<div class="container">
-<br><br><h1 style="text-align:center;">Modification d'un Dossier Patient</h1><br><br>
 
+</head>
+
+<body>
 <?php
-    if(!empty ($erreur2))
-    echo $erreur2."<br><br>";
+include('./utilitaire/bootstrap.php');
+include('./utilitaire/barre_de_navigation.php');
 ?>
 
-<form action = "" method = "POST" class="needs-validation" novalidate>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Nom</label>
-      <input name = "nom" type="text" class="form-control" id="validationTooltip01" placeholder="Nom" required>
-      <div class="valid-tooltip">
-        Looks good!
-      </div>
+<div class="container">
+    <div>
+
+    <br><h1>DOSSIER PATIENT</h1>
+
+            <br><hr><br>
+            <form action="" method="POST">
+            <label><b>Nom</b></label><br>
+            <input class="form-control w-25 p-1" type="text" placeholder="Nouveau Nom" name="newnom">
+            <?php
+            if(isset($succes_modify_nom))
+            {
+                echo '<div class = "succes">' . $succes_modify_nom . '</div>';
+            }
+            ?>
+            
+            <input type="submit" id='modify_submit' value='Modifier' name ='action' class="btn btn-warning">
+            </form><br>
+
+            <form action="" method="POST">
+            <label><b>Prénom</b></label><br>
+            <input class="form-control w-25 p-1" type="text" placeholder="Nouveau Prenom" name="newprenom">
+            <?php
+            if(isset($succes_modify_prenom))
+            {
+                echo '<div class = "succes">' . $succes_modify_prenom . '</div>';
+            }
+            ?>
+            
+            <input type="submit" id='modify_submit' value='Modifier' name ='action' class="btn btn-warning">
+            </form><br>
+
+            <form action="" method="POST">
+            <label><b>Mail</b></label><br>
+            <input class="form-control w-25 p-1" type="email" placeholder="Nouveau E-Mail" name="newmail">
+            <?php
+            if(isset($succes_modify_email))
+            {
+                echo '<div class = "succes">' . $succes_modify_email . '</div>';
+            }
+            ?>
+           
+            <input type="submit" id='modify_submit' value='Modifier' name ='action' class="btn btn-warning">
+            </form><br>
+
+            <form action="" method="POST">
+            <label><b>Mot de passe</b></label><br>
+            <input class="form-control w-25 p-1" type="password" placeholder="Nouveau mot de passe" value="" name="newmdp">
+            <?php
+            if(isset($succes_modify_password))
+            {
+                echo '<div class = "succes">' . $succes_modify_password . '</div>';
+            }
+            ?>
+           
+            <input type="submit" id='modify_submit' value='Modifier' name ='action' class="btn btn-warning">
+            </form><br>
+
+            <hr><br>
+        
+        <form action="./index.php" method="GET">
+            <button type="submit" value="supprimer_patient" name ="action" class="btn btn-danger">Supprimer patient</button>
+        </form>
+
     </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">Prénom</label>
-      <input name = "prenom" type="text" class="form-control" id="validationTooltip02" placeholder="Prénom" name  required>
-      <div class="valid-tooltip">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="exampleInputEmail1">Email</label>
-      <div class="input-group">
-        <input name = "email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp" required>
-        <div class="invalid-tooltip">
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationTooltip03">Date de naissance</label>
-      <input name = "date_n" type="date" class="form-control" id="validationTooltip03" required>
-      <div class="invalid-tooltip">
-        Please provide a valid city.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationTooltip04">Telephone</label>
-      <input name = "telephone" type="number" class="form-control" id="validationTooltip04" placeholder="Telephone" required>
-      <div class="invalid-tooltip">
-        Please provide a valid state.
-      </div>
-    </div>
-    <div class="form-group">
-    <label for="exampleFormControlSelect2">Sexe</label>
-    <select name = "sexe" class="form-control">
-    <option>Homme</option>
-    <option>Femme</option>
-    </select>
-    
-    </div>
-  </div>
-  
-  <button class="btn btn-primary" type="submit" value="modifier_dossier_patient" name="action">Modifier Dossier</button>
-</form>
 </div>
-
+<br><br>
 </body>
- </html>
-
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

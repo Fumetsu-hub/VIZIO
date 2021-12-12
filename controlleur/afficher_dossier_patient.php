@@ -8,7 +8,6 @@ if (empty($_SESSION['id_user']))
 
 require('./model/afficher_dossier_patient.php');
 
-
 $title = "afficher dossier patient";
     
 require('./view/afficher_dossier_patient.php');

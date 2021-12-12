@@ -22,10 +22,9 @@ include('./utilitaire/barre_de_navigation.php');
     <li>Âge : <?= $info_patient['age'] ?></li></br>
     <li>Sexe : <?= $info_patient['sexe'] ?></li>
 
-    <!--boutons-->
     <br>
     <form action="./index.php" method="GET">
-            <button type="submit" value="modifier_profil" name="action" class="btn btn-dark">Modifier Dossier</button>
+            <button type="submit" value="modifier_dossier_patient" name="action" class="btn btn-dark">Modifier dossier</button>
     </form><br>
   </div>
 </div>

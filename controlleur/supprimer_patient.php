@@ -7,9 +7,9 @@ if (empty($_SESSION['id_user']))
 }
 else 
 { 
-    require('./model/supprimer_profil.php');
+    require('./model/supprimer_patient.php');
 }
 
-$title = "Supprimer profil";
+$title = "Supprimer patient";
 
 ?>

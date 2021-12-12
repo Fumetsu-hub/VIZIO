@@ -30,6 +30,7 @@ session_start();
 					break;
 				case 'modifier_dossier_patient':
 					include("./controlleur/modifier_dossier_patient.php");
+					break;
 				case 'afficher_profil':
 					include("./controlleur/afficher_profil.php");
 					break;
@@ -41,6 +42,9 @@ session_start();
 					break;
 				case 'supprimer_profil':
 					include("./controlleur/supprimer_profil.php");
+					break;
+				case 'supprimer_patient':
+					include("./controlleur/supprimer_patient.php");
 					break;
 			}
 		}
