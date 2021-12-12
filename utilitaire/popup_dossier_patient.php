@@ -9,9 +9,9 @@
       <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
    <body>
    <?php
-// bootstrap
-include('./utilitaire/bootstrap.php');
-?>
+   // bootstrap
+   include('./utilitaire/bootstrap.php');
+   ?>
       <div class="center modal-box">
          <div class="fas fa-times"></div>
          <p style="font-size:20px; font-weight: bold; color: black;">
