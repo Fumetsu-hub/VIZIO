@@ -1,39 +1,49 @@
-<link href="./css/no_button.css" rel="stylesheet">
-<?php include('./utilitaire/bootstrap.php'); ?>
-
-
-<!-- BARRE DE NAVIGATION -->
-<nav style="background-color:#e3f3fc; font-size:23px" class="container-fluid navbar navbar-expand-lg navbar-light">
-  <img src="./utilitaire/logo.png" width="80" height="80" class="d-inline-block align-top" alt="">
-  <form action="./index.php" method="GET">
-    <button value="accueil" name="action" type="submit" style="margin-left:20px; font-size:28px" class=" no_button navbar-brand mb-0 h1">Accueil</button>
-  </form>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li style="margin-left:10px;" class="nav-item">
-      <form action="./index.php" method="GET">
-        <button style="margin-top:2px;" class="no_button nav-link" type="submit" value="liste_dossier_patient" name="action">Dossiers patient</button>
-      </form>
-      </li>
-      <li style="margin-left:20px;" class="nav-item">
-      <form action="./index.php" method="GET">
-        <button style="margin-top:2px;" class="no_button nav-link" type="submit" value="afficher_profil" name="action">Mon profil</button>
-      </form>  
-      </li>
-      <li style="margin-left:20px;" class="nav-item">
-      <form action="" method="GET">
-        <button style="margin-top:2px;" class="no_button nav-link" type="submit" value="" name="action">Vide</button>
-      </form>      
-      </li>
-      <li style="margin-left:20px;" class="nav-item">
-      <form action="" method="GET">
-        <button style="margin-top:2px;" class="no_button nav-link" type="submit" value="" name="action">Vide</button>
-      </form>      
-      </li>
-    </ul>
-  </div>
-</nav>
-<!-- FIN BARRE DE NAVIGATION -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Navbar</title>
+      <link rel="stylesheet" href="./css/navbar.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav>
+         <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+         </div>
+         <div class="logo">
+            Vizio
+         </div>
+         <div class="nav-items">
+            <li><a href="index.php?action=accueil">Accueil</a></li>
+            <li><a href="index.php?action=liste_dossier_patient">Dossier patient</a></li>
+            <li><a href="index.php?action=afficher_profil">Mon profil</a></li>
+            <li><a href="index.php?action=accueil">Vide</a></li>
+            <li><a href="index.php?action=accueil">Vide</a></li>
+         </div>
+         <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+         </div>
+      </nav>
+      <script>
+         const menuBtn = document.querySelector(".menu-icon span");
+         const cancelBtn = document.querySelector(".cancel-icon");
+         const items = document.querySelector(".nav-items");
+         const form = document.querySelector("form");
+         menuBtn.onclick = ()=>{
+           items.classList.add("active");
+           menuBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+         cancelBtn.onclick = ()=>
+         {
+           items.classList.remove("active");
+           menuBtn.classList.remove("hide");
+           cancelBtn.classList.remove("show");
+           form.classList.remove("active");
+           cancelBtn.style.color = "#ff3d00";
+         }
+      </script>
+   </body>
+</html>
