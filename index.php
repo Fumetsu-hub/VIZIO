@@ -33,6 +33,9 @@ session_start();
 				case 'afficher_profil':
 					include("./controlleur/afficher_profil.php");
 					break;
+				case 'afficher_dossier_patient':
+					include("./controlleur/afficher_dossier_patient.php");
+					break;
 				case 'liste_dossier_patient':
 					include("./controlleur/liste_dossier_patient.php");
 					break;

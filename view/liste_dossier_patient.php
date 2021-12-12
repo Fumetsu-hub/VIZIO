@@ -49,10 +49,12 @@ include('./utilitaire/barre_de_navigation.php');
             ?></td>
 
             <td  align="left"><?php echo $row["sexe"]; ?></td>
-            <td  align="left">
-                <?php $row["id"]; ?>
-                <button style="font-size:17px;">Dossier</button>
-            </td>
+            <td  align="left"> <!--Boutons-->
+                <form action="" method="POST">
+                    <input value =<?php echo $row["id"]; ?> name="id_dossier_patient" type="hidden" id="id_dossier_patient"> <!-- sert à attribuer l'id du patient au bouton correspondant -->
+                    <button class="btn btn-primary" type="submit" value="afficher_dossier_patient" name ="action">Dossier</button>
+                </form>
+            </td> <!--Fin Boutons-->
 
         </tr>
 
