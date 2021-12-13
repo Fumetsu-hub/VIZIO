@@ -11,19 +11,23 @@ include('./utilitaire/bootstrap.php');
 include('./utilitaire/barre_de_navigation.php');
 ?>
 <br><br>
-<div class="card container shadow" style="border-width: 5px; width: 27rem; background-color:grey;"><br>
+<<<<<<< HEAD
+<div class="card container shadow" style="border-width: 5px; width: 27rem; background-color:white;"><br>
+=======
+<div class="responsive_accueil card container shadow" style="border-width: 5px; background-color:white;"><br>
+>>>>>>> 20d79fb5b2a86b29e0180c7ae8610d06f18300ba
   <img class="card-img-top" src="./utilitaire/image.png" alt="Card image cap">
   <div class="card-body">
     <p style="text-align:center; font-weight: bold; font-size:25px; color:black;" class="card-text">Actions rapides</p><hr><br>
-        <div class = "container">
+        <div style="text-align: center;" class = "container">
         <form action="./index.php" method="GET">
                 <button type="submit" value="creer_dossier_patient" name="action" class="btn btn-primary">Crée un dossier patient</button>
         </form><br>
         <form action="./index.php" method="GET">
-                <button type="submit" value="consultation" name="action" class="btn btn-primary">Crée une fiche consultation</button><a> (à venir)</a>
+                <button type="submit" value="consultation" name="action" class="btn btn-primary">Crée une fiche consultation</button><br><a> (à venir)</a>
         </form><br>
         <form action="./index.php" method="GET">
-                <button type="submit" value="questionnaire" name="action" class="btn btn-primary">Crée un questionnaire</button><a> (à venir)</a>
+                <button type="submit" value="questionnaire" name="action" class="btn btn-primary">Crée un questionnaire</button><br><a> (à venir)</a>
         </form>
         </div><br>
         <hr>
