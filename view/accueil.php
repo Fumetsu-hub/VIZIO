@@ -13,7 +13,6 @@ include('./utilitaire/barre_de_navigation.php');
 <br><br>
 
 <div class="card container shadow" style="border-width: 5px; width: 27rem; background-color:grey;"><br>
-
 <div class="responsive_accueil card container shadow" style="border-width: 5px; background-color:white;"><br>
 
   <img class="card-img-top" src="./utilitaire/image.png" alt="Card image cap">
