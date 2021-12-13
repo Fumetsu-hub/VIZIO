@@ -12,7 +12,7 @@ include('./utilitaire/bootstrap.php');
 include('./utilitaire/barre_de_navigation.php');
 ?>
 
-<div class="card border-0 shadow rounded-3 my-5 container" style="width: 30rem;">
+<div class="responsive_card card border-0 shadow rounded-3 my-5 container">
   <div class="card-body">
 
   <h2 style="text-align:center;">Dossier de : <?= $info_patient['nom']. " " . $info_patient['prenom']?> </h2></br>
