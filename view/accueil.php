@@ -11,11 +11,11 @@ include('./utilitaire/bootstrap.php');
 include('./utilitaire/barre_de_navigation.php');
 ?>
 <br><br>
-<<<<<<< HEAD
+
 <div class="card container shadow" style="border-width: 5px; width: 27rem; background-color:white;"><br>
-=======
+
 <div class="responsive_accueil card container shadow" style="border-width: 5px; background-color:white;"><br>
->>>>>>> 20d79fb5b2a86b29e0180c7ae8610d06f18300ba
+
   <img class="card-img-top" src="./utilitaire/image.png" alt="Card image cap">
   <div class="card-body">
     <p style="text-align:center; font-weight: bold; font-size:25px; color:black;" class="card-text">Actions rapides</p><hr><br>
