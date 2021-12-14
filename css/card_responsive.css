@@ -1,0 +1,36 @@
+@media screen and (max-width: 400px)
+{
+    .responsive_card
+    {
+        width: 90%;
+    }
+
+    .responsive_accueil
+    {
+        width: 90%;
+    }
+}
+@media screen and (min-width: 401px)    
+{
+    .responsive_card
+    {
+        width: 60%;
+    }
+
+    .responsive_accueil
+    {
+        width: 45%;
+    }
+}
+@media screen and (min-width: 940px)
+{
+    .responsive_card
+    {
+        width: 30%;
+    }
+
+    .responsive_accueil
+    {
+        width: 25%;
+    }
+}
