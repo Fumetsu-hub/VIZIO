@@ -73,7 +73,7 @@ include('./utilitaire/barre_de_navigation.php');
   </div>
 
   <div class="form-row">
-    <div class="col-md-6 mb-3">
+    <div class="col-md-5 mb-3">
       <label for="validationTooltip03">Date de naissance</label>
       <input name = "date_n" type="date" class="form-control" id="validationTooltip03" value="<?php if(isset($date_n))echo$date_n; ?>" required>
 

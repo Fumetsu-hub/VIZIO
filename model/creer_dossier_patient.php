@@ -34,7 +34,7 @@ include('./utilitaire/db_connexion.php');
             //Vérification si le mail est valide
             if(strpos($mail, "@") == FALSE){$erreur_email = "Le mail n'est pas valide";unset($mail);}else{
 
-            //Vérification cherche si le mail existe déjà
+            //Cherche si le mail existe déjà dans la bdd
             $sql = "SELECT mail FROM user WHERE mail = '$mail'";  
             $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
             $recup_mail = mysqli_fetch_array($result);
