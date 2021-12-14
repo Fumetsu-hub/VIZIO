@@ -49,6 +49,18 @@ include('./utilitaire/barre_de_navigation.php');
     echo $erreur_date;
     echo '</div>';
   } 
+  if(isset($erreur_nom))
+  {
+    echo '<div class="container alert alert-danger w-25 p-2" role="alert">';
+    echo $erreur_nom;
+    echo '</div>';
+  } 
+  if(isset($erreur_prenom))
+  {
+    echo '<div class="container alert alert-danger w-25 p-2" role="alert">';
+    echo $erreur_prenom;
+    echo '</div>';
+  } 
 ?>
 
 <form action = "" method = "POST" class="needs-validation" novalidate>

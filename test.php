@@ -13,9 +13,20 @@
     include('./utilitaire/popup_profil.php');
   ?>
 
-      <div class="popup-btn btn btn-dark">
-         <a>Supprimer profil</a>
-      </div>
 
+   <?php
+
+      $variable = "fksdiofsjdifd";
+
+      if (preg_match('/1|2|3|4|5|6|7|8|9/i', $variable))
+      {
+         echo "Contiens des nombres";
+      }
+      else
+      {
+         echo "Ne contients pas de nombres";
+      }
+
+   ?>
    </body>
 </html>

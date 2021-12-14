@@ -8,7 +8,7 @@ include('./utilitaire/db_connexion.php');
 
  if(isset($_POST['action']))
  {
-     
+
     if(empty($_POST['nom']) or empty($_POST['prenom']) or empty($_POST['mdp']) or empty($_POST['mdp2']) or empty($_POST['email']) or empty($_POST['date_n']) or empty($_POST['sex']) or empty($_POST['tel']) or empty($_POST['statut']))  
     {
         $erreur = "Veuillez remplir tous les champs !";
@@ -33,6 +33,12 @@ include('./utilitaire/db_connexion.php');
             $to   = new DateTime('today');
             $age_verif = $from->diff($to)->y;
 
+            //Vérification du nom (si il contient des chiffre)
+            if (preg_match('/1|2|3|4|5|6|7|8|9/i', $nom)){$erreur_nom = "Votre nom n'est pas valide";unset($nom);}else{
+
+            //Vérification du prénom (si il contient des chiffre)
+            if (preg_match('/1|2|3|4|5|6|7|8|9/i', $prenom)){$erreur_prenom = "Votre prénom n'est pas valide";unset($prenom);}else{
+
             //vérification de l'âge
             if($age_verif <= 0 or $age_verif > 150){$erreur_date = "Votre date de naissance n'est pas valide";unset($date_n);}else{
 
@@ -56,7 +62,7 @@ include('./utilitaire/db_connexion.php');
             $succes = "Votre compte a bien été créé !";
             header("Refresh:0; url=./index.php?action=LOGIN");
                 
-            }}}}
+            }}}}}}
         }
     }
 }

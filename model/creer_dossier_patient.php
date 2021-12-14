@@ -15,7 +15,7 @@ include('./utilitaire/db_connexion.php');
     {
         $erreur2 = "Veuillez remplir tous les champs !";
     }
-    
+
     $nom = htmlspecialchars($_POST['nom']);
     $prenom = htmlspecialchars($_POST['prenom']);
     $mail = htmlspecialchars($_POST['email']);
@@ -32,6 +32,12 @@ include('./utilitaire/db_connexion.php');
             $from = new DateTime($date_n);
             $to   = new DateTime('today');
             $age_verif = $from->diff($to)->y;
+
+            //Vérification du nom (si il contient des chiffre)
+            if (preg_match('/1|2|3|4|5|6|7|8|9/i', $nom)){$erreur_nom = "Votre nom n'est pas valide";unset($nom);}else{
+
+            //Vérification du prénom (si il contient des chiffre)
+            if (preg_match('/1|2|3|4|5|6|7|8|9/i', $prenom)){$erreur_prenom = "Votre prénom n'est pas valide";unset($prenom);}else{
 
             //vérification de l'âge
             if($age_verif <= 0 or $age_verif > 150){$erreur_date = "Votre date de naissance n'est pas valide";unset($date_n);}else{
@@ -55,7 +61,7 @@ include('./utilitaire/db_connexion.php');
             mysqli_query($base, $sql) or die('Erreur : '.$sql.'<br />'.mysqli_error($base));
             $reussite = "Dossier patient créé !";
       
-            }}}}
+            }}}}}}
         }
         
     }

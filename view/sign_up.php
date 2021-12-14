@@ -46,6 +46,18 @@
                 echo $erreur_date;
                 echo '</div>';
             }
+            if(isset($erreur_nom))
+            {
+              echo '<div class="container alert alert-danger w-25 p-2" role="alert">';
+              echo $erreur_nom;
+              echo '</div>';
+            } 
+            if(isset($erreur_prenom))
+            {
+              echo '<div class="container alert alert-danger w-25 p-2" role="alert">';
+              echo $erreur_prenom;
+              echo '</div>';
+            } 
         ?>
         <!-- Les balises php vont servir à pré-remplire le formulaire quand l'utilisateur se trompe -->
         
