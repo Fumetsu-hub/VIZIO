@@ -21,7 +21,7 @@ include('./utilitaire/db_connexion.php');
             $data = mysqli_fetch_array($result);
             if(!empty($data['mail']) && $data['mail'] == $email_connection)
             {
-                $reussite = "<br>Le mail est correcte<br>"; // a retirer quand l'accueil sera terminé
+                $reussite = "<br>Le mail est correcte<br>";
             }
             else
             {
@@ -34,7 +34,7 @@ include('./utilitaire/db_connexion.php');
 
             if(!empty($data['mdp']) && $data['mdp'] == $mdp_connection)
             {
-                $reussite2 = "<br>Le mot de passe est correcte<br>"; // a retirer quand l'accueil sera terminé
+                $reussite2 = "<br>Le mot de passe est correcte<br>";
 
                 // récupère l'ID de l'utilisateur
                 $sql = "SELECT id FROM user WHERE mail = '$email_connection'";
@@ -42,7 +42,7 @@ include('./utilitaire/db_connexion.php');
                 $data = mysqli_fetch_array($result);
                 $_SESSION['id_user'] = $data['id'];
 
-                // récupere les informations de utilisateur (j'ai pas réussi à exploiter ces données dans "modifier profil")
+                // récupere les informations de utilisateur
                 $sql = "SELECT * FROM user WHERE mail = '$email_connection'";
                 $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
                 $data = mysqli_fetch_array($result);

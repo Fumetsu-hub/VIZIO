@@ -40,67 +40,74 @@
                 echo $erreur_tel;
                 echo '</div>';
             }
+            if(isset($erreur_date))
+            {
+                echo '<div class="alert alert-danger container w-25 p-3" role="alert">';
+                echo $erreur_date;
+                echo '</div>';
+            }
         ?>
-
+        <!-- Les balises php vont servir à pré-remplire le formulaire quand l'utilisateur se trompe -->
+        
          <form action="" method="POST" >
              <table>
                   <tr>
                      <td>
                          <label for="name">Nom</label><br>
-                         <input class="form-control" type="text" name="nom" autocomplete="off">
+                         <input class="form-control" type="text" name="nom" value="<?php if(isset($nom))echo$nom; ?>">
                      </td>
                   </tr>
                   <tr>
                       <td>
                           <label for="name">Prenom</label><br>
-                          <input class="form-control" type="text" name="prenom" autocomplete="off">
+                          <input class="form-control" type="text" name="prenom" value="<?php if(isset($prenom))echo$prenom; ?>">
                       </td>
                  </tr>
                  <tr>
                      <td>
                         <label for="mdp">Mot de passe</label><br>
-                        <input class="form-control" type="password" name="mdp" autocomplete="off">
+                        <input class="form-control" type="password" name="mdp">
                      </td>
                  </tr>
                  <tr>
                      <td>
                          <label for="mdp">Confirmation mot de passe</label><br>
-                         <input class="form-control" type="password" name="mdp2" autocomplete="off">
+                         <input class="form-control" type="password" name="mdp2">
                      </td>
                  </tr>
                  <tr>
                      <td>
                          <label for="mail">E-mail</label><br>
-                         <input class="form-control" type="email" name="email" autocomplete="off">
+                         <input class="form-control" type="email" name="email" value="<?php if(isset($mail))echo$mail; ?>">
                      </td>
                  </tr>
                 
                  <tr>
                      <td>
                          <label for="date">Date de naissance</label><br>
-                         <input class="form-control" type="date" name="date_n" autocomplete="off">
+                         <input class="form-control" type="date" name="date_n" value="<?php if(isset($date_n))echo$date_n; ?>">
                      </td>
                  </tr>
                  <tr>
                      <td>
                      <br><label for="sex">Sexe</label>
                          <select class="form-control" name="sex">
-                         <option value="h">Masculin</option>
-                         <option value="f">Feminin</option>
+                         <option <?php if(isset($sex)and$sex=="h")echo"selected";?> value="h">Masculin</option>
+                         <option <?php if(isset($sex)and$sex=="f")echo"selected";?> value="f">Feminin</option>
                      </td>
                  </tr>
                  <tr>
                      <td>
                      <br><label for="tel">Telephone</label>
-                         <input class="form-control" type="tel" name="tel" autocomplete="off">
+                         <input class="form-control" type="tel" name="tel" value="<?php if(isset($tel))echo$tel; ?>">
                      </td>
                  </tr>
                  <tr>
                      <td>
                      <br><label for="statut">Statut</label>
                          <select class="form-control" name="statut">
-                         <option value="medecin">Medecin</option>
-                         <option value="patient">Patient</option>
+                         <option <?php if(isset($statut)and$statut=="medecin")echo"selected";?> value="medecin">Medecin</option>
+                         <option <?php if(isset($statut)and$statut=="patient")echo"selected";?> value="patient">Patient</option>
                      </td>
                  </tr>
                  <tr>

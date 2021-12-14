@@ -43,44 +43,51 @@ include('./utilitaire/barre_de_navigation.php');
     echo $erreur_tel;
     echo '</div>';
   } 
+  if(isset($erreur_date))
+  {
+    echo '<div class="container alert alert-danger w-25 p-2" role="alert">';
+    echo $erreur_date;
+    echo '</div>';
+  } 
 ?>
 
 <form action = "" method = "POST" class="needs-validation" novalidate>
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationTooltip01">Nom</label>
-      <input name = "nom" type="text" class="form-control" id="validationTooltip01" placeholder="Nom" required>
+      <input name = "nom" type="text" class="form-control" placeholder="Nom" value="<?php if(isset($nom))echo$nom; ?>" required>
 
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationTooltip02">Prénom</label>
-      <input name = "prenom" type="text" class="form-control" id="validationTooltip02" placeholder="Prénom" name  required>
+      <input name = "prenom" type="text" class="form-control" placeholder="Prénom" value="<?php if(isset($prenom))echo$prenom; ?>" required>
+
 
     </div>
     <div class="col-md-4 mb-3">
-      <label for="exampleInputEmail1">Email</label>
+      <label for="mail">Email</label>
       <div class="input-group">
-        <input name = "email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp" required>
-
+        <input name="email" type="email" class="form-control" placeholder="Email" value="<?php if(isset($mail))echo$mail; ?>" required>
       </div>
     </div>
   </div>
+
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationTooltip03">Date de naissance</label>
-      <input name = "date_n" type="date" class="form-control" id="validationTooltip03" required>
+      <input name = "date_n" type="date" class="form-control" id="validationTooltip03" value="<?php if(isset($date_n))echo$date_n; ?>" required>
 
     </div>
     <div class="col-md-3 mb-3">
       <label for="validationTooltip04">Telephone</label>
-      <input name = "telephone" type="number" class="form-control" id="validationTooltip04" placeholder="Telephone" required>
+      <input name = "telephone" type="number" class="form-control" id="validationTooltip04" placeholder="Telephone" value="<?php if(isset($tel))echo$tel; ?>" required>
 
     </div>
     <div class="form-group">
     <label for="exampleFormControlSelect2">Sexe</label>
     <select name = "sexe" class="form-control">
-    <option value="h">Homme</option>
-    <option value="f">Femme</option>
+    <option <?php if(isset($sex)and$sex=="h")echo"selected";?> value="h">Masculin</option>
+    <option <?php if(isset($sex)and$sex=="f")echo"selected";?> value="f">Feminin</option>
     </select>
     
     </div>
