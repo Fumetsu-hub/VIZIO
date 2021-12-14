@@ -17,9 +17,9 @@ include('./utilitaire/barre_de_navigation.php');
 
   <h2 style="text-align:center;">Dossier de : <?= $info_patient['nom']. " " . $info_patient['prenom']?> </h2></br>
     <li>Mail : <?= $info_patient['mail'] ?></li></br>
-    <li>Telephone : <?= $info_patient['tel'] ?></li></br>
+    <li>Téléphone : <?= $info_patient['tel'] ?></li></br>
     <li>Statut : <?php if($info_patient['statut'] == "patient"){echo"Patient";}else{echo"Médecin";} ?></li></br>
-    <li>Age : <?= $info_patient['age'] ?></li></br>
+    <li>Âge : <?= $info_patient['age'] ?></li></br>
     <li>Sexe : <?php if($info_patient['sexe'] == "h"){echo"Homme";}else{echo"Femme";} ?></li>
 
     <br>

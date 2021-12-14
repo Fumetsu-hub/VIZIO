@@ -17,9 +17,9 @@ include('./utilitaire/barre_de_navigation.php');
 
   <h2 style="text-align:center;">Profil de : <?= $_SESSION['nom']. " " . $_SESSION['prenom']?> </h2></br>
     <li>Mail : <?= $_SESSION['mail'] ?></li></br>
-    <li>Telephone : <?= $_SESSION['tel'] ?></li></br>
+    <li>Téléphone : <?= $_SESSION['tel'] ?></li></br>
     <li>Statut : <?php if($_SESSION['statut'] == "patient"){echo"Patient";}else{echo"Médecin";} ?></li></br>
-    <li>Age : <?= $_SESSION['age'] ?></li></br>
+    <li>Âge : <?= $_SESSION['age'] ?></li></br>
     <li>Sexe : <?php if($_SESSION['sexe'] == "h"){echo"Homme";}else{echo"Femme";} ?></li>
 
     <!--boutons-->
