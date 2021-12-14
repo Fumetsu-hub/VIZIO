@@ -1,4 +1,5 @@
 <?php
+
 include('./db_connexion.php');
     //supprimer
     if(isset($_POST['delete']))
@@ -7,6 +8,9 @@ include('./db_connexion.php');
         $_SESSION['flash_message'] = "Ce compte à été supprimé";
         exit;
     }
+
+include('./utilitaire/db_connexion.php');
+
 
 $id_user = $_SESSION['id_user']; // récupère l'id de l'utilisateur
 

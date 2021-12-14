@@ -2,7 +2,7 @@
 
 <?php
 // connexion à la base de données
-include('./db_connexion.php');
+include('./utilitaire/db_connexion.php');
 // bootstrap
 include('./utilitaire/bootstrap.php');
 //navbar
@@ -20,9 +20,6 @@ include('./utilitaire/barre_de_navigation.php');
         <th><strong>Email</strong></th>
         <th><strong>Âge</strong></th>
         <th><strong>Sexe</strong></th>
-        <th><strong></strong></th>
-
-        <th></th>
         <th></th>
         </tr>
         </thead>
@@ -38,7 +35,6 @@ include('./utilitaire/barre_de_navigation.php');
             <td  align="left"><?php echo $row["nom"]; ?></td>
             <td  align="left"><?php echo $row["prenom"]; ?>
             <td  align="left"><?php echo $row["mail"]; ?></td>
-            
             <td  align="left">
             <?php 
             # Déterminer l'âge
@@ -49,10 +45,12 @@ include('./utilitaire/barre_de_navigation.php');
             ?></td>
 
             <td  align="left"><?php echo $row["sexe"]; ?></td>
-            <td  align="left">
-                <?php $row["id"]; ?>
-                <button style="font-size:17px;">Dossier</button>
-            </td>
+            <td  align="left"> <!--Boutons-->
+                <form action="" method="POST">
+                    <input value =<?php echo $row["id"]; ?> name="id_dossier_patient" type="hidden" id="id_dossier_patient"> <!-- sert à attribuer l'id du patient au bouton correspondant -->
+                    <button class="btn btn-primary" type="submit" value="afficher_dossier_patient" name ="action">Dossier</button>
+                </form>
+            </td> <!--Fin Boutons-->
 
         </tr>
 
