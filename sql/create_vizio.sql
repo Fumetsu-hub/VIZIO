@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `vizio`.`user` (
   `date_n` DATE NULL,
   `sexe` ENUM('f', 'h') NULL,
   `tel` CHAR(10) NULL,
-  `statut` ENUM('med', 'pat') NULL,
+  `statut` ENUM('medecin', 'patient') NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
