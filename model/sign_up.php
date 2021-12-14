@@ -8,20 +8,26 @@ include('./utilitaire/db_connexion.php');
 
  if(isset($_POST['action']))
  {
+     
+    if(empty($_POST['nom']) or empty($_POST['prenom']) or empty($_POST['mdp']) or empty($_POST['mdp2']) or empty($_POST['email']) or empty($_POST['date_n']) or empty($_POST['sex']) or empty($_POST['tel']) or empty($_POST['statut']))  
+    {
+        $erreur = "Veuillez remplir tous les champs !";
+    }
+
+    $nom = htmlspecialchars($_POST['nom']);
+    $prenom = htmlspecialchars($_POST['prenom']);
+    $mdp = htmlspecialchars($_POST['mdp']);
+    $mdp2 = htmlspecialchars($_POST['mdp2']);
+    $mail = htmlspecialchars($_POST['email']);
+    $date_n = htmlspecialchars($_POST['date_n']);
+    $sex = htmlspecialchars($_POST['sex']);
+    $tel = htmlspecialchars($_POST['tel']);
+    $statut = htmlspecialchars($_POST['statut']);
+
     if(isset($_POST['nom']) and isset($_POST['prenom']) and isset($_POST['mdp']) and isset($_POST['mdp2']) and isset($_POST['email']) and isset($_POST['date_n']) and isset($_POST['sex']) and isset($_POST['tel']) and isset($_POST['statut']))
     {
         if(!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['mdp']) and !empty($_POST['mdp2']) and !empty($_POST['email']) and !empty($_POST['date_n']) and !empty($_POST['sex']) and !empty($_POST['tel']) and isset($_POST['statut']))  
         {
-            $nom = htmlspecialchars($_POST['nom']);
-            $prenom = htmlspecialchars($_POST['prenom']);
-            $mdp = htmlspecialchars($_POST['mdp']);
-            $mdp2 = htmlspecialchars($_POST['mdp2']);
-            $mail = htmlspecialchars($_POST['email']);
-            $date_n = htmlspecialchars($_POST['date_n']);
-            $sex = htmlspecialchars($_POST['sex']);
-            $tel = htmlspecialchars($_POST['tel']);
-            $statut = htmlspecialchars($_POST['statut']);
-
             //Détermine l'âge
             $from = new DateTime($date_n);
             $to   = new DateTime('today');
