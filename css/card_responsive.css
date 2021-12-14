@@ -22,7 +22,7 @@
         width: 45%;
     }
 }
-@media screen and (min-width: 940px)
+@media screen and (min-width: 940px) 
 {
     .responsive_card
     {
@@ -31,6 +31,6 @@
 
     .responsive_accueil
     {
-        width: 25%;
+        width: 20%;
     }
 }

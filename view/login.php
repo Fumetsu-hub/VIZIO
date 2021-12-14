@@ -22,7 +22,7 @@
 ?>
 
 <form action="" method="POST">
-    <div class="form-group">
+    <div class="form-group col-sm-6 container">
       <label for="email">E-mail</label>
       <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
       <?php
@@ -40,7 +40,7 @@
       }
       ?>
     </div><br>
-    <div class="form-group">
+    <div class="form-group col-sm-6 container">
       <label for="mdp">Mot de passe</label>
       <input name="mdp" type="password" class="form-control" id="mdp" placeholder="Mot de passe">
       <?php
@@ -59,13 +59,15 @@
       }
       ?>
     </div><br>
+      <div style="text-align: center;">
     <button name="action" value="LOGIN" type="submit" class="btn btn-success">Se connecter</button>
 
 </form>
 <br>
-<form action="./index.php" method="GET">
+<form class=" mt-3" action="./index.php" method="GET">
             <a class="form-text">Pas de compte?</a>
             <button type="submit" value="Inscription" name="action" class="btn btn-primary">S'inscrire</button>
+    </div>
     </form><br>
     <hr><br>
 </div>
