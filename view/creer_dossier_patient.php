@@ -21,20 +21,26 @@ include('./utilitaire/barre_de_navigation.php');
 <?php
   if(isset($erreur_email))
   {
-    echo '<div class="alert alert-danger container w-25 p-3" role="alert">';
+    echo '<div class="container alert alert-danger container w-25 p-3" role="alert">';
     echo $erreur_email;
     echo '</div>';
   }
   if(isset($erreur2))
   {
-    echo '<div class="alert alert-danger w-25 p-2" role="alert">';
+    echo '<div class="container alert alert-danger w-25 p-2" role="alert">';
     echo $erreur2;
     echo '</div>';
   } 
   if(isset($reussite))
   {
-    echo '<div class="alert alert-success w-25 p-2" role="alert">';
+    echo '<div class="container alert alert-success w-25 p-2" role="alert">';
     echo $reussite;
+    echo '</div>';
+  } 
+  if(isset($erreur_tel))
+  {
+    echo '<div class="container alert alert-danger w-25 p-2" role="alert">';
+    echo $erreur_tel;
     echo '</div>';
   } 
 ?>

@@ -21,27 +21,36 @@ include('./utilitaire/db_connexion.php');
             $sex = htmlspecialchars($_POST['sex']);
             $tel = htmlspecialchars($_POST['tel']);
             $statut = htmlspecialchars($_POST['statut']);
-            
-            //Vérification si l'email est déjà utilisée
-            $sql = "SELECT mail FROM user WHERE mail = '$mail'";
-            $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
-            $recup_mail = mysqli_fetch_array($result);
 
-            if(!empty($recup_mail['mail'])) // si email déjà utilisée
+            //Vérification du numéro de téléphone
+            if(strlen($tel)!=10)
             {
-                $erreur_email = "Le mail existe deja";
+                $erreur_tel = "Le numéro de téléphone n'est pas valide";
             }
-            else  // si email libre, alors on continue
+            else //si tél est bon, alors on continue
             {
-                if($mdp == $mdp2)
+                //Vérification si l'email est déjà utilisée
+                $sql = "SELECT mail FROM user WHERE mail = '$mail'";
+                $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
+                $recup_mail = mysqli_fetch_array($result);
+
+                if(!empty($recup_mail['mail'])) // si email déjà utilisée
                 {
-                    $sql = 'INSERT INTO user VALUES("", "'.$nom.'", "'.$prenom.'", "'.$mdp.'", "'.$mail.'", "'.$date_n.'", "'.$sex.'", "'.$tel.'", "'.$statut.'")';
-                    mysqli_query($base, $sql) or die('Erreur : '.$sql.'<br />'.mysqli_error($base));
-                    $succes = "Votre compte a bien été créé !";
+                    $erreur_email = "Le mail existe deja";
                 }
-                else
+                else  // si email libre, alors on continue
                 {
-                    $erreur = "Vos mots de passe ne correspondent pas !";
+                    if($mdp == $mdp2)
+                    {
+                        $sql = 'INSERT INTO user VALUES("", "'.$nom.'", "'.$prenom.'", "'.$mdp.'", "'.$mail.'", "'.$date_n.'", "'.$sex.'", "'.$tel.'", "'.$statut.'")';
+                        mysqli_query($base, $sql) or die('Erreur : '.$sql.'<br />'.mysqli_error($base));
+                        $succes = "Votre compte a bien été créé !";
+                        header("Refresh:0; url=./index.php?action=LOGIN");
+                    }
+                    else
+                    {
+                        $erreur = "Vos mots de passe ne correspondent pas !";
+                    }
                 }
             }
         }

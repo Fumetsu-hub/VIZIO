@@ -34,6 +34,12 @@
                 echo $erreur_email;
                 echo '</div>';
             }
+            if(isset($erreur_tel))
+            {
+                echo '<div class="alert alert-danger container w-25 p-3" role="alert">';
+                echo $erreur_tel;
+                echo '</div>';
+            }
         ?>
 
          <form action="" method="POST" >

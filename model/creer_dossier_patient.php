@@ -20,20 +20,28 @@ include('./utilitaire/db_connexion.php');
             $sex = htmlspecialchars($_POST['sexe']);
             $tel = htmlspecialchars($_POST['telephone']);
 
-            //Vérification si l'email est déjà utilisée
-            $sql = "SELECT mail FROM user WHERE mail = '$mail'";  
-            $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
-            $recup_mail = mysqli_fetch_array($result);
-            
-            if(!empty($recup_mail['mail'])) // si email déjà utilisée
+            //Vérification du numéro de téléphone
+            if(strlen($tel)!=10)
             {
-              $erreur_email = "Le mail existe deja";
+              $erreur_tel = "Le numéro de téléphone n'est pas valide";
             }
-            else
+            else //si tél est bon, alors on continue
             {
-              $sql = 'INSERT INTO user VALUES("", "'.$nom.'", "'.$prenom.'", "", "'.$mail.'", "'.$date_n.'", "'.$sex.'", "'.$tel.'", "patient")';
-              mysqli_query($base, $sql) or die('Erreur : '.$sql.'<br />'.mysqli_error($base));
-              $reussite = "Dossier patient créé !";
+              //Vérification si l'email est déjà utilisée
+              $sql = "SELECT mail FROM user WHERE mail = '$mail'";  
+              $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
+              $recup_mail = mysqli_fetch_array($result);
+              
+              if(!empty($recup_mail['mail'])) // si email déjà utilisée
+              {
+                $erreur_email = "Le mail existe deja";
+              }
+              else
+              {
+                $sql = 'INSERT INTO user VALUES("", "'.$nom.'", "'.$prenom.'", "", "'.$mail.'", "'.$date_n.'", "'.$sex.'", "'.$tel.'", "patient")';
+                mysqli_query($base, $sql) or die('Erreur : '.$sql.'<br />'.mysqli_error($base));
+                $reussite = "Dossier patient créé !";
+              }
             }
         }
         
