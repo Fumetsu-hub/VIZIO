@@ -90,16 +90,6 @@ CREATE TABLE IF NOT EXISTS `vizio`.`quest/rep` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `vizio`.`reponses`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `vizio`.`reponses` ;
-
-CREATE TABLE IF NOT EXISTS `vizio`.`reponses` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `rep` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
