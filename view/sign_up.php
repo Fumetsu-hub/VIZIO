@@ -91,8 +91,8 @@
                      <td>
                      <br><label for="statut">Statut</label>
                          <select class="form-control" name="statut">
-                         <option value="med">Medecin</option>
-                         <option value="pat">Patient</option>
+                         <option value="medecin">Medecin</option>
+                         <option value="patient">Patient</option>
                      </td>
                  </tr>
                  <tr>

@@ -19,7 +19,7 @@ include('./utilitaire/barre_de_navigation.php');
     <li>Mail : <?= $_SESSION['mail'] ?></li></br>
     <li>Telephone : <?= $_SESSION['tel'] ?></li></br>
     <li>Statut : <?= $_SESSION['statut'] ?></li></br>
-    <li>Âge : <?= $_SESSION['age'] ?></li></br>
+    <li>Age : <?= $_SESSION['age'] ?></li></br>
     <li>Sexe : <?= $_SESSION['sexe'] ?></li>
 
     <!--boutons-->

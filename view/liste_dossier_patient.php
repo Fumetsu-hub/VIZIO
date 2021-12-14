@@ -27,7 +27,7 @@ include('./utilitaire/barre_de_navigation.php');
         <?php
         $count=1;
         $sel_query='SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut
-        FROM user WHERE statut = "pat"';
+        FROM user WHERE statut = "patient"';
         $result = mysqli_query($base,$sel_query);
         while($row = mysqli_fetch_assoc($result)) { ?>
         <tr valign="middle">

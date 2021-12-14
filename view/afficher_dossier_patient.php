@@ -19,7 +19,7 @@ include('./utilitaire/barre_de_navigation.php');
     <li>Mail : <?= $info_patient['mail'] ?></li></br>
     <li>Telephone : <?= $info_patient['tel'] ?></li></br>
     <li>Statut : <?= $info_patient['statut'] ?></li></br>
-    <li>Âge : <?= $info_patient['age'] ?></li></br>
+    <li>Age : <?= $info_patient['age'] ?></li></br>
     <li>Sexe : <?= $info_patient['sexe'] ?></li>
 
     <br>
