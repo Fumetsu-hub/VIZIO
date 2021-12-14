@@ -20,7 +20,7 @@ include('./utilitaire/barre_de_navigation.php');
     <li>Telephone : <?= $info_patient['tel'] ?></li></br>
     <li>Statut : <?= $info_patient['statut'] ?></li></br>
     <li>Age : <?= $info_patient['age'] ?></li></br>
-    <li>Sexe : <?= $info_patient['sexe'] ?></li>
+    <li>Sexe : <?php if($info_patient['sexe'] == "h"){echo"Homme";}else{echo"Femme";} ?></li>
 
     <br>
     <form action="./index.php" method="GET">

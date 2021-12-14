@@ -20,7 +20,7 @@ include('./utilitaire/barre_de_navigation.php');
     <li>Telephone : <?= $_SESSION['tel'] ?></li></br>
     <li>Statut : <?= $_SESSION['statut'] ?></li></br>
     <li>Age : <?= $_SESSION['age'] ?></li></br>
-    <li>Sexe : <?= $_SESSION['sexe'] ?></li>
+    <li>Sexe : <?php if($_SESSION['sexe'] == "h"){echo"Homme";}else{echo"Femme";} ?></li>
 
     <!--boutons-->
     <br>

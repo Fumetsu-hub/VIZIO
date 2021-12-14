@@ -60,7 +60,6 @@ mysqli_select_db($base, "vizio");
                 $from = new DateTime($data["date_n"]);
                 $to   = new DateTime('today');
                 $_SESSION['age'] = $from->diff($to)->y;
-                echo "age = ". $_SESSION['age'];
 
             }
             else

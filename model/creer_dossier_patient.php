@@ -31,7 +31,7 @@ include('./utilitaire/db_connexion.php');
             }
             else
             {
-              $sql = 'INSERT INTO user VALUES("", "'.$nom.'", "'.$prenom.'", "", "'.$mail.'", "'.$date_n.'", "'.$sex.'", "'.$tel.'", "pat")';
+              $sql = 'INSERT INTO user VALUES("", "'.$nom.'", "'.$prenom.'", "", "'.$mail.'", "'.$date_n.'", "'.$sex.'", "'.$tel.'", "patient")';
               mysqli_query($base, $sql) or die('Erreur : '.$sql.'<br />'.mysqli_error($base));
               $reussite = "Dossier patient créé !";
             }
