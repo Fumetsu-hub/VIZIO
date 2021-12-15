@@ -29,7 +29,7 @@ include('./utilitaire/barre_de_navigation.php');
             $sel_query='SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut
             FROM user WHERE statut = "patient"';
             $result = mysqli_query($base,$sel_query);
-            while($row = mysqli_fetch_assoc($result)) 
+            while($row = mysqli_fetch_assoc($result))  //rentre dans des tableaux sessions les données des patients
             {
                 $_SESSION["id_patients"][$count] = $row["id"];
                 $_SESSION["nom_patients"][$count] = $row["nom"];
@@ -40,21 +40,21 @@ include('./utilitaire/barre_de_navigation.php');
                 $count++;
             }
 
-            if(!isset($_SESSION['patient_a_afficher']))$_SESSION['patient_a_afficher']=1;
+            if(!isset($_SESSION['patient_a_afficher']))$_SESSION['patient_a_afficher']=1; //initialise la variable qui va servire à afficher les 10 dossiers de la page
 
-            $_SESSION['patient_a_afficher'] += $_SESSION['liste_dossier_patient'];
-            $_SESSION['liste_dossier_patient']=0;
+            if(isset($_SESSION['liste_dossier_patient']))$_SESSION['patient_a_afficher'] += $_SESSION['liste_dossier_patient']; // ajoute -10 ou 10 en fonction de page suivante ou page précédente
+            $_SESSION['liste_dossier_patient']=0; // reset liste_dossier_patient une fois l'information récupérée
 
-            if($_SESSION['patient_a_afficher']<1)
+            if($_SESSION['patient_a_afficher']<1) // empêche d'afficher des dossiers inexistant
             {
                 $_SESSION['patient_a_afficher'] += 10;
             }
-            else if($_SESSION['patient_a_afficher']>=$count)
+            else if($_SESSION['patient_a_afficher']>=$count) // empêche d'afficher des dossiers inexistant
             {
                 $_SESSION['patient_a_afficher'] -= 10;
             }
             
-            for($z=$_SESSION['patient_a_afficher']; $z<=$_SESSION['patient_a_afficher']+9; $z++)
+            for($z=$_SESSION['patient_a_afficher']; $z<=$_SESSION['patient_a_afficher']+9; $z++) // boucle qui affiche les 10 dossiers
             {
                 if($z>=$count)break; // si ya plus de patients, on sort de la boucle.
 
