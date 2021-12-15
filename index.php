@@ -24,7 +24,7 @@ session_start();
 					break;
 				case 'accueil':
 					include("./controlleur/accueil.php");
-
+					break;
 				case 'creer_dossier_patient':
 					include("./controlleur/creer_dossier_patient.php");
 					break;
