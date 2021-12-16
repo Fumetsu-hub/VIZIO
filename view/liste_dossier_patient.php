@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="./css/liste_responsive.css">
 
 <?php
 // connexion à la base de données
@@ -14,12 +15,12 @@ include('./utilitaire/barre_de_navigation.php');
     <table  style="background-color:#FFF; font-size:20px; " class="table table-striped table-hover">
         <thead>
         <tr>
-        <th valign=""><strong>No Patient</strong></th>
+        <th class="hidden-sm hidden-md" valign=""><strong>No Patient</strong></th>
         <th><strong>Nom</strong></th>
         <th><strong>Prénom</strong></th>
-        <th><strong>Email</strong></th>
-        <th><strong>Âge</strong></th>
-        <th><strong>Sexe</strong></th>
+        <th class="hidden-sm hidden-md"><strong>Email</strong></th>
+        <th class="hidden-sm"><strong>Âge</strong></th>
+        <th class="hidden-sm"><strong>Sexe</strong></th>
         <th></th>
         </tr>
         </thead>
@@ -60,11 +61,11 @@ include('./utilitaire/barre_de_navigation.php');
 
                 ?>
                 <tr valign="middle">
-                <td  align="left"><strong><?php echo$z; ?></strong> </td>
+                <td  class="hidden-sm hidden-md" align="left"><strong><?php echo$z; ?></strong> </td>
                 <td  align="left"><?php echo$_SESSION["nom_patients"][$z]; ?></td>
                 <td  align="left"><?php echo$_SESSION["prenom_patients"][$z]; ?>
-                <td  align="left"><?php echo$_SESSION["mail_patients"][$z]; ?></td>
-                <td  align="left">
+                <td  class="hidden-sm hidden-md" align="left"><?php echo$_SESSION["mail_patients"][$z]; ?></td>
+                <td class="hidden-sm" align="left">
                 <?php 
 
                 # Déterminer l'âge
@@ -74,8 +75,8 @@ include('./utilitaire/barre_de_navigation.php');
                 echo $age;
                 ?></td>
 
-                <td  align="left"><?php echo$_SESSION["sexe_patients"][$z]; ?></td>
-                <td  align="left"> <!--Boutons-->
+                <td class="hidden-sm" align="left"><?php echo$_SESSION["sexe_patients"][$z]; ?></td>
+                <td align="left"> <!--Boutons-->
                     <form action="" method="POST">
                         <input value =<?php echo$_SESSION["id_patients"][$z]; ?> name="id_dossier_patient" type="hidden" id="id_dossier_patient"> <!-- sert à attribuer l'id du patient au bouton correspondant -->
                         <button class="btn btn-primary" type="submit" value="afficher_dossier_patient" name ="action">Dossier</button>
