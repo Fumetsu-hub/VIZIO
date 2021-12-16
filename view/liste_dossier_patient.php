@@ -58,6 +58,8 @@ include('./utilitaire/barre_de_navigation.php');
             for($z=$_SESSION['patient_a_afficher']; $z<=$_SESSION['patient_a_afficher']+9; $z++) // boucle qui affiche les 10 dossiers
             {
                 if($z>=$count)break; // si ya plus de patients, on sort de la boucle.
+                if(!isset($_SESSION["nom_patients"][$z]))break; // verification si il y'a 0 patients
+
 
                 ?>
                 <tr valign="middle">
