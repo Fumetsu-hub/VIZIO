@@ -32,3 +32,4 @@ include('./utilitaire/barre_de_navigation.php');
 <br>
 </body>
 </html>
+
