@@ -6,7 +6,8 @@ if (empty($_SESSION['id_user']))
     exit();
 }
 else 
-{ 
+{
+    
     require('./model/supprimer_profil.php');
 }
 

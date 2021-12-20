@@ -2,8 +2,7 @@
 
 <?php
 // connexion à la base de données
-$base = mysqli_connect('localhost', 'root', '');
-mysqli_select_db($base, "vizio");
+include('./utilitaire/db_connexion.php');
 ?>
 
  <?php
@@ -60,7 +59,6 @@ mysqli_select_db($base, "vizio");
                 $from = new DateTime($data["date_n"]);
                 $to   = new DateTime('today');
                 $_SESSION['age'] = $from->diff($to)->y;
-                echo "age = ". $_SESSION['age'];
 
             }
             else

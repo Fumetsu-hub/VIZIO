@@ -13,4 +13,16 @@ if(isset($_POST['action']))
   }
 }
 
+if(isset($_POST['action']))
+{
+  if(isset($_POST['liste_dossier_patient']))
+  {
+    if(!empty($_POST['liste_dossier_patient']))
+    {
+      $_SESSION['liste_dossier_patient'] = $_POST['liste_dossier_patient'];
+      $_POST['liste_dossier_patient'] = 0;
+    }
+  }
+}
+
  ?>
