@@ -15,8 +15,6 @@ include('./utilitaire/barre_de_navigation.php');
   <div class="card-body">
 
 
-  
-
   <br>
     <form action="./index.php" method="GET">
             <button type="submit" value="ajouter" name="action" class="btn btn-dark">Ajouter document</button>
