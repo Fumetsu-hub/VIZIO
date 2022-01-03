@@ -49,6 +49,9 @@ session_start();
 				case 'Document' :
 					include ("./controlleur/voir_docu.php");
 					break;
+				case 'ajouter' :
+					include ("./controlleur/ajouter_docu.php");
+					break;
 			}
 		}
 	}
