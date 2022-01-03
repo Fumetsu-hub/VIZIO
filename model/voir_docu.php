@@ -6,12 +6,19 @@ include('./utilitaire/db_connexion.php');
 ?>
 
  <?php
- $id_img = $_SESSION["id_user"];
- $sql_img = "SELECT * FROM document WHERE doc = '.$id_img.'";
- $img_result = mysqli_query($base, $sql_img) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
+ 
 
 
- while ($row = mysqli_fetch_array($img_result,MYSQLI_BOTH)) {
-    echo "<img src=<?$image;?>>".$row['image']."'>";
-    echo "<p>".$row['text']. "</p>";
-}
+ $res = $base->query("SELECT image FROM gallery WHERE id = {$_GET['']}");
+    
+    if($res->num_rows > 0){
+        $img = $res->fetch_assoc();
+        
+        //Rendre l'image
+        header("Content-type: image/jpg"); 
+        echo $img['image']; 
+    }else{
+        echo 'Image non trouvée...';
+    }
+
+?>
