@@ -23,7 +23,7 @@ include('./utilitaire/barre_de_navigation.php');
     </form><br>
     <br>
     <form action="./index.php" method="GET">
-            <button type="submit" value="Document" name="action" class="btn btn-dark">Document</button>
+            <button type="submit" value="supprimer_document" name="action" class="btn btn-dark">Supprimer document</button>
     </form><br>
     <form action="./index.php" method="GET">
             <button type="submit" value="afficher_dossier_patient" name="action" class="btn btn-dark">Retour</button>
