@@ -26,14 +26,4 @@ include('./utilitaire/db_connexion.php');
         echo "Veuillez sélectionner une image à uploader.";
     }
 }
-
-
-  $query = $base->query("INSERT into gallery (image) VALUES ('')");
-        if($query){
-            echo "Fichier uploadé avec succès.";
-        }else{
-            echo "Échec d'upload du fichier.";
-        } 
-   
-
 ?>
