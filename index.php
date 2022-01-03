@@ -46,6 +46,9 @@ session_start();
 				case 'supprimer_patient':
 					include("./controlleur/supprimer_patient.php");
 					break;
+				case 'Document' :
+					include ("./controlleur/voir_docu.php");
+					break;
 			}
 		}
 	}
