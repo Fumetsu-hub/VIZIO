@@ -19,7 +19,7 @@ include('./utilitaire/barre_de_navigation.php');
 Image
 <br />
 <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
-<input type="file" name="image" size="12"/>
+<input type="file" name="userfile" size="12"/>
 <input type="submit" value="Ajouter"/>
 </form>
 </html>
