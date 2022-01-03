@@ -52,6 +52,9 @@ session_start();
 				case 'ajouter' :
 					include ("./controlleur/ajouter_docu.php");
 					break;
+				case 'supprimer_document':
+					include ("./controlleur/supprimer_docu.php");
+					break;
 			}
 		}
 	}
