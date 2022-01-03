@@ -1,9 +1,6 @@
-<html>
-<form action="inserer_image.php" method="post" enctype="multipart/form­data">
-Image
-<br />
-<input type="hidden" name="MAX_FILE_SIZE" value="300000" />
-<input type="file" name="image" size="12"/>
-<input type="submit" value="Ajouter"/>
-</form>
-</html>
+<!DOCTYPE html>
+
+<?php
+// connexion à la base de données
+include('./utilitaire/db_connexion.php');
+?>
