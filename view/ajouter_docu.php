@@ -15,9 +15,9 @@ include('./utilitaire/barre_de_navigation.php');
   <div class="card-body">
 
   <html>
-  <form enctype="multipart/form-data" action="ajouter" method="post">
+  <form enctype="multipart/form-data" action="Document" method="post">
         <label>Uploader le document image:</label><br /> 
         <input name="userImage" type="file" /> 
-        <input type="submit" value="Uploader" />
+        <input type="submit" value="ajouter" />
 </form>
 </html>
