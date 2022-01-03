@@ -55,6 +55,9 @@ session_start();
 				case 'supprimer_document':
 					include ("./controlleur/supprimer_docu.php");
 					break;
+				case 'recherche_multicritere':
+					include("./controlleur/recherche_multicritere.php");
+					break;
 			}
 		}
 	}
