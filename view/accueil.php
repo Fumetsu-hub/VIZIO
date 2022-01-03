@@ -25,6 +25,9 @@ include('./utilitaire/barre_de_navigation.php');
         <form action="./index.php" method="GET">
                 <button type="submit" value="questionnaire" name="action" class="btn btn-primary">Créer un questionnaire</button><br><a> (à venir)</a>
         </form>
+        <form action="./index.php" method="GET">
+                <button type="submit" value="recherche_multicritere" name="action" class="btn btn-primary">Recher multicritère</button><br><a> (à venir)</a>
+        </form>
         </div><br>
         <hr>
   </div>
