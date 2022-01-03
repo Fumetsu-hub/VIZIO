@@ -13,9 +13,6 @@ include('./utilitaire/barre_de_navigation.php');
 ?>
 <div class="responsive_card card border-0 shadow rounded-3 my-5 container">
   <div class="card-body">
-<?php
- echo  $_SESSION["id_user"];
-  ?>
 
   <br>
     <form action="./index.php" method="GET">
