@@ -17,18 +17,18 @@ include('./utilitaire/barre_de_navigation.php');
     <p style="text-align:center; font-weight: bold; font-size:25px; color:black;" class="card-text">Actions rapides</p><hr><br>
         <div style="text-align: center;" class = "container">
         <form action="./index.php" method="GET">
-                <button type="submit" value="creer_dossier_patient" name="action" class="btn btn-primary">Créer un dossier patient</button>
-        </form><br>
-        <form action="./index.php" method="GET">
+                <button type="submit" value="recherche_multicritere" name="action" class="btn btn-primary">Recherche patient multicritère</button><br>
+        </form>
+        <form action="./index.php" method="GET" class="mt-4">
+                <button type="submit" value="recherche_fiche_consultation" name="action" class="btn btn-primary">Recherche fiche consultation</button>
+        </form>
+        <form action="./index.php" method="GET" class="mt-4">
                 <button type="submit" value="consultation" name="action" class="btn btn-primary">Créer une fiche consultation</button><br><a> (à venir)</a>
-        </form><br>
-        <form action="./index.php" method="GET">
+        </form>
+        <form action="./index.php" method="GET" class="mt-4">
                 <button type="submit" value="questionnaire" name="action" class="btn btn-primary">Créer un questionnaire</button><br><a> (à venir)</a>
         </form>
-        <form action="./index.php" method="GET">
-                <button type="submit" value="recherche_multicritere" name="action" class="btn btn-primary">Recher multicritère</button><br><a> (à venir)</a>
-        </form>
-        </div><br>
+        </div>
         <hr>
   </div>
 </div>

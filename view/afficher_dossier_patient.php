@@ -31,7 +31,7 @@ include('./utilitaire/barre_de_navigation.php');
             <button type="submit" value="Document" name="action" class="btn btn-dark">Document</button>
     </form><br>
     <form action="./index.php" method="GET">
-            <button type="submit" value="liste_dossier_patient" name="action" class="btn btn-dark">Retour</button>
+            <button type="submit" value="accueil" name="action" class="btn btn-dark">Quitter</button>
     </form><br>
   </div>
 </div>
