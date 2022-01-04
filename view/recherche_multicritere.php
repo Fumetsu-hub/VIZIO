@@ -68,20 +68,20 @@ include('./utilitaire/popup_recherche.php');
             if(isset($prenom) or isset($nom) or isset($sexe)) // si une recherche est effectuée :
             {
               // recherche par nom et prenom et sexe
-              if(isset($prenom) and isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND sexe='$sexe'";echo"nom et prenom et sexe";}
+              if(isset($prenom) and isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND sexe='$sexe'";}
               // recherche par nom et prenom
-              else if(isset($prenom) and isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%'";echo"nom et prenom";}
+              else if(isset($prenom) and isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%'";}
               // recherche par prenom
-              else if(isset($prenom) and !isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%'";echo"prenom";}
+              else if(isset($prenom) and !isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%'";}
               // recherche par nom
-              else if(!isset($prenom) and isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%'";echo"nom";}
+              else if(!isset($prenom) and isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%'";}
               // recherche par sexe
-              else if(!isset($prenom) and !isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe'";echo"sexe";}
+              else if(!isset($prenom) and !isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe'";}
               // recherche par sexe et prenom
-              else if(isset($prenom) and !isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND prenom LIKE '%$prenom%'";echo"sexe et prenom";}
+              else if(isset($prenom) and !isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND prenom LIKE '%$prenom%'";}
               // recherche par sexe et nom
-              else if(!isset($prenom) and isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND nom LIKE '%$nom%'";echo"sexe et nom";}
-
+              else if(!isset($prenom) and isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND nom LIKE '%$nom%'";}
+            
               $result = mysqli_query($base,$sel_query);
               while($row = mysqli_fetch_assoc($result))  //rentre dans des tableaux sessions les données des patients
               {
