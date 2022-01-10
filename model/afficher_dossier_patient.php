@@ -29,4 +29,7 @@ include('./utilitaire/db_connexion.php');
     $from = new DateTime($data["date_n"]);
     $to   = new DateTime('today');
     $info_patient['age'] = $from->diff($to)->y;
+
+
+    $_SESSION['patient_a_afficher']=1; // sert à corriger le pb de "page suivante" "page precedente" pour afficher_liste_fiches
  ?>

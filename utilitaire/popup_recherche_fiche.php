@@ -21,19 +21,14 @@
 <form action = "" method = "POST" class="needs-validation" novalidate>
   <div class="form-row">
 
-    <div class="">
-      <label for="validationTooltip01">Nom</label>
-      <input name = "nom" type="text" class="form-control" placeholder="Nom" required>
-    </div>
-
     <div class="mt-3">
-      <label for="validationTooltip02">Prénom</label>
-      <input name = "prenom" type="text" class="form-control" placeholder="Prénom" required>
+      <label for="validationTooltip02">Mots clés</label>
+      <input name = "mot_cle" type="text" class="form-control" placeholder="Mot-clé">
     </div>
 
     <div class="mt-3">
       <label for="validationTooltip03">Date de consultation</label>
-      <input name = "date_fiche" type="date" class="form-control" id="validationTooltip03" required>
+      <input name = "date_fiche" type="date" class="form-control" id="validationTooltip03">
     </div>
 
 
