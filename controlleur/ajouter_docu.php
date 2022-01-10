@@ -8,11 +8,11 @@ if (empty($_SESSION['id_user']))
 else 
 {
     
-    require('./model/ajouter_docu.php');
+    require('./view/ajouter_docu.php');
 }
 
-$title = "Ajouter document patient";
+//$title = "Ajouter document patient";
 
-require('./view/ajouter_docu.php');
+//require('./model/ajouter_docu.php');
 
 ?>
