@@ -22,7 +22,7 @@ include('./utilitaire/barre_de_navigation.php');
   
 <form action="./view/ajouter_docu.php" method="post" enctype="multipart/form-data">
         <p>
-                Formulaire d'envoi de fichier :<br />
+                ajouter un fichier image :<br />
                 <input type="file" name="monfichier" /><br />
                 <input type="submit" value="Envoyer le fichier" />
         </p>
