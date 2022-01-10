@@ -34,20 +34,23 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
                 }
         }
  }     
-?>
-<?php
+
+ 
+ {
+     
+ $req = $base->query('INSERT INTO document (doc_bin) VALUES(?)');
+ 
+ }
  
  if(isset($_POST["submit"])){
      
      echo(var_dump($_FILES,$_POST));
-    $b = getimagesize($_FILES["userImage"]["tmp_name"]);
-    //fopen à add
+    $b = getimagesize($_FILES["monfichier"]["tmp_name"]);
     //Vérifiez si l'utilisateur à sélectionné une image
-    
     if($b !== 0){
         echo("tata");
         //Récupérer le contenu de l'image
-        $file = $_FILES['userImage']['tmp_name'];
+        $file = $_FILES['monfichier']['tmp_name'];
         $image = addslashes(file_get_contents($file));
 
 
