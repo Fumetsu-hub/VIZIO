@@ -46,7 +46,7 @@ include('./utilitaire/popup_recherche.php');
 <div class="container">
 
     <div class="popup-btn btn btn-primary">
-      <a>Recherche</a>
+      <a>Rechercher</a>
     </div><br><br>
 
     <table  style="background-color:#FFF; font-size:20px; " class="table table-striped table-hover">
