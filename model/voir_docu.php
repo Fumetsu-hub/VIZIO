@@ -10,5 +10,5 @@ include('./utilitaire/db_connexion.php');
  $sql_img = "SELECT * FROM document WHERE doc = '.$id_img.'";
  $img_result = mysqli_query($base, $sql_img) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
 
-
+?>
  
