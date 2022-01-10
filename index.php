@@ -58,8 +58,8 @@ session_start();
 				case 'recherche_multicritere':
 					include("./controlleur/recherche_multicritere.php");
 					break;
-				case 'recherche_fiche_consultation':
-					include("./controlleur/recherche_fiche_consultation.php");
+				case 'afficher_liste_fiche':
+					include("./controlleur/afficher_liste_fiche.php");
 					break;
 			}
 		}

@@ -20,9 +20,6 @@ include('./utilitaire/barre_de_navigation.php');
                 <button type="submit" value="recherche_multicritere" name="action" class="btn btn-primary">Recherche patient multicritère</button><br>
         </form>
         <form action="./index.php" method="GET" class="mt-4">
-                <button type="submit" value="recherche_fiche_consultation" name="action" class="btn btn-primary">Recherche fiche consultation</button>
-        </form>
-        <form action="./index.php" method="GET" class="mt-4">
                 <button type="submit" value="consultation" name="action" class="btn btn-primary">Créer une fiche consultation</button><br><a> (à venir)</a>
         </form>
         <form action="./index.php" method="GET" class="mt-4">

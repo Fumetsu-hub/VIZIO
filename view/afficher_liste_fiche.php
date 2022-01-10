@@ -9,7 +9,7 @@ include('./utilitaire/bootstrap.php');
 //navbar
 include('./utilitaire/barre_de_navigation.php');
 //popup recherche
-include('./utilitaire/popup_recherche.php');
+include('./utilitaire/popup_recherche_fiche.php');
 
 ?>
 
@@ -28,21 +28,21 @@ include('./utilitaire/popup_recherche.php');
     $_SESSION['recherche_prenom'] = $prenom;
   }
 
-  if(!empty($_POST['sexe']))
+  if(!empty($_POST['date_fiche']))
   {
-    $sexe = $_POST['sexe'];
-    $_SESSION['recherche_sexe'] = $sexe;
+    $date_fiche = $_POST['date_fiche'];
+    $_SESSION['recherche_fiche'] = $date_fiche;
   }
 
   // enregistre la derniere recherche faite pour pouvoir faire marche les "pages suivantes"
   if(isset($_SESSION['recherche_prenom'])){$prenom = $_SESSION['recherche_prenom'];}  
   if(isset($_SESSION['recherche_nom'])){$nom = $_SESSION['recherche_nom'];}
-  if(isset($_SESSION['recherche_sexe'])){$sexe = $_SESSION['recherche_sexe'];}
+  if(isset($_SESSION['recherche_fiche'])){$date_fiche = $_SESSION['recherche_fiche'];}
   
 ?>
 
 <div style="background-color: #f3f3f2;">
-<br><br><h1 style="text-align:center;">Recherche fiche consultation</h1><br><br>
+<br><br><h1 style="text-align:center;">Fiches consultation</h1><br><br>
 <div class="container">
 
     <div class="popup-btn btn btn-primary">
@@ -52,12 +52,10 @@ include('./utilitaire/popup_recherche.php');
     <table  style="background-color:#FFF; font-size:20px; " class="table table-striped table-hover">
         <thead>
         <tr>
-        <th class="hidden-sm hidden-md" valign=""><strong>No Patient</strong></th>
-        <th><strong>Nom</strong></th>
-        <th><strong>Prénom</strong></th>
-        <th class="hidden-sm hidden-md"><strong>Email</strong></th>
-        <th class="hidden-sm"><strong>Âge</strong></th>
-        <th class="hidden-sm"><strong>Sexe</strong></th>
+        <th class="hidden-sm hidden-md" valign=""><strong>No Fiche</strong></th>
+        <th><strong>Date</strong></th>
+        <th class="hidden-sm hidden-md"><strong>Type</strong></th>
+        <th class="hidden-sm"><strong>Patient</strong></th>
         <th></th>
         </tr>
         </thead>
@@ -65,32 +63,16 @@ include('./utilitaire/popup_recherche.php');
         <?php
             $count=1;
 
-            if(isset($prenom) or isset($nom) or isset($sexe)) // si une recherche est effectuée :
-            {
-              // recherche par nom et prenom et sexe
-              if(isset($prenom) and isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient'";}
-              // recherche par nom et prenom
-              else if(isset($prenom) and isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND statut='patient'";}
-              // recherche par prenom
-              else if(isset($prenom) and !isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND statut='patient'";}
-              // recherche par nom
-              else if(!isset($prenom) and isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND statut='patient'";}
-              // recherche par sexe
-              else if(!isset($prenom) and !isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND statut='patient'";}
-              // recherche par sexe et prenom
-              else if(isset($prenom) and !isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND prenom LIKE '%$prenom%' AND statut='patient'";}
-              // recherche par sexe et nom
-              else if(!isset($prenom) and isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND nom LIKE '%$nom%' AND statut='patient'";}
-            
+              $id_dossier_patient = $_SESSION["id_dossier_patient"];
+
+              $sel_query="SELECT user2, date, type FROM consultation WHERE user2='$id_dossier_patient'";
+
               $result = mysqli_query($base,$sel_query);
               while($row = mysqli_fetch_assoc($result))  //rentre dans des tableaux sessions les données des patients
               {
-                  $_SESSION["id_patients"][$count] = $row["id"];
-                  $_SESSION["nom_patients"][$count] = $row["nom"];
-                  $_SESSION["prenom_patients"][$count] = $row["prenom"];
-                  $_SESSION["mail_patients"][$count] = $row["mail"];
-                  $_SESSION["date_n_patients"][$count] = $row["date_n"];
-                  $_SESSION["sexe_patients"][$count] = $row["sexe"];
+                  $_SESSION["date_fiche"][$count] = $row["date"];
+                  $_SESSION["type_fiche"][$count] = $row["type"];
+                  $_SESSION["user_fiche"][$count] = $row["user2"];
                   $count++;
               }
 
@@ -116,20 +98,9 @@ include('./utilitaire/popup_recherche.php');
                   ?>
                   <tr valign="middle">
                   <td  class="hidden-sm hidden-md" align="left"><strong><?php echo$z; ?></strong> </td>
-                  <td  align="left"><?php echo$_SESSION["nom_patients"][$z]; ?></td>
-                  <td  align="left"><?php echo$_SESSION["prenom_patients"][$z]; ?>
-                  <td  class="hidden-sm hidden-md" align="left"><?php echo$_SESSION["mail_patients"][$z]; ?></td>
-                  <td class="hidden-sm" align="left">
-                  <?php 
-
-                  # Déterminer l'âge
-                  $from = new DateTime($_SESSION["date_n_patients"][$z]);
-                  $to   = new DateTime('today');
-                  $age = $from->diff($to)->y;
-                  echo $age;
-                  ?></td>
-
-                  <td class="hidden-sm" align="left"><?php echo$_SESSION["sexe_patients"][$z]; ?></td>
+                  <td  align="left"><?php echo$_SESSION["date_fiche"][$z]; ?></td>
+                  <td  class="hidden-sm hidden-md" align="left"><?php echo$_SESSION["type_fiche"][$z]; ?></td>
+                  <td class="hidden-sm" align="left"><?php echo$_SESSION["user_fiche"][$z]; ?></td>
                   <td align="left"> <!--Boutons-->
                       <form action="" method="POST">
                           <input value =<?php echo$_SESSION["id_patients"][$z]; ?> name="id_dossier_patient" type="hidden" id="id_dossier_patient"> <!-- sert à attribuer l'id du patient au bouton correspondant -->
@@ -139,7 +110,6 @@ include('./utilitaire/popup_recherche.php');
                   </tr>
         <?php
             }
-          } // celui la sert a fermer le "if (isset nom prenom)"
         ?>
 
         </tbody>
