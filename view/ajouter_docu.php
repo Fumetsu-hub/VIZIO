@@ -4,7 +4,11 @@
     <title>Afficher document patient</title>
 </head>
 <body>
-
+<?php
+ // connexion à la base de données
+ $base = mysqli_connect('localhost', 'root', '');
+ mysqli_select_db($base, "vizio");
+?>
 <?php
 // bootstrap
 include('./utilitaire/bootstrap.php');
@@ -16,7 +20,7 @@ include('./utilitaire/barre_de_navigation.php');
 
   <html>
   
-<form action="Document" method="post" enctype="multipart/form-data">
+<form action="./view/ajouter_docu.php" method="post" enctype="multipart/form-data">
         <p>
                 Formulaire d'envoi de fichier :<br />
                 <input type="file" name="monfichier" /><br />
@@ -26,9 +30,11 @@ include('./utilitaire/barre_de_navigation.php');
 </form>
 
 <?php
-$photo = monfichier;
+
+if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
+{
         // Testons si le fichier n'est pas trop gros
-        if ($_FILES['monfichier']['size'] <= 1000000)
+        if ($_FILES['monfichier']['size'] <= 10000000)
         {
                 // Testons si l'extension est autorisée
                 $infosfichier = pathinfo($_FILES['monfichier']['name']);
@@ -37,12 +43,21 @@ $photo = monfichier;
                 if (in_array($extension_upload, $extensions_autorisees))
                 {
                         // On peut valider le fichier et le stocker définitivement
-                        move_uploaded_file($_FILES['monfichier']['tmp_name'], 'site/' . basename($_FILES['monfichier']['name']));
+                       $toto= move_uploaded_file($_FILES['monfichier']['tmp_name'], 'site/');
+                       if ($toto)
+                       {
                         echo "L'envoi a bien été effectué !";
+                       }
+                       else
+                       {
+                        echo "L'envoi a raté";
+                       }
+                        
                          
  
                 }
-        }     
+        }
+ }     
 ?>
 </div>
       </div>
