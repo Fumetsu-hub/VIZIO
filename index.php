@@ -53,6 +53,21 @@ session_start();
 					include("./controlleur/questionnaire.php");
 					break;
 				
+				case 'Document' :
+					include ("./controlleur/voir_docu.php");
+					break;
+				case 'ajouter' :
+					include ("./controlleur/ajouter_docu.php");
+					break;
+				case 'supprimer_document':
+					include ("./controlleur/supprimer_docu.php");
+					break;
+				case 'recherche_multicritere':
+					include("./controlleur/recherche_multicritere.php");
+					break;
+				case 'afficher_liste_fiche':
+					include("./controlleur/afficher_liste_fiche.php");
+					break;
 			}
 		}
 	}

@@ -14,10 +14,10 @@
       <div class="center modal-box">
          <div class="fas fa-times"></div>
          <p style="font-size:20px; font-weight: bold; color: black;">
-            Voulez-vous vraiment supprimer ce patient ?
+            Voulez-vous vraiment supprimer ce document ?
          </p>
          <form action="./index.php" method="GET">
-            <button type="submit" value="supprimer_patient" name ="action" class="btn btn-danger">Supprimer patient</button>
+            <button type="submit" value="supprimer_document" name ="action" class="btn btn-danger">Supprimer document</button>
         </form>
       </div>
       <script>

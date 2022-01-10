@@ -11,14 +11,39 @@
    // bootstrap
    include('./utilitaire/bootstrap.php');
    ?>
+
       <div class="center modal-box">
          <div class="fas fa-times"></div>
          <p style="font-size:20px; font-weight: bold; color: black;">
-            Voulez-vous vraiment supprimer ce patient ?
+            Recherche :
          </p>
-         <form action="./index.php" method="GET">
-            <button type="submit" value="supprimer_patient" name ="action" class="btn btn-danger">Supprimer patient</button>
-        </form>
+<!------------------------------------------->
+<form action = "" method = "POST" class="needs-validation" novalidate>
+  <div class="form-row">
+
+    <div class="">
+      <label for="validationTooltip01">Nom</label>
+      <input name = "nom" type="text" class="form-control" placeholder="Nom" required>
+    </div>
+
+    <div class="mt-3">
+      <label for="validationTooltip02">Prénom</label>
+      <input name = "prenom" type="text" class="form-control" placeholder="Prénom" required>
+    </div>
+
+    <div class="mt-3">
+      <label for="validationTooltip03">Date de consultation</label>
+      <input name = "date_fiche" type="date" class="form-control" id="validationTooltip03" required>
+    </div>
+
+
+  </div>
+  
+  <button class="mt-4 btn btn-primary" type="submit" value="recherche_multicritere" name="action">Rechercher</button>
+</form>
+<!------------------------------------------->
+
+
       </div>
       <script>
          $(document).ready(function(){

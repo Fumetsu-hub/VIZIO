@@ -95,14 +95,15 @@ include('./utilitaire/barre_de_navigation.php');
       <input name = "telephone" type="number" class="form-control" id="validationTooltip04" placeholder="Telephone" value="<?php if(isset($tel))echo$tel; ?>" required>
 
     </div>
+    
     <div class="form-group">
     <label for="exampleFormControlSelect2">Sexe</label>
     <select name = "sexe" class="form-control">
     <option <?php if(isset($sex)and$sex=="h")echo"selected";?> value="h">Masculin</option>
     <option <?php if(isset($sex)and$sex=="f")echo"selected";?> value="f">Feminin</option>
     </select>
-    
     </div>
+
   </div>
   
   <button class="btn btn-primary" type="submit" value="créer_dossier_patient" name="action">Créer Dossier</button>

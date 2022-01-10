@@ -12,6 +12,11 @@ include('./utilitaire/barre_de_navigation.php');
 
 <br><br><h1 style="text-align:center;">Liste Patients</h1><br><br>
 <div class="container">
+
+    <form action="./index.php" method="GET">
+            <button type="submit" value="recherche_multicritere" name ="action" class="btn btn-primary">Recherche multicritère</button>
+    </form><hr>
+
     <table  style="background-color:#FFF; font-size:20px; " class="table table-striped table-hover">
         <thead>
         <tr>
@@ -94,7 +99,7 @@ include('./utilitaire/barre_de_navigation.php');
 
     <form action="./index.php" method="GET">
             <button type="submit" value="creer_dossier_patient" name ="action" class="btn btn-primary">Ajouter un patient</button>
-    </form><br>
+    </form><hr>
     <div class="row">
     <form class="col-sm-offset-4 col-sm-2" action="" method="POST">
         <input value = -10 name="liste_dossier_patient" type="hidden" id="liste_dossier_patient"> <!-- sert à attribuer l'id du patient au bouton correspondant -->
@@ -105,5 +110,5 @@ include('./utilitaire/barre_de_navigation.php');
         <button class="btn btn-primary" type="submit" value="liste_dossier_patient" name ="action">Page suivante</button>
     </form>
     </div>
-</div>
+</div><br>
 </div>
