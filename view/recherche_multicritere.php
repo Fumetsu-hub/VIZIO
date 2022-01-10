@@ -46,8 +46,8 @@ include('./utilitaire/popup_recherche.php');
 <div class="container">
 
     <div class="popup-btn btn btn-primary">
-      <a>Recherche</a>
-    </div><br><br>
+      <a>Rechercher</a>
+    </div><br><hr>
 
     <table  style="background-color:#FFF; font-size:20px; " class="table table-striped table-hover">
         <thead>
@@ -143,7 +143,7 @@ include('./utilitaire/popup_recherche.php');
         ?>
 
         </tbody>
-    </table>
+    </table><hr>
 
     <div class="row">
     <form class="col-sm-offset-4 col-sm-2" action="" method="POST">

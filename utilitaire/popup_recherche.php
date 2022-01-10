@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
@@ -44,7 +43,7 @@
   </div>
   
   <button class="mt-4 btn btn-primary" type="submit" value="recherche_multicritere" name="action">Rechercher</button>
-</form><br>
+</form>
 <!------------------------------------------->
 
 
