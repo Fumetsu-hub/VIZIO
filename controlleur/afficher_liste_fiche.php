@@ -6,9 +6,9 @@ if (empty($_SESSION['id_user']))
     exit();
 }
 
-    //require_once('./model/recherche_fiche_consultation.php');
+    require_once('./model/afficher_liste_fiche.php');
   
     $title = "recherche fiche consultation";
     
-    require_once('./view/recherche_fiche_consultation.php');
+    require_once('./view/afficher_liste_fiche.php');
 ?> 
