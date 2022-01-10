@@ -44,6 +44,8 @@ if(isset($_SESSION['id_dossier_patient']))
     {
         $new_mdp = htmlspecialchars($_POST['newmdp']);
         $info_patient['mdp'] = $_POST['newmdp'];
+        $mdp2 = htmlspecialchars($_POST['mdp2']);
+        $_POST['newmdp'] = $_POST['mdp2'];
     
         $update_mdp = "UPDATE user SET mdp = '$new_mdp' WHERE id = $id_dossier_patient";
         mysqli_query($base, $update_mdp) or die('Erreur : '.$update_mdp.'<br />'.mysqli_error($base));

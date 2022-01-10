@@ -19,6 +19,12 @@ include('./utilitaire/db_connexion.php');
     $info_patient['sexe'] = $data['sexe'];
     $info_patient['date_n'] = $data['date_n'];
 
+    $_SESSION['nom_pat'] = $info_patient['nom'];
+    $_SESSION['prenom_pat'] = $info_patient['prenom'];
+    $_SESSION['mail_pat'] = $info_patient['mail'];
+    $_SESSION['mdp_pat'] = $info_patient['mdp'];
+
+
     # Déterminer l'âge
     $from = new DateTime($data["date_n"]);
     $to   = new DateTime('today');
