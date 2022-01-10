@@ -27,7 +27,7 @@ include('./utilitaire/popup_dossier_patient.php');
             <label><b>Nom</b></label><br>
             <input class="form-control w-25 p-1" type="text" value = "<?php echo$_SESSION['nom_pat'] ?>" name="newnom">
             <?php
-             if (preg_match('/1|2|3|4|5|6|7|8|9/i', $nom)){$erreur_nom = "Votre nom n'est pas valide";unset($nom);}else{
+             if (preg_match('/1|2|3|4|5|6|7|8|9/i', $_SESSION['nom'])){$erreur_nom = "Votre nom n'est pas valide";unset($nom);}else{
             if(isset($succes_modify_nom))
             {
                 echo '<div class = "succes">' . $succes_modify_nom . '</div>';
@@ -41,7 +41,7 @@ include('./utilitaire/popup_dossier_patient.php');
             <label><b>Prénom</b></label><br>
             <input class="form-control w-25 p-1" type="text" value = "<?php echo$_SESSION['prenom_pat'] ?>" name="newprenom">
             <?php
-            if (preg_match('/1|2|3|4|5|6|7|8|9/i', $prenom)){$erreur_prenom = "Votre prénom n'est pas valide";unset($prenom);}else{
+            if (preg_match('/1|2|3|4|5|6|7|8|9/i', $_SESSION['prenom'])){$erreur_prenom = "Votre prénom n'est pas valide";unset($prenom);}else{
 
             if(isset($succes_modify_prenom))
             {
@@ -56,7 +56,7 @@ include('./utilitaire/popup_dossier_patient.php');
             <label><b>Mail</b></label><br>
             <input class="form-control w-25 p-1" type="email" value = "<?php echo$_SESSION['mail_pat'] ?>" name="newmail">
             <?php
-            if(strpos($mail, "@") == FALSE){$erreur_email = "Le mail n'est pas valide";unset($mail);}else{
+            if(strpos($_SESSION['nom'], "@") == FALSE){$erreur_email = "Le mail n'est pas valide";unset($mail);}else{
             if(isset($succes_modify_email))
             {
                 echo '<div class = "succes">' . $succes_modify_email . '</div>';
