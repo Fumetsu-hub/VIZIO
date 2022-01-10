@@ -42,12 +42,12 @@ include('./utilitaire/popup_recherche.php');
 ?>
 
 <div style="background-color: #f3f3f2;">
-<br><br><h1 style="text-align:center;">Recherche patient</h1><br><br>
+<br><br><h1 style="text-align:center;">Recherche fiche consultation</h1><br><br>
 <div class="container">
 
     <div class="popup-btn btn btn-primary">
-      <a>Recherche</a>
-    </div><br><br>
+      <a>Rechercher</a>
+    </div><br><hr>
 
     <table  style="background-color:#FFF; font-size:20px; " class="table table-striped table-hover">
         <thead>
@@ -143,7 +143,7 @@ include('./utilitaire/popup_recherche.php');
         ?>
 
         </tbody>
-    </table>
+    </table><hr>
 
     <div class="row">
     <form class="col-sm-offset-4 col-sm-2" action="" method="POST">

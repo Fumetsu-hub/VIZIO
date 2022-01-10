@@ -43,7 +43,7 @@
   </div>
   
   <button class="mt-4 btn btn-primary" type="submit" value="recherche_multicritere" name="action">Rechercher</button>
-</form><br>
+</form>
 <!------------------------------------------->
 
 
