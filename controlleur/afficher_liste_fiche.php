@@ -8,7 +8,7 @@ if (empty($_SESSION['id_user']))
 
     require_once('./model/afficher_liste_fiche.php');
   
-    $title = "recherche fiche consultation";
+    $title = "afficher fiche consultation";
     
     require_once('./view/afficher_liste_fiche.php');
 ?> 
