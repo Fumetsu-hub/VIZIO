@@ -23,12 +23,19 @@
 
     <div class="">
       <label for="validationTooltip01">Nom</label>
-      <input name = "nom" type="text" class="form-control" placeholder="Nom" required>
+      <input name = "nom" type="text" class="form-control" placeholder="Nom">
     </div>
 
     <div class="mt-3">
       <label for="validationTooltip02">Prénom</label>
-      <input name = "prenom" type="text" class="form-control" placeholder="Prénom" required>
+      <input name = "prenom" type="text" class="form-control" placeholder="Prénom">
+    </div>
+
+    <div class="mt-3">
+      <label for="mail">Email</label>
+      <div class="input-group">
+        <input name="email" type="email" class="form-control" placeholder="Email">
+      </div>
     </div>
 
     <div class="mt-3">

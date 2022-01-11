@@ -15,9 +15,9 @@ include('./utilitaire/barre_de_navigation.php');
 
     <form action="./index.php" method="GET">
             <button type="submit" value="recherche_multicritere" name ="action" class="btn btn-primary">Recherche multicritère</button>
-    </form><hr>
+    </form>
 
-    <table  style="background-color:#FFF; font-size:20px; " class="table table-striped table-hover">
+    <table  style="background-color:#FFF; font-size:20px; " class="mt-2 table table-striped table-hover">
         <thead>
         <tr>
         <th class="hidden-sm hidden-md" valign=""><strong>No Patient</strong></th>
@@ -99,8 +99,8 @@ include('./utilitaire/barre_de_navigation.php');
 
     <form action="./index.php" method="GET">
             <button type="submit" value="creer_dossier_patient" name ="action" class="btn btn-primary">Ajouter un patient</button>
-    </form><hr>
-    <div class="row">
+    </form>
+    <div class="row mt-4">
     <form class="col-sm-offset-4 col-sm-2" action="" method="POST">
         <input value = -10 name="liste_dossier_patient" type="hidden" id="liste_dossier_patient"> <!-- sert à attribuer l'id du patient au bouton correspondant -->
         <button class="btn btn-primary" type="submit" value="liste_dossier_patient" name ="action">Page précédente</button>

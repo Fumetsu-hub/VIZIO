@@ -40,9 +40,9 @@ include('./utilitaire/popup_recherche_fiche.php');
 
     <div class="popup-btn btn btn-primary">
       <a>Rechercher</a>
-    </div><br><hr>
+    </div><br>
 
-    <table  style="background-color:#FFF; font-size:20px; " class="table table-striped table-hover">
+    <table  style="background-color:#FFF; font-size:20px; " class="mt-2 table table-striped table-hover">
         <thead>
         <tr>
         <th class="hidden-sm hidden-md" valign=""><strong>No Fiche</strong></th>
@@ -123,7 +123,7 @@ include('./utilitaire/popup_recherche_fiche.php');
         ?>
 
         </tbody>
-    </table><hr>
+    </table>
 
     <div class="row">
     <form class="col-sm-offset-4 col-sm-2" action="" method="POST">
