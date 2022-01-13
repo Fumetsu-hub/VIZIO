@@ -10,7 +10,6 @@ include('./utilitaire/db_connexion.php');
  {
     if(empty($_POST['ques']))
     {
-
         $erreur2 = "Il n'y a pas de questions !";
     }
 
@@ -37,7 +36,6 @@ include('./utilitaire/db_connexion.php');
 
         }
     }
-
 
  }
 

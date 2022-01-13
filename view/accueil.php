@@ -23,7 +23,7 @@ include('./utilitaire/barre_de_navigation.php');
                 <button type="submit" value="consultation" name="action" class="btn btn-primary">Créer une fiche consultation</button><br><a> (à venir)</a>
         </form>
         <form action="./index.php" method="GET" class="mt-4">
-                <button type="submit" value="questionnaire" name="action" class="btn btn-primary">Créer un questionnaire</button><br><a> (à venir)</a>
+                <button type="submit" value="ques_rep" name="action" class="btn btn-primary">Créer un questionnaire</button><br>
         </form>
         </div>
         <hr>

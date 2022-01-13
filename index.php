@@ -52,7 +52,6 @@ session_start();
 				case 'questionnaire':
 					include("./controlleur/questionnaire.php");
 					break;
-				
 				case 'Document' :
 					include ("./controlleur/voir_docu.php");
 					break;

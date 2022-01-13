@@ -60,7 +60,7 @@
     5 choix max
 <input name="numChoices" type="text" size="9" value="3">
 &nbsp;&nbsp;
-<input type="button" value="Valider" onclick="react(this.form)">
+<button type="submit" value="questionnaire" name="action" class="btn btn-primary">Valider</button><br>
 </form>
 
 <!-- The Quiz creator was created by Charity Kahn, charity@cnet.com -->

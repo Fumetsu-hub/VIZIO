@@ -8,7 +8,7 @@ if (empty($_SESSION['id_user']))
 
 require('./model/ques_rep.php');
 
-$title = "questionnaire";
+$title = "ques_rep";
     
 require('./view/ques_rep.php');
 
