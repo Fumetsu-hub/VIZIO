@@ -46,6 +46,12 @@ session_start();
 				case 'supprimer_patient':
 					include("./controlleur/supprimer_patient.php");
 					break;
+				case 'ques_rep':
+					include("./controlleur/ques_rep.php");
+					break;
+				case 'questionnaire':
+					include("./controlleur/questionnaire.php");
+					break;
 				case 'Document' :
 					include ("./controlleur/voir_docu.php");
 					break;

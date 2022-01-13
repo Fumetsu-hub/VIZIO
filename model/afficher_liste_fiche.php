@@ -25,8 +25,7 @@ if(isset($_POST['action']))
   }
   else
   {
-    unset($_SESSION['recherche_prenom']);
-    unset($_SESSION['recherche_nom']);
+    unset($_SESSION['mot_cle']);
     unset($_SESSION['recherche_fiche']);
   }
 }

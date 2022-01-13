@@ -34,11 +34,17 @@ include('./utilitaire/popup_recherche.php');
     $_SESSION['recherche_sexe'] = $sexe;
   }
 
+  if(!empty($_POST['email']))
+  {
+    $email = $_POST['email'];
+    $_SESSION['recherche_email'] = $email;
+  }
+
   // enregistre la derniere recherche faite pour pouvoir faire marche les "pages suivantes"
   if(isset($_SESSION['recherche_prenom'])){$prenom = $_SESSION['recherche_prenom'];}  
   if(isset($_SESSION['recherche_nom'])){$nom = $_SESSION['recherche_nom'];}
   if(isset($_SESSION['recherche_sexe'])){$sexe = $_SESSION['recherche_sexe'];}
-  
+  if(isset($_SESSION['recherche_email'])){$email = $_SESSION['recherche_email'];}
 ?>
 
 <div style="background-color: #f3f3f2;">
@@ -47,9 +53,9 @@ include('./utilitaire/popup_recherche.php');
 
     <div class="popup-btn btn btn-primary">
       <a>Rechercher</a>
-    </div><br><hr>
+    </div><br>
 
-    <table  style="background-color:#FFF; font-size:20px; " class="table table-striped table-hover">
+    <table  style="background-color:#FFF; font-size:20px; " class=" mt-2 table table-striped table-hover">
         <thead>
         <tr>
         <th class="hidden-sm hidden-md" valign=""><strong>No Patient</strong></th>
@@ -65,7 +71,7 @@ include('./utilitaire/popup_recherche.php');
         <?php
             $count=1;
 
-            if(isset($prenom) or isset($nom) or isset($sexe)) // si une recherche est effectuée :
+            if(isset($prenom) or isset($nom) or isset($sexe) or isset($email)) // si une recherche est effectuée :
             {
               // recherche par nom et prenom et sexe
               if(isset($prenom) and isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient'";}
@@ -75,6 +81,7 @@ include('./utilitaire/popup_recherche.php');
               else if(isset($prenom) and !isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND statut='patient'";}
               // recherche par nom
               else if(!isset($prenom) and isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND statut='patient'";}
+              
               // recherche par sexe
               else if(!isset($prenom) and !isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND statut='patient'";}
               // recherche par sexe et prenom
@@ -82,6 +89,23 @@ include('./utilitaire/popup_recherche.php');
               // recherche par sexe et nom
               else if(!isset($prenom) and isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND nom LIKE '%$nom%' AND statut='patient'";}
             
+              // recherche par nom et prenom et sexe et email
+              else if(isset($prenom) and isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
+              // recherche par nom et prenom et email
+              else if(isset($prenom) and isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND statut='patient' AND mail LIKE '%$email%'";}
+              // recherche par nom et sexe et email
+              else if(!isset($prenom) and isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
+              // recherche par prenom et sexe et email
+              else if(isset($prenom) and !isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
+              // recherche par email
+              else if(!isset($prenom) and !isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE statut='patient' AND mail LIKE '%$email%'";}
+              // recherche par sexe et email
+              else if(!isset($prenom) and !isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND mail LIKE '%$email%' AND statut='patient'";}
+              // recherche par email et nom
+              else if(!isset($prenom) and isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND mail LIKE '%$email%' AND statut='patient'";}
+              // recherche par email et prenom
+              else if(isset($prenom) and !isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND mail LIKE '%$email%' AND statut='patient'";}
+              
               $result = mysqli_query($base,$sel_query);
               while($row = mysqli_fetch_assoc($result))  //rentre dans des tableaux sessions les données des patients
               {
@@ -97,7 +121,7 @@ include('./utilitaire/popup_recherche.php');
               if(!isset($_SESSION['patient_a_afficher']))$_SESSION['patient_a_afficher']=1; //initialise la variable qui va servire à afficher les 10 dossiers de la page
 
               if(isset($_SESSION['recherche_multicritere']))$_SESSION['patient_a_afficher'] += $_SESSION['recherche_multicritere']; // ajoute -10 ou 10 en fonction de page suivante ou page précédente
-              $_SESSION['recherche_multicritere']=0; // reset recherche_multicritere une fois l'information récupérée
+              //$_SESSION['recherche_multicritere']=0; // reset recherche_multicritere une fois l'information récupérée
 
               if($_SESSION['patient_a_afficher']<1) // empêche d'afficher des dossiers inexistant
               {
@@ -107,6 +131,17 @@ include('./utilitaire/popup_recherche.php');
               {
                   $_SESSION['patient_a_afficher'] -= 10;
               }
+
+              // ----- Cette partie sert à revenir à la page 1 lors d'une nouvelle recherche ------
+              if(isset($_SESSION['recherche_multicritere']))
+              {
+                if($_SESSION['recherche_multicritere'] == 0)
+                {
+                  $_SESSION['patient_a_afficher'] = 1;
+                }
+              }
+              $_SESSION['recherche_multicritere']=0; // reset recherche_multicritere
+              // ---------- fin partie -----------
               
               for($z=$_SESSION['patient_a_afficher']; $z<=$_SESSION['patient_a_afficher']+9; $z++) // boucle qui affiche les 10 dossiers
               {
@@ -143,9 +178,9 @@ include('./utilitaire/popup_recherche.php');
         ?>
 
         </tbody>
-    </table><hr>
+    </table>
 
-    <div class="row">
+    <div class="row mt-3">
     <form class="col-sm-offset-4 col-sm-2" action="" method="POST">
         <input value = -10 name="recherche_multicritere" type="hidden" id="recherche_multicritere">
         <button class="btn btn-primary" type="submit" value="recherche_multicritere" name ="action">Page précédente</button>
