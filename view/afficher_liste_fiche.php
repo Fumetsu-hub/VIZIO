@@ -40,9 +40,9 @@ include('./utilitaire/popup_recherche_fiche.php');
 
     <div class="popup-btn btn btn-primary">
       <a>Rechercher</a>
-    </div><br><hr>
+    </div><br>
 
-    <table  style="background-color:#FFF; font-size:20px; " class="table table-striped table-hover">
+    <table  style="background-color:#FFF; font-size:20px; " class="mt-2 table table-striped table-hover">
         <thead>
         <tr>
         <th class="hidden-sm hidden-md" valign=""><strong>No Fiche</strong></th>
@@ -108,13 +108,24 @@ include('./utilitaire/popup_recherche_fiche.php');
                   ?>
                   <tr valign="middle">
                   <td  class="hidden-sm hidden-md" align="left"><strong><?php echo$z; ?></strong> </td>
-                  <td  align="left"><?php echo$_SESSION["date_fiche"][$z]; ?></td>
+                  <td  align="left">
+                    <?php 
+                    //Affiche la date   (le php sert à changer le format de la date)
+
+                    $date = $_SESSION["date_fiche"][$z];
+                    // Création du timestamp à partir du date donnée
+                    $timestamp = strtotime($date);
+                    // Créer le nouveau format à partir du timestamp
+                    $date = date("d-m-Y", $timestamp);
+                    echo$date;
+                    ?>
+                  </td>
                   <td  class="hidden-sm hidden-md" align="left"><?php echo$_SESSION["type_fiche"][$z]; ?></td>
                   <td class="hidden-sm" align="left"><?php echo$_SESSION["user_fiche"][$z]; ?></td>
                   <td align="left"> <!--Boutons-->
                       <form action="" method="POST">
                           <input value =<?php echo$_SESSION["id_patients"][$z]; ?> name="id_dossier_patient" type="hidden" id="id_dossier_patient"> <!-- sert à attribuer l'id du patient au bouton correspondant -->
-                          <button class="btn btn-primary" type="submit" value="afficher_dossier_patient" name ="action">Voir fiche</button>
+                          <button class="btn btn-dark" type="submit" value="afficher_dossier_patient" name ="action">Voir fiche</button>
                       </form>
                   </td> <!--Fin Boutons-->
                   </tr>
@@ -123,7 +134,7 @@ include('./utilitaire/popup_recherche_fiche.php');
         ?>
 
         </tbody>
-    </table><hr>
+    </table>
 
     <div class="row">
     <form class="col-sm-offset-4 col-sm-2" action="" method="POST">
