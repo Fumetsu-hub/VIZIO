@@ -23,7 +23,7 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
                        if ($toto)
                        {
                         echo "L'envoi a bien été effectué !";
-                        $req = $base->query('INSERT INTO document (doc_bin , doc_name, id) VALUES(site/, "test", "2")');
+                        $req = $base->query('INSERT INTO document VALUES("","","test",site/');
                        }
                        else
                        {
