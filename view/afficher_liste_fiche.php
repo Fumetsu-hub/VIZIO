@@ -35,7 +35,7 @@ include('./utilitaire/popup_recherche_fiche.php');
 ?>
 
 <div style="background-color: #f3f3f2;">
-<br><br><h1 style="text-align:center;">Fiches consultation</h1><br><br>
+<br><br><h1 style="text-align:center;">Fiches consultation de <br><?php echo$_SESSION['nom_pat']." ".$_SESSION['prenom_pat']?></h1><br><br>
 <div class="container">
 
     <div class="popup-btn btn btn-primary">
@@ -45,10 +45,10 @@ include('./utilitaire/popup_recherche_fiche.php');
     <table  style="background-color:#FFF; font-size:20px; " class="mt-2 table table-striped table-hover">
         <thead>
         <tr>
-        <th class="hidden-sm hidden-md" valign=""><strong>No Fiche</strong></th>
+        <th class="hidden-sm hidden-md" valign=""><strong>Numero Fiche</strong></th>
         <th><strong>Date</strong></th>
         <th class="hidden-sm hidden-md"><strong>Type</strong></th>
-        <th class="hidden-sm"><strong>Patient</strong></th>
+        <th class="hidden-sm hidden-md"><strong>Action</strong></th>
         <th></th>
         </tr>
         </thead>
@@ -59,17 +59,17 @@ include('./utilitaire/popup_recherche_fiche.php');
 
             if (!empty($_POST['mot_cle']) or !empty($_POST['date_fiche']))
             {
-              if(!empty($_POST['mot_cle']) and empty($_POST['date_fiche']))
+              if(!empty($_POST['mot_cle']) and empty($_POST['date_fiche'])) // mot clé
               {
-                $sel_query="SELECT user2, date, type FROM consultation WHERE user2='$id_dossier_patient' AND description LIKE '%$mot_cle%'";
+                $sel_query="SELECT user2, date, type FROM consultation WHERE user2='$id_dossier_patient' AND description LIKE '%$mot_cle%' OR type LIKE '%$mot_cle%'";
               }
-              else if(empty($_POST['mot_cle']) and !empty($_POST['date_fiche']))
+              else if(empty($_POST['mot_cle']) and !empty($_POST['date_fiche'])) // date fiche
               {
                 $sel_query="SELECT user2, date, type FROM consultation WHERE user2='$id_dossier_patient' AND date LIKE '%$date_fiche%'";
               }
-              else if(!empty($_POST['mot_cle']) and !empty($_POST['date_fiche']))
+              else if(!empty($_POST['mot_cle']) and !empty($_POST['date_fiche'])) // mot clé et date fiche
               {
-                  $sel_query="SELECT user2, date, type FROM consultation WHERE user2='$id_dossier_patient' AND date LIKE '%$date_fiche%' AND description LIKE '%$mot_cle%'";
+                  $sel_query="SELECT user2, date, type FROM consultation WHERE user2='$id_dossier_patient' AND date LIKE '%$date_fiche%' AND description LIKE '%$mot_cle%' OR type LIKE '%$mot_cle%'";
               }
             }
             else
@@ -121,7 +121,6 @@ include('./utilitaire/popup_recherche_fiche.php');
                     ?>
                   </td>
                   <td  class="hidden-sm hidden-md" align="left"><?php echo$_SESSION["type_fiche"][$z]; ?></td>
-                  <td class="hidden-sm" align="left"><?php echo$_SESSION["user_fiche"][$z]; ?></td>
                   <td align="left"> <!--Boutons-->
                       <form action="" method="POST">
                           <input value =<?php echo$_SESSION["id_patients"][$z]; ?> name="id_dossier_patient" type="hidden" id="id_dossier_patient"> <!-- sert à attribuer l'id du patient au bouton correspondant -->

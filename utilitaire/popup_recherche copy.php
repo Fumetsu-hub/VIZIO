@@ -39,13 +39,6 @@
     </div>
 
     <div class="mt-3">
-      <label for="date_n">Date de naissance</label>
-      <div class="input-group">
-      <input name = "date_n" type="date" class="form-control">
-      </div>
-    </div>
-
-    <div class="mt-3">
     <label for="exampleFormControlSelect2">Sexe</label>
     <select name = "sexe" class="form-control">
     <option value="">Vide</option>

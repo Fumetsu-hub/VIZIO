@@ -40,11 +40,18 @@ include('./utilitaire/popup_recherche.php');
     $_SESSION['recherche_email'] = $email;
   }
 
+  if(!empty($_POST['date_n']))
+  {
+    $date_n = $_POST['date_n'];
+    $_SESSION['recherche_date_n'] = $date_n;
+  }
+
   // enregistre la derniere recherche faite pour pouvoir faire marche les "pages suivantes"
   if(isset($_SESSION['recherche_prenom'])){$prenom = $_SESSION['recherche_prenom'];}  
   if(isset($_SESSION['recherche_nom'])){$nom = $_SESSION['recherche_nom'];}
   if(isset($_SESSION['recherche_sexe'])){$sexe = $_SESSION['recherche_sexe'];}
   if(isset($_SESSION['recherche_email'])){$email = $_SESSION['recherche_email'];}
+  if(isset($_SESSION['recherche_date_n'])){$date_n = $_SESSION['recherche_date_n'];}
 ?>
 
 <div style="background-color: #f3f3f2;">
@@ -71,41 +78,85 @@ include('./utilitaire/popup_recherche.php');
         <?php
             $count=1;
 
-            if(isset($prenom) or isset($nom) or isset($sexe) or isset($email)) // si une recherche est effectuée :
+            if(isset($date_n) or isset($prenom) or isset($nom) or isset($sexe) or isset($email)) // si une recherche est effectuée :
             {
               // recherche par nom et prenom et sexe
-              if(isset($prenom) and isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient'";}
+              if(isset($prenom) and isset($nom) and isset($sexe) and !isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient'";}
               // recherche par nom et prenom
-              else if(isset($prenom) and isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND statut='patient'";}
+              else if(isset($prenom) and isset($nom) and !isset($sexe) and !isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND statut='patient'";}
               // recherche par prenom
-              else if(isset($prenom) and !isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND statut='patient'";}
+              else if(isset($prenom) and !isset($nom) and !isset($sexe) and !isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND statut='patient'";}
               // recherche par nom
-              else if(!isset($prenom) and isset($nom) and !isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND statut='patient'";}
+              else if(!isset($prenom) and isset($nom) and !isset($sexe) and !isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND statut='patient'";}
               
               // recherche par sexe
-              else if(!isset($prenom) and !isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND statut='patient'";}
+              else if(!isset($prenom) and !isset($nom) and isset($sexe) and !isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND statut='patient'";}
               // recherche par sexe et prenom
-              else if(isset($prenom) and !isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND prenom LIKE '%$prenom%' AND statut='patient'";}
+              else if(isset($prenom) and !isset($nom) and isset($sexe) and !isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND prenom LIKE '%$prenom%' AND statut='patient'";}
               // recherche par sexe et nom
-              else if(!isset($prenom) and isset($nom) and isset($sexe)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND nom LIKE '%$nom%' AND statut='patient'";}
+              else if(!isset($prenom) and isset($nom) and isset($sexe) and !isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND nom LIKE '%$nom%' AND statut='patient'";}
             
               // recherche par nom et prenom et sexe et email
-              else if(isset($prenom) and isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
+              else if(isset($prenom) and isset($nom) and isset($sexe) and isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
               // recherche par nom et prenom et email
-              else if(isset($prenom) and isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND statut='patient' AND mail LIKE '%$email%'";}
+              else if(isset($prenom) and isset($nom) and !isset($sexe) and isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND statut='patient' AND mail LIKE '%$email%'";}
               // recherche par nom et sexe et email
-              else if(!isset($prenom) and isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
+              else if(!isset($prenom) and isset($nom) and isset($sexe) and isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
               // recherche par prenom et sexe et email
-              else if(isset($prenom) and !isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
+              else if(isset($prenom) and !isset($nom) and isset($sexe) and isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
               // recherche par email
-              else if(!isset($prenom) and !isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE statut='patient' AND mail LIKE '%$email%'";}
+              else if(!isset($prenom) and !isset($nom) and !isset($sexe) and isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE statut='patient' AND mail LIKE '%$email%'";}
               // recherche par sexe et email
-              else if(!isset($prenom) and !isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND mail LIKE '%$email%' AND statut='patient'";}
+              else if(!isset($prenom) and !isset($nom) and isset($sexe) and isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND mail LIKE '%$email%' AND statut='patient'";}
               // recherche par email et nom
-              else if(!isset($prenom) and isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND mail LIKE '%$email%' AND statut='patient'";}
+              else if(!isset($prenom) and isset($nom) and !isset($sexe) and isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND mail LIKE '%$email%' AND statut='patient'";}
               // recherche par email et prenom
-              else if(isset($prenom) and !isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND mail LIKE '%$email%' AND statut='patient'";}
+              else if(isset($prenom) and !isset($nom) and !isset($sexe) and isset($email) and !isset($date_n)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND mail LIKE '%$email%' AND statut='patient'";}
               
+              // ----------------------------------------------------------------date-----------------------------------------------------------------------
+
+              // recherche par nom et prenom et sexe et email et date_n
+              else if(isset($date_n) and isset($prenom) and isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%' AND date_n = '$date_n'";}
+              
+              // recherche par nom et prenom et email et date_n
+              else if(isset($date_n) and isset($prenom) and isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND date_n = '$date_n' AND prenom LIKE '%$prenom%' AND statut='patient' AND mail LIKE '%$email%'";}
+              // recherche par nom et sexe et email et date_n
+              else if(isset($date_n) and !isset($prenom) and isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND date_n = '$date_n' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
+              // recherche par prenom et sexe et email et date_n
+              else if(isset($date_n) and isset($prenom) and !isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND date_n = '$date_n' AND sexe='$sexe' AND statut='patient' AND mail LIKE '%$email%'";}
+              // recherche par prenom et nom et sexe et date_n
+              else if(isset($date_n) and isset($prenom) and isset($nom) and isset($sexe) and !isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND date_n = '$date_n' AND sexe='$sexe' AND statut='patient' AND nom LIKE '%$nom%'";}
+
+              // recherche par nom et prenom et date_n
+              else if(isset($date_n) and isset($prenom) and isset($nom) and !isset($sexe) and !isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND prenom LIKE '%$prenom%' AND statut='patient' AND date_n = '$date_n'";}
+              // recherche par nom et email et date_n
+              else if(isset($date_n) and !isset($prenom) and isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND mail LIKE '%$email%' AND statut='patient' AND date_n = '$date_n'";}
+              // recherche par nom et sexe et date_n
+              else if(isset($date_n) and !isset($prenom) and isset($nom) and isset($sexe) and !isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND sexe = '$sexe' AND statut='patient' AND date_n = '$date_n'";}
+              // recherche par prenom et email et date_n
+              else if(isset($date_n) and isset($prenom) and !isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND mail LIKE '%$email%' AND statut='patient' AND date_n = '$date_n'";}
+              // recherche par prenom et sexe et date_n
+              else if(isset($date_n) and isset($prenom) and !isset($nom) and isset($sexe) and !isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND sexe = '$sexe' AND statut='patient' AND date_n = '$date_n'";}
+              // recherche par email et sexe et date_n
+              else if(isset($date_n) and !isset($prenom) and !isset($nom) and isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE mail LIKE '%$email%' AND sexe = '$sexe' AND statut='patient' AND date_n = '$date_n'";}
+
+              // recherche par date_n et prenom
+              else if(isset($date_n) and isset($prenom) and !isset($nom) and !isset($sexe) and !isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE prenom LIKE '%$prenom%' AND date_n = '$date_n' AND statut='patient'";}
+              // recherche par date_n et nom
+              else if(isset($date_n) and !isset($prenom) and isset($nom) and !isset($sexe) and !isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE nom LIKE '%$nom%' AND date_n = '$date_n' AND statut='patient'";}
+              // recherche par date_n et sexe
+              else if(isset($date_n) and !isset($prenom) and !isset($nom) and isset($sexe) and !isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE sexe='$sexe' AND date_n = '$date_n' AND statut='patient'";}
+              // recherche par date_n et email
+              else if(isset($date_n) and !isset($prenom) and !isset($nom) and !isset($sexe) and isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE mail LIKE '%$email%' AND date_n = '$date_n' AND statut='patient'";}
+
+              // recherche par date_n
+              else if(isset($date_n) and !isset($prenom) and !isset($nom) and !isset($sexe) and !isset($email)){$sel_query="SELECT id, nom, prenom, mail, date_n, sexe, tel ,statut FROM user WHERE statut='patient' AND date_n = '$date_n'";}
+
+              // ---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
               $result = mysqli_query($base,$sel_query);
               while($row = mysqli_fetch_assoc($result))  //rentre dans des tableaux sessions les données des patients
               {
