@@ -28,7 +28,7 @@ include('./utilitaire/db_connexion.php');
     echo '<img src="data:image/jpeg;base64,'.base64_encode( $toto['doc_bin'] ).'"/>';
  }
  else{
-     echo("probleme");
+     echo("il n'y a aucun document a consulter");
  }
  ?>
   <br>
