@@ -20,6 +20,7 @@
          <div class="nav-items">
             <li><a href="index.php?action=accueil">Accueil</a></li>
             <li><a href="index.php?action=liste_dossier_patient">Dossier patient</a></li>
+            <li><a href="index.php?action=ques_rep">Questionnaires</a></li>
             <li><a href="index.php?action=afficher_profil">Mon profil</a></li>
             <li><a href="index.php?action=LOGOUT">Se déconnecter</a></li>
          </div>

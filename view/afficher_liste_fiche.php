@@ -135,7 +135,10 @@ include('./utilitaire/popup_recherche_fiche.php');
         </tbody>
     </table>
 
-    <div class="row">
+    <form action="./index.php" method="GET">
+      <button type="submit" value="creer_fiche_consultation" name="action" class="btn btn-primary">Créer fiche</button>
+    </form>
+    <div class="mt-4 row">
     <form class="col-sm-offset-4 col-sm-2" action="" method="POST">
         <input value = -10 name="recherche_multicritere" type="hidden" id="recherche_multicritere">
         <button class="btn btn-primary" type="submit" value="recherche_multicritere" name ="action">Page précédente</button>
