@@ -29,6 +29,7 @@ if(isset($_POST['action']))
     unset($_SESSION['recherche_nom']);
     unset($_SESSION['recherche_sexe']);
     unset($_SESSION['recherche_email']);
+    unset($_SESSION['recherche_date_n']);
   }
 }
 
