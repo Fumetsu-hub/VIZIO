@@ -16,6 +16,7 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
                 $infosfichier = pathinfo($_FILES['monfichier']['name']);
                 $extension_upload = $infosfichier['extension'];
                 $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
+                $req = $base->query('INSERT INTO doc_bin VALUES("'.$_FILES['monfichier']['name'].'")');
                 if (in_array($extension_upload, $extensions_autorisees))
                 {
                         // On peut valider le fichier et le stocker définitivement
