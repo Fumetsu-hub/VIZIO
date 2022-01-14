@@ -60,6 +60,13 @@ include('./utilitaire/db_connexion.php');
             $sql = 'INSERT INTO user VALUES("", "'.$nom.'", "'.$prenom.'", "", "'.$mail.'", "'.$date_n.'", "'.$sex.'", "'.$tel.'", "patient")';
             mysqli_query($base, $sql) or die('Erreur : '.$sql.'<br />'.mysqli_error($base));
             $reussite = "Dossier patient créé !";
+
+            // vide les champs quand le dossier patient est créé
+            unset($nom);
+            unset($prenom);
+            unset($date_n);
+            unset($tel);
+            unset($mail);
       
             }}}}}}
         }
