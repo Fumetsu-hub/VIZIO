@@ -10,7 +10,6 @@ include('./utilitaire/bootstrap.php');
 include('./utilitaire/barre_de_navigation.php');
 //popup recherche
 include('./utilitaire/popup_recherche_fiche.php');
-
 ?>
 
 <?php
