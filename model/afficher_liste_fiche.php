@@ -3,12 +3,12 @@
  <?php
 if(isset($_POST['action']))
 {
-  if(isset($_POST['id_dossier_patient']))
+  if(isset($_POST['id_fiche']))
   {
-    if(!empty($_POST['id_dossier_patient']))
+    if(!empty($_POST['id_fiche']))
     {
-      $_SESSION['id_dossier_patient'] = $_POST['id_dossier_patient'];
-      header("Refresh:0; url=index.php?action=afficher_dossier_patient"); // redirige vers "afficher dossier patient"
+      $_SESSION['id_fiche_afficher'] = $_POST['id_fiche'];
+      header("Refresh:0; url=index.php?action=afficher_fiche_consultation"); // redirige vers "afficher dossier patient"
     }
   }
 }
