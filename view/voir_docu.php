@@ -28,14 +28,15 @@ include('./utilitaire/db_connexion.php');
     echo '<img src="data:image/jpeg;base64,'.base64_encode( $toto['doc_bin'] ).'"/>';
  }
  else{
-     echo("il n'y a aucun document a consulter");
+     echo("Il n'y a aucun document a consulter");
  }
  ?>
+ <br>
   <br>
     <form action="./index.php" method="GET">
             <button type="submit" value="ajouter" name="action" class="btn btn-dark">Ajouter document</button>
     </form><br>
-    <br>
+    
     <form action="./index.php" method="GET">
             <button type="submit" value="supprimer_document" name="action" class="btn btn-dark">Supprimer document</button>
     </form><br>

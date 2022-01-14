@@ -10,7 +10,6 @@ include('./utilitaire/bootstrap.php');
 include('./utilitaire/barre_de_navigation.php');
 //popup recherche
 include('./utilitaire/popup_recherche_fiche.php');
-
 ?>
 
 <?php
@@ -74,12 +73,13 @@ include('./utilitaire/popup_recherche_fiche.php');
             }
             else
             {
-              $sel_query="SELECT user2, date, type FROM consultation WHERE user2='$id_dossier_patient'";
+              $sel_query="SELECT id, user2, date, type FROM consultation WHERE user2='$id_dossier_patient'";
             }
 
               $result = mysqli_query($base,$sel_query);
               while($row = mysqli_fetch_assoc($result))  //rentre dans des tableaux sessions les données des patients
               {
+                  $_SESSION["id_fiche"][$count] = $row["id"];
                   $_SESSION["date_fiche"][$count] = $row["date"];
                   $_SESSION["type_fiche"][$count] = $row["type"];
                   $_SESSION["user_fiche"][$count] = $row["user2"];
@@ -123,8 +123,8 @@ include('./utilitaire/popup_recherche_fiche.php');
                   <td  class="hidden-sm hidden-md" align="left"><?php echo$_SESSION["type_fiche"][$z]; ?></td>
                   <td align="left"> <!--Boutons-->
                       <form action="" method="POST">
-                          <input value =<?php echo$_SESSION["id_patients"][$z]; ?> name="id_dossier_patient" type="hidden" id="id_dossier_patient"> <!-- sert à attribuer l'id du patient au bouton correspondant -->
-                          <button class="btn btn-dark" type="submit" value="afficher_dossier_patient" name ="action">Voir fiche</button>
+                          <input value =<?php echo$_SESSION["id_fiche"][$z]; ?> name="id_fiche" type="hidden" id="id_fiche"> <!-- sert à attribuer l'id du patient au bouton correspondant -->
+                          <button class="btn btn-dark" type="submit" value="afficher_fiche_consultation" name ="action">Voir fiche</button>
                       </form>
                   </td> <!--Fin Boutons-->
                   </tr>
@@ -135,7 +135,10 @@ include('./utilitaire/popup_recherche_fiche.php');
         </tbody>
     </table>
 
-    <div class="row">
+    <form action="./index.php" method="GET">
+      <button type="submit" value="creer_fiche_consultation" name="action" class="btn btn-primary">Créer fiche</button>
+    </form>
+    <div class="mt-4 row">
     <form class="col-sm-offset-4 col-sm-2" action="" method="POST">
         <input value = -10 name="recherche_multicritere" type="hidden" id="recherche_multicritere">
         <button class="btn btn-primary" type="submit" value="recherche_multicritere" name ="action">Page précédente</button>

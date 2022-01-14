@@ -67,6 +67,12 @@ session_start();
 				case 'afficher_liste_fiche':
 					include("./controlleur/afficher_liste_fiche.php");
 					break;
+				case 'afficher_fiche_consultation':
+					include("./controlleur/afficher_fiche_consultation.php");
+					break;
+				case 'creer_fiche_consultation':
+					include("./controlleur/creer_fiche_consultation.php");
+					break;
 			}
 		}
 	}
