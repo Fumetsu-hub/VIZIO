@@ -43,7 +43,7 @@ include('./utilitaire/db_connexion.php');
             if($age_verif <= 0 or $age_verif > 150){$erreur_date = "Votre date de naissance n'est pas valide";unset($date_n);}else{
 
             //Vérification du numéro de téléphone
-            if(strlen($tel)!=10){$erreur_tel = "Le numéro de téléphone n'est pas valide";unset($tel);}else{
+            if(strlen($tel)!=10 or !ctype_digit($tel)){$erreur_tel = "Le numéro de téléphone n'est pas valide";unset($tel);}else{
 
             //Vérification si l'email est déjà utilisée
             $sql = "SELECT mail FROM user WHERE mail = '$mail'";

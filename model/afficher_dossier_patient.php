@@ -23,7 +23,7 @@ include('./utilitaire/db_connexion.php');
     $_SESSION['prenom_pat'] = $info_patient['prenom'];
     $_SESSION['mail_pat'] = $info_patient['mail'];
     $_SESSION['mdp_pat'] = $info_patient['mdp'];
-
+    $_SESSION['tel_pat'] = $info_patient['tel'];
 
     # Déterminer l'âge
     $from = new DateTime($data["date_n"]);

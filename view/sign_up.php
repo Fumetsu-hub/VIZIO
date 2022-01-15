@@ -111,7 +111,7 @@
                  <tr>
                      <td>
                      <br><label for="tel">Telephone</label>
-                         <input class="form-control" type="tel" name="tel" value="<?php if(isset($tel))echo$tel; ?>">
+                         <input class="form-control" type="tel" pattern="[0-9]{10}" name="tel" value="<?php if(isset($tel))echo$tel; ?>">
                      </td>
                  </tr>
                  <tr>

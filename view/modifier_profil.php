@@ -26,11 +26,14 @@ include('./utilitaire/popup_profil.php');
             <label><b>Nom</b></label><br>
             <input class="form-control w-25 p-1" type="text" value =  "<?php echo$_SESSION['nom'] ?>" name="newnom">
             <?php
-             if (preg_match('/1|2|3|4|5|6|7|8|9/i', $_SESSION['nom'])){$erreur_nom = "Votre nom n'est pas valide";unset($nom);}else{
             if(isset($succes_modify_nom))
             {
                 echo '<div class = "succes">' . $succes_modify_nom . '</div>';
-            }}
+            }
+            if(isset($erreur_nom_modif))
+            {
+                echo '<div class = "succes">' . $erreur_nom_modif . '</div>';
+            }
             ?>
             
             <input type="submit" id='modify_submit' value='Modifier' name ='action' class="btn btn-warning">
@@ -40,12 +43,14 @@ include('./utilitaire/popup_profil.php');
             <label><b>Prénom</b></label><br>
             <input class="form-control w-25 p-1" type="text" value =  "<?php echo$_SESSION['prenom'] ?>" name="newprenom">
             <?php
-            if (preg_match('/1|2|3|4|5|6|7|8|9/i', $_SESSION['prenom'])){$erreur_prenom = "Votre prénom n'est pas valide";unset($prenom);}else{
-
             if(isset($succes_modify_prenom))
             {
                 echo '<div class = "succes">' . $succes_modify_prenom . '</div>';
-            }}
+            }
+            if(isset($erreur_prenom_modif))
+            {
+                echo '<div class = "succes">' . $erreur_prenom_modif . '</div>';
+            }
             ?>
             
             <input type="submit" id='modify_submit' value='Modifier' name ='action' class="btn btn-warning">
@@ -55,36 +60,50 @@ include('./utilitaire/popup_profil.php');
             <label><b>Mail</b></label><br>
             <input class="form-control w-25 p-1" type="email" value = "<?php echo$_SESSION['mail'] ?>" name="newmail">
             <?php
-            if(strpos($_SESSION['nom'], "@") == FALSE){$erreur_email = "Le mail n'est pas valide";unset($mail);}else{
             if(isset($succes_modify_email))
             {
                 echo '<div class = "succes">' . $succes_modify_email . '</div>';
-            }}
+            }
+            if(isset($erreur_email_modif))
+            {
+                echo '<div class = "succes">' . $erreur_email_modif . '</div>';
+            }
             ?>
            
             <input type="submit" id='modify_submit' value='Modifier' name ='action' class="btn btn-warning">
             </form><br>
 
             <form action="" method="POST">
+            <label><b>Téléphone</b></label><br>
+            <input class="form-control w-25 p-1" type="tel" pattern="[0-9]{10}" value = "<?php echo$_SESSION['tel'] ?>" name="newtel">
+            <?php
+            if(isset($succes_tel_modif))
+            {
+                echo '<div class = "succes">' . $succes_tel_modif . '</div>';
+            }
+            ?>
+
+            <input type="submit" id='modify_submit' value='Modifier' name ='action' class="btn btn-warning">
+            </form><br>
+
+            <form action="" method="POST">
             <label><b>Mot de passe</b></label><br>
-            <input class="form-control w-25 p-1" type="password"  value=  "<?php echo$_SESSION['mdp'] ?>" name="newmdp">
+            <input class="form-control w-25 p-1" type="password" value="" name="newmdp">
+
+           <form action="" method="POST">
+            <label class="mt-3"><b>Confirmation mot de passe</b></label><br>
+            <input class="form-control w-25 p-1" type="password" name="newmdp_confirm">
             <?php
             if(isset($succes_modify_password))
             {
                 echo '<div class = "succes">' . $succes_modify_password . '</div>';
             }
-            
-            ?><br>
-           <form action="" method="POST">
-            <label><b>Confirmation de mot de passe</b></label><br>
-            <input class="form-control w-25 p-1" type="password" placeholder = "confirmation de mot de passe" name="mdp2">
-            <?php
-            if(isset($succes_modify_password_2))
+            if(isset($erreur_mdp_modif))
             {
-                echo '<div class = "succes">' . $succes_modify_password_2 . '</div>';
+                echo '<div class = "succes">' . $erreur_mdp_modif . '</div>';
             }
             ?>
-           
+
             <input type="submit" id='modify_submit' value='Modifier' name ='action' class="btn btn-warning">
             </form><br>
 
