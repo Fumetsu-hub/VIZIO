@@ -36,7 +36,7 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
                          
  
                 }
-        }
+        //}
  }     
 //$req = $base->query('INSERT INTO document (doc_bin) VALUES('$doc_bin')');
  
@@ -64,5 +64,5 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
       //  echo "Veuillez sélectionner une image à uploader.";
     //}
 //}
-header("Refresh:0; url=../index.php?action=Document");
+//header("Refresh:0; url=../index.php?action=Document");
 ?>
