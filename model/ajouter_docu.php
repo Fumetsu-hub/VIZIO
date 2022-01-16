@@ -16,27 +16,27 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
                 $infosfichier = pathinfo($_FILES['monfichier']['name']);
                 $extension_upload = $infosfichier['extension'];
                 $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
-                //$req = $base->query('INSERT INTO doc_bin VALUES("'.$_FILES['monfichier']['name'].'")');
-                if (in_array($extension_upload, $extensions_autorisees))
-                {
+                $req = $base->query('INSERT INTO document VALUES("'.$_SESSION["id_user"].'","'.$_SESSION["id_dossier_patient"].'","document","'.$_FILES['monfichier']['name'].'")');
+                //if (in_array($extension_upload, $extensions_autorisees))
+                //{
                         // On peut valider le fichier et le stocker définitivement
-                       $toto= move_uploaded_file($_FILES['monfichier']['tmp_name'], 'site/');
-                       if ($toto)
-                       {
-                         $docu = 'site/';
-                         echo($docu);
-                        echo "L'envoi a bien été effectué !";
-                        $req = $base->query('INSERT INTO document VALUES("","","test","'.$docu.'"');
-                       }
-                       else
-                       {
-                        echo "L'envoi a raté";
-                       }
+                      // $toto= move_uploaded_file($_FILES['monfichier']['tmp_name'], 'site/');
+                       //if ($toto)
+                       //{
+                         //$docu = 'site/';
+                         //echo($docu)
+                        //echo "L'envoi a bien été effectué !";
+                        //$req = $base->query('INSERT INTO document VALUES("","","test","'.$docu.'"');
+                      // }
+                       //else
+                       //{
+                        //echo "L'envoi a raté";
+                       //}
                         
                          
  
                 }
-        }
+        //}
  }     
 //$req = $base->query('INSERT INTO document (doc_bin) VALUES('$doc_bin')');
  
@@ -64,5 +64,5 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
       //  echo "Veuillez sélectionner une image à uploader.";
     //}
 //}
-header("Refresh:0; url=../index.php?action=Document");
+//header("Refresh:0; url=../index.php?action=Document");
 ?>

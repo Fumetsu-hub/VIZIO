@@ -140,29 +140,7 @@ CREATE TABLE IF NOT EXISTS `vizio`.`consultation` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `vizio`.`post`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `vizio`.`post` ;
 
-CREATE TABLE IF NOT EXISTS `vizio`.`post` (
-  `is` INT(11) NOT NULL AUTO_INCREMENT,
-  `quest/rep` INT(11) NULL DEFAULT NULL,
-  `consultation` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`is`),
-  INDEX `quest/rep_idx` (`quest/rep` ASC),
-  INDEX `consultation_idx` (`consultation` ASC),
-  CONSTRAINT `quest/rep`
-    FOREIGN KEY (`quest/rep`)
-    REFERENCES `vizio`.`quest/rep` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `consultation`
-    FOREIGN KEY (`consultation`)
-    REFERENCES `vizio`.`consultation` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
