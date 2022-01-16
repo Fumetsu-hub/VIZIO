@@ -20,7 +20,7 @@ include('./utilitaire/barre_de_navigation.php');
 include('./utilitaire/db_connexion.php');
 ?>
 <?php
- $id_img = $_SESSION["id_user"];
+ $id_img = $_SESSION["id_dossier_patient"];
  $sql_img = "SELECT doc_bin FROM document WHERE id = '$id_img'";
  $img_result =$base->query($sql_img);
  if($img_result->num_rows>0){
