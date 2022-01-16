@@ -16,7 +16,7 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
                 $infosfichier = pathinfo($_FILES['monfichier']['name']);
                 $extension_upload = $infosfichier['extension'];
                 $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
-                $req = $base->query('INSERT INTO document VALUES("'.$_SESSION["id_user"].'","'.$_SESSION["id_dossier_patient"].'","'.$_FILES['monfichier']['name'].'")');
+                $req = $base->query('INSERT INTO document VALUES("'.$_SESSION["id_user"].'","'.$_SESSION["id_dossier_patient"].'","document","'.$_FILES['monfichier']['name'].'")');
                 if (in_array($extension_upload, $extensions_autorisees))
                 {
                         // On peut valider le fichier et le stocker définitivement
