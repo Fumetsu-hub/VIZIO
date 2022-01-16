@@ -9,8 +9,14 @@
 // bootstrap
 include('./utilitaire/bootstrap.php');
 //navbar
-include('./utilitaire/barre_de_navigation.php');
-?>
+if($_SESSION['statut'] == "medecin")
+{
+        include('./utilitaire/barre_de_navigation_medecin.php');
+}
+else
+{
+        include('./utilitaire/barre_de_navigation_patient.php');
+}?>
 
 <div class="responsive_card card border-0 shadow rounded-3 my-5 container">
   <div class="card-body">

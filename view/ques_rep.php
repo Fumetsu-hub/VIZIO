@@ -2,7 +2,7 @@
     <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    
         <title>Générateur de QCM</title>
 
         <script language="php">
@@ -37,8 +37,14 @@
     <body>
         <?php
             include('./utilitaire/bootstrap.php');
-            include('./utilitaire/barre_de_navigation.php');
-            include('./utilitaire/popup_profil.php');
+            if($_SESSION['statut'] == "medecin")
+            {
+                    include('./utilitaire/barre_de_navigation_medecin.php');
+            }
+            else
+            {
+                    include('./utilitaire/barre_de_navigation_patient.php');
+            }            include('./utilitaire/popup_profil.php');
         ?>
         <div class="tout">
         <div class="container">

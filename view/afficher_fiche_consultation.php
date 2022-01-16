@@ -7,8 +7,14 @@ include('./utilitaire/db_connexion.php');
 // bootstrap
 include('./utilitaire/bootstrap.php');
 //navbar
-include('./utilitaire/barre_de_navigation.php');
-?>
+if($_SESSION['statut'] == "medecin")
+{
+        include('./utilitaire/barre_de_navigation_medecin.php');
+}
+else
+{
+        include('./utilitaire/barre_de_navigation_patient.php');
+}?>
 
 <?php
 //sert à changer le format de la date

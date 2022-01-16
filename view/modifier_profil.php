@@ -12,8 +12,14 @@
 <body>
 <?php
 include('./utilitaire/bootstrap.php');
-include('./utilitaire/barre_de_navigation.php');
-include('./utilitaire/popup_profil.php');
+if($_SESSION['statut'] == "medecin")
+{
+        include('./utilitaire/barre_de_navigation_medecin.php');
+}
+else
+{
+        include('./utilitaire/barre_de_navigation_patient.php');
+}include('./utilitaire/popup_profil.php');
 ?>
 <div class="tout">
 <div class="container">

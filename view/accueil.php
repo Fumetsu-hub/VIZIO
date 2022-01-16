@@ -8,7 +8,15 @@
 <body>
 <?php
 include('./utilitaire/bootstrap.php');
-include('./utilitaire/barre_de_navigation.php');
+//navbar
+if($_SESSION['statut'] == "medecin")
+{
+        include('./utilitaire/barre_de_navigation_medecin.php');
+}
+else
+{
+        include('./utilitaire/barre_de_navigation_patient.php');
+}
 ?>
 <br><br>
 <div class="responsive_accueil card container shadow" style="border-width: 5px; background-color:white;"><br>

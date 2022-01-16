@@ -1,6 +1,6 @@
 <?php
 
-if (empty($_SESSION['id_user']))
+if (empty($_SESSION['id_user']) or $_SESSION['statut'] != "medecin")
 {
     header('Location: ./index.php');
     exit();
