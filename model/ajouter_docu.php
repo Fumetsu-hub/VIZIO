@@ -7,6 +7,7 @@
 ?>
 <?php
 
+
 if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
 {
         // Testons si le fichier n'est pas trop gros
@@ -15,9 +16,9 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
                 // Testons si l'extension est autorisée
                 $infosfichier = pathinfo($_FILES['monfichier']['name']);
                 $extension_upload = $infosfichier['extension'];
-                $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
-                $id_patient= $_SESSION["id_dossier_patient"];
-                $id_medecin= $_SESSION["id_user"];
+                $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png'); 
+               $id_patient= $_SESSION["id_dossier_patient"];
+                $id_medecin= $_SESSION["id_user"] + 1;
                 $req = $base->query('INSERT INTO document VALUES("'.$id_medecin.'","'.$id_patient.'","document","'.$_FILES['monfichier']['name'].'")');
                 //if (in_array($extension_upload, $extensions_autorisees))
                 //{
@@ -66,5 +67,5 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
       //  echo "Veuillez sélectionner une image à uploader.";
     //}
 //}
-header("Refresh:0; url=../index.php?action=Document");
+//header("Refresh:0; url=../index.php?action=Document");
 ?>
