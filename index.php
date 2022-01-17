@@ -73,6 +73,15 @@ session_start();
 				case 'creer_fiche_consultation':
 					include("./controlleur/creer_fiche_consultation.php");
 					break;
+				case 'document_accueil':
+					include("./controlleur/document_accueil.php");
+					break;
+					case 'document_upload':
+						include("./controlleur/document_upload.php");
+						break;
+				case 'document_view':
+					include("./controlleur/document_view.php");
+					break;
 			}
 		}
 	}
