@@ -14,11 +14,12 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
         if ($_FILES['monfichier']['size'] <= 10000000)
         {
                 // Testons si l'extension est autorisée
-                $nomfichier = basename($_FILES["image"]["name"]);
+                $nomfichier = basename($_FILES["monfichier"]["name"]);
                 $infosfichier = pathinfo($nomfichier, PATHINFO_EXTENSION);
                 $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png'); 
                 if(in_array($infosfichier, $extensions_autorisees)){
                   $image = $_FILES['monfichier']['tmp_name'];
+                  $imgContent = addslashes(file_get_contents($image));
                   $insert = $base->query("INSERT into document (image, created) VALUES ('$imgContent', NOW())");
                   if($insert){ 
                     $status = 'success'; 
