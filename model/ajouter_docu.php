@@ -14,12 +14,26 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
         if ($_FILES['monfichier']['size'] <= 10000000)
         {
                 // Testons si l'extension est autorisée
-                $infosfichier = pathinfo($_FILES['monfichier']['name']);
-                $extension_upload = $infosfichier['extension'];
+                $nomfichier = basename($_FILES["monfichier"]["name"]);
+                $infosfichier = pathinfo($nomfichier, PATHINFO_EXTENSION);
                 $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png'); 
-               $id_patient= $_SESSION["id_dossier_patient"];
-                $id_medecin= $_SESSION["id_user"] + 1;
-                $req = $base->query('INSERT INTO document VALUES("'.$id_medecin.'","'.$id_patient.'","document","'.$_FILES['monfichier']['name'].'")');
+                if(in_array($infosfichier, $extensions_autorisees)){
+                  $image = $_FILES['monfichier']['tmp_name'];
+                  $imgContent = addslashes(file_get_contents($image));
+                  $insert = $base->query("INSERT into document (image, created) VALUES ('$imgContent', NOW())");
+                  if($insert){ 
+                    $status = 'success'; 
+                    $statusMsg = "Document enregistré."; 
+                }else{ 
+                    $statusMsg = "Echec de l'enregistrement du document."; 
+                }  
+            }else{ 
+                $statusMsg = 'Seulement les documents JPG, JPEG, PNG, & GIF sont acceptées.'; 
+            } 
+        }else{ 
+            $statusMsg = 'Veuillez selectionner un document à enregistrer.'; 
+        } 
+                }
                 //if (in_array($extension_upload, $extensions_autorisees))
                 //{
                         // On peut valider le fichier et le stocker définitivement
