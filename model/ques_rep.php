@@ -25,7 +25,7 @@ include('./utilitaire/db_connexion.php');
             $recup_quest = mysqli_fetch_array($result);
               
             //Vérification si la question est déjà utilisée
-            if(!empty($recup_quest['mail'])){$erreur_ques = "La question existe deja";unset($ques);}
+            if(!empty($recup_quest['quest'])){$erreur_ques = "La question existe deja";unset($ques);}
             else
             {
             //Si tout est bon alors :

@@ -20,7 +20,7 @@
             {
                 if(!empty($_POST['ques']))
                 {
-                    //Cherche si la question dans la bdd
+                    //Cherche la question dans la bdd
                     $sql = "SELECT quest FROM quest/rep WHERE quest = '$ques'";  
                     $result = mysqli_query($base, $sql) or die("Erreur SQL !<br />".$sql.'<br />'.mysqli_error($base));
                     $recup_quest = mysqli_fetch_array($result);
