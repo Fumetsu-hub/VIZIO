@@ -5,7 +5,7 @@
     
         <title>Générateur de QCM</title>
 
-        <script language="php">
+        <script language="javascript">
 
             /**************************************************
             Ce fichier demande à l'utilisateur combien il veut poser de questions, de quel type : (boutons radio, menus déroulants, ou zone de texte). Il charge ces valeurs dans les variables numQuestions et quizType, qui sont initialisées dans le fichier du premier cadre (frame), ad.htm.
@@ -50,7 +50,8 @@
         <div class="container">
         <div>
         <br>
-        <form>Combien de questions dans le QCM ? 
+        <form>
+            Combien de questions dans le QCM ? 
             <input name="numQuestions" type="text" size="5" value="1"><br>
             Sélectionnez un type d'affichage : 
             <select name="quizType">
@@ -59,15 +60,15 @@
             </option><option value="checkbox">cases à cocher
             </option><option value="text">zone de texte
             </option></select>
-        </form>
+        
         <br>
         <!-- demande combien d'items et le stocke dans numChoices; charge qcm2.htm -->
-<form>Combien d'items par question ? 
-    5 choix max
-<input name="numChoices" type="text" size="9" value="3">
-&nbsp;&nbsp;
-<button type="submit" value="questionnaire" name="action" class="btn btn-primary">Valider</button><br>
-</form>
+        Combien d'items par question ? 
+            5 choix max
+        <input name="numChoices" type="text" size="9" value="3">
+        &nbsp;&nbsp;
+        <button type="submit" value="questionnaire" name="action" class="btn btn-primary">Valider</button><br>
+        </form>
 
 <!-- The Quiz creator was created by Charity Kahn, charity@cnet.com -->
         </div>
