@@ -39,9 +39,7 @@ include('./utilitaire/db_connexion.php');
      <p class="status error">Image(s) not found...</p> 
  <?php } ?>
  
- <form action="./document_accueil.php" method="GET" class="mt-4">
-     <button type="submit" value="" name="action" class="btn btn-primary">Retour</button><br>
- </form>
+ 
  
  <br>
   <br>
