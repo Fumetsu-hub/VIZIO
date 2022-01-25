@@ -26,17 +26,23 @@ else
 include('./utilitaire/db_connexion.php');
 ?>
 <?php
- $id_img = $_SESSION["id_dossier_patient"];
- $sql_img = "SELECT image FROM document WHERE id = '$id_img'";
- $img_result =$base->query($sql_img);
- if($img_result->num_rows>0){
-    $toto=$img_result->fetch_assoc();
-    echo '<img src="data:image/jpeg;base64,'.base64_encode( $toto['doc_bin'] ).'"/>';
- }
- else{
-     echo("Il n'y a aucun document a consulter");
- }
+ $result = $base->query("SELECT image FROM document ORDER BY id DESC"); 
  ?>
+ 
+ <?php if($result->num_rows > 0){ ?> 
+     <div class="gallery"> 
+         <?php while($row = $result->fetch_assoc()){ ?> 
+             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> 
+         <?php } ?> 
+     </div> 
+ <?php }else{ ?> 
+     <p class="status error">Image(s) not found...</p> 
+ <?php } ?>
+ 
+ <form action="./document_accueil.php" method="GET" class="mt-4">
+     <button type="submit" value="" name="action" class="btn btn-primary">Retour</button><br>
+ </form>
+ 
  <br>
   <br>
     <form action="./index.php" method="GET">
