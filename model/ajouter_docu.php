@@ -39,7 +39,7 @@ if(isset($_POST["submit"])){
  
 // Display status message 
 echo $statusMsg; 
-header("Refresh:0; url=../index.php?action=Document");
+
 ?>
 
 <?php
