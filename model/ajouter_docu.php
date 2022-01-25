@@ -39,12 +39,9 @@ if(isset($_POST["submit"])){
  
 // Display status message 
 echo $statusMsg; 
-
+header("Refresh:0; url=../index.php?action=Document");
 ?>
 
-<form action="./document_accueil.php" method="GET" class="mt-4">
-    <button type="submit" value="ques_rep" name="action" class="btn btn-primary">Retour</button><br>
-</form>
 <?php
 /*if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
 {
