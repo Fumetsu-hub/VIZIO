@@ -20,7 +20,7 @@ if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
                 if(in_array($infosfichier, $extensions_autorisees)){
                   $image = $_FILES['monfichier']['tmp_name'];
                   $imgContent = addslashes(file_get_contents($image));
-                  $insert = $base->query("INSERT into document (doc_bin, created) VALUES ('$imgContent', NOW())");
+                  $insert = $base->query("INSERT into document (image, created) VALUES ('$imgContent', NOW())");
                   if($insert){ 
                     $status = 'success'; 
                     $statusMsg = "Document enregistré."; 
