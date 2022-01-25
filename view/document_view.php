@@ -1,3 +1,9 @@
+<?php
+    include('../utilitaire/bootstrap.php');
+    include('../utilitaire/navbar.php');
+?>
+<div class=" mt-5 card container shadow" style="border-width:5px; width:50rem;">
+
 <?php 
 // Include the database configuration file  
 include('../utilitaire/db_connexion.php');
@@ -19,3 +25,4 @@ $result = $base->query("SELECT image FROM document ORDER BY id DESC");
 <form action="./document_accueil.php" method="GET" class="mt-4">
     <button type="submit" value="" name="action" class="btn btn-primary">Retour</button><br>
 </form>
+</div>

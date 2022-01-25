@@ -1,3 +1,10 @@
+<?php
+    include('../utilitaire/bootstrap.php');
+    include('../utilitaire/navbar.php');
+?>
+
+<div class=" mt-5 card container shadow" style="border-width:5px; width:35rem;">
+
 <?php 
 // Include the database configuration file  
 include('../utilitaire/db_connexion.php');
@@ -42,3 +49,4 @@ echo $statusMsg;
 <form action="./document_accueil.php" method="GET" class="mt-4">
     <button type="submit" value="ques_rep" name="action" class="btn btn-primary">Retour</button><br>
 </form>
+</div>
