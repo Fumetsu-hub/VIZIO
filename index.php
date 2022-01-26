@@ -76,6 +76,9 @@ session_start();
 				case 'document_view':
 					include("./controlleur/document_view.php");
 					break;
+				case 'creation_fiche_consultation':
+					include("./controlleur/creation_fiche_consultation.php");
+					break;
 			}
 		}
 	}

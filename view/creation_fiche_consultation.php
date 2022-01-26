@@ -7,7 +7,7 @@
     max-width: 1000px;
     max-height: 850px;
     top: 0;
-    left: 0;"class="mt-4 container">
+    left: 0;"class="card pb-5 shadow mt-4 container">
       <div class="row">
 
         <div class="pt-3 pb-3 col-sm-6" style="border:solid; border-bottom:none; border-right:none; border-top:none; border-left:none"> <!-- HAUT GAUCHE -->
@@ -114,6 +114,10 @@
          <input style="border:none; border-bottom:1px solid;" type="text" id="name" name="name" size="48"> 
 
         </div>
+
+      <form class="mt-3" action="./index.php" method="GET">
+        <button type="submit" value="creation_fiche_consultation" name="action" class="btn btn-primary">Créer fiche</button>
+      </form>
 
     </div>
 </div>

@@ -142,7 +142,7 @@ include('./utilitaire/popup_recherche_fiche.php');
     </table>
 
     <form action="./index.php" method="GET">
-      <button type="submit" value="creer_fiche_consultation" name="action" class="btn btn-primary">Créer fiche</button>
+      <button type="submit" value="creation_fiche_consultation" name="action" class="btn btn-primary">Créer fiche</button>
     </form>
     <div class="mt-4 row">
     <form class="col-sm-offset-4 col-sm-2" action="" method="POST">

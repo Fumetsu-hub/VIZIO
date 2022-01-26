@@ -18,7 +18,7 @@
     <input type="submit" name="submit" value="enregistrer">
 </form>
 <br>
-<form action="./document_view.php" method="GET" class="mt-4">
+<form action="./document_view.php" method="GET" class="mt-4 pb-3">
     <button type="submit" value="ques_rep" name="action" class="btn btn-primary">Voir documents</button><br>
 </form>
 </div>
