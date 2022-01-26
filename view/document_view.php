@@ -2,7 +2,8 @@
     include('../utilitaire/bootstrap.php');
     include('../utilitaire/navbar.php');
 ?>
-<div class=" mt-5 card container shadow" style="border-width:5px; width:50rem;">
+
+<div class="mt-5 card container shadow" style="border-width:5px; width:70rem;">
 
 <?php 
 // Include the database configuration file  
@@ -21,8 +22,8 @@ $result = $base->query("SELECT image FROM document ORDER BY id DESC");
 <?php }else{ ?> 
     <p class="status error">Image(s) not found...</p> 
 <?php } ?>
+</div>
 
-<form action="./document_accueil.php" method="GET" class="mt-4">
+<form class="pb-5 mt-5 container " action="./document_accueil.php" method="GET" class="mt-4">
     <button type="submit" value="" name="action" class="btn btn-primary">Retour</button><br>
 </form>
-</div>

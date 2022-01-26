@@ -16,35 +16,32 @@ else
         include('./utilitaire/barre_de_navigation_patient.php');
 }?>
 
-<?php
-//sert à changer le format de la date
-$date = $_SESSION['date_fiche_cons'];
-$timestamp = strtotime($date);
-$date = date("d-m-Y", $timestamp);
+<div class="mt-5 card container shadow" style="border-width:5px; width:70rem;">
+
+<?php 
+// Include the database configuration file  
+include('./utilitaire/db_connexion.php');
+ 
+// Get image data from database 
+if(isset($_SESSION['id_dossier_patient']))
+{
+  $use_id = $_SESSION["id_dossier_patient"];
+}
+else if(isset($_SESSION['id_user']))
+{
+  $use_id = $_SESSION["id_user"];
+}
+$result = $base->query("SELECT image FROM document WHERE id='$use_id' ORDER BY id DESC");
 ?>
 
-<h1 class="mt-5" style="text-align:center;">Fiche consultation</h1>
-
-<div class="mt-5 card container " style="width: 100rem;">
-  <div class="card-body">
-
-<table  style="font-size:25px; " class="mt-2 table table-bordered">
-        <thead>
-        <tr>
-        <th class="hidden-sm hidden-md" valign=""><strong>Date</strong></th>
-        <th><strong>Type</strong></th>
-        <th class=""><strong>Description</strong></th>
-        <th></th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr valign="middle">
-            <td  class="hidden-sm hidden-md" align="left"><strong><?php echo$date?></strong> </td>
-            <td  align="left"><?php echo$_SESSION['type_fiche_cons']?></td>
-            <td  class="" align="left"><?php echo$_SESSION['description_fiche_cons']; ?></td>
-          </tr>
-        </tbody>
-</table>
-
-  </div>
+<?php if($result->num_rows > 0){ ?> 
+    <div class="gallery"> 
+        <?php while($row = $result->fetch_assoc()){ ?> 
+            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> 
+        <?php } ?> 
+    </div> 
+<?php }else{ ?> 
+    <p class="status error">Aucune fiche consultation trouvée...</p>
+<?php } ?>
 </div>
+<div class="pb-5  "></div>
