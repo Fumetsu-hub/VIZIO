@@ -43,9 +43,11 @@ include('./utilitaire/popup_recherche_fiche.php');
 <br><br><h1 style="text-align:center;">Fiches consultation de <br><?php echo$_SESSION['nom_pat']." ".$_SESSION['prenom_pat']?></h1><br><br>
 <div class="container">
 
+<!--
     <div class="popup-btn btn btn-primary">
       <a>Rechercher</a>
     </div><br>
+-->
 
     <table  style="background-color:#FFF; font-size:20px; " class="mt-2 table table-striped table-hover">
         <thead>
